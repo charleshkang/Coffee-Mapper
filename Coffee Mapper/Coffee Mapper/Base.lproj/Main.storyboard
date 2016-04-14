@@ -21,7 +21,6 @@
         <!--Navigation Controller-->
         <scene sceneID="QRg-XN-htf">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TPu-bH-L3W" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="76b-1L-L1q" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="t0e-Jl-qey">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -31,6 +30,7 @@
                         <segue destination="d7a-lR-tIP" kind="relationship" relationship="rootViewController" id="Ulh-Uh-UGG"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TPu-bH-L3W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="847" y="-481"/>
         </scene>
@@ -226,7 +226,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="DAc-ey-SRH">
             <objects>
-                <viewController id="d2V-Cc-1r4" customClass="CMSignUpViewController" customModule="Coffee_Mapper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="d2V-Cc-1r4" customClass="CMSignUpViewController" customModule="Coffee_Mapper" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4ka-dx-bLq"/>
                         <viewControllerLayoutGuide type="bottom" id="DlF-r5-Y2b"/>
@@ -414,8 +414,8 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="emailTextField" destination="jsk-Xv-bwO" id="t7O-0u-Pe0"/>
-                        <outlet property="passwordTextField" destination="3ZC-FE-9o8" id="9ui-Rx-4IG"/>
+                        <outlet property="emailTextField" destination="3ZC-FE-9o8" id="vzE-tL-19L"/>
+                        <outlet property="passwordTextField" destination="jsk-Xv-bwO" id="UIs-rg-tEF"/>
                         <outlet property="usernameTextField" destination="0Bx-ec-llQ" id="UmW-Dr-wbQ"/>
                         <segue destination="76b-1L-L1q" kind="show" identifier="NewUserLoggedIn" id="4fb-k9-NET"/>
                     </connections>

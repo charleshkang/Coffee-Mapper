@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 class CMLoginViewController: UIViewController
 {
@@ -19,7 +18,7 @@ class CMLoginViewController: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
+//        self.hideKeyboardWhenTappedAround()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -29,7 +28,6 @@ class CMLoginViewController: UIViewController
             self.performSegueWithIdentifier("CurrentlyLoggedIn", sender: nil)
         }
     }
-    
     
     @IBAction func signInButtonTapped(sender: AnyObject)
     {
@@ -59,13 +57,13 @@ class CMLoginViewController: UIViewController
     }
 }
 
-extension UIViewController {
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
-    }
-    
-    func dismissKeyboard() {
-        view.endEditing(true)
-    }
-}
+//extension UIViewController {
+//    func hideKeyboardWhenTappedAround() {
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+//        view.addGestureRecognizer(tap)
+//    }
+//    
+//    func dismissKeyboard() {
+//        view.endEditing(true)
+//    }
+//}
