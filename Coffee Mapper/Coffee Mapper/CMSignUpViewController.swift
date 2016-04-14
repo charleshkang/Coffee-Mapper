@@ -17,22 +17,11 @@ class CMSignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
     }
     
     @IBAction func signUpButtonTapped(sender: AnyObject)
-    {
-        if self.usernameTextField.isFirstResponder() {
-            self.usernameTextField.resignFirstResponder()
-        }
-        
-        if self.passwordTextField.isFirstResponder() {
-            self.passwordTextField.resignFirstResponder()
-        }
-        
-        if self.emailTextField.isFirstResponder() {
-            self.emailTextField.resignFirstResponder()
-        }
-        
+    {        
         let username = usernameTextField.text
         let email = emailTextField.text
         let password = passwordTextField.text
