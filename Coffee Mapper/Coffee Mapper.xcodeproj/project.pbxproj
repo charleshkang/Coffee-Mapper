@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		5761F498A6B7791D22F97949 /* Pods_Coffee_Mapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E97D1A107812F063E9427C /* Pods_Coffee_Mapper.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BFA474AB1CBEEC4200BA3928 /* CMLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474AA1CBEEC4200BA3928 /* CMLoginViewController.swift */; };
+		BFA474AF1CBEF38800BA3928 /* CMSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474AE1CBEF38800BA3928 /* CMSignUpViewController.swift */; };
+		BFA474BE1CBF162500BA3928 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474BD1CBF162500BA3928 /* Constants.swift */; };
+		BFA474C11CBF176100BA3928 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474C01CBF176100BA3928 /* DataService.swift */; };
+		BFA474C51CBF2E8000BA3928 /* CMHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474C41CBF2E8000BA3928 /* CMHomeViewController.swift */; };
 		BFCF745D1CBEDE23005733F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF745C1CBEDE23005733F9 /* AppDelegate.swift */; };
-		BFCF745F1CBEDE23005733F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF745E1CBEDE23005733F9 /* ViewController.swift */; };
 		BFCF74621CBEDE23005733F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFCF74601CBEDE23005733F9 /* Main.storyboard */; };
 		BFCF74641CBEDE23005733F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFCF74631CBEDE23005733F9 /* Assets.xcassets */; };
 		BFCF74671CBEDE23005733F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFCF74651CBEDE23005733F9 /* LaunchScreen.storyboard */; };
@@ -38,9 +42,13 @@
 /* Begin PBXFileReference section */
 		76E97D1A107812F063E9427C /* Pods_Coffee_Mapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coffee_Mapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE5C7DE6DB06F0FFDB524039 /* Pods-Coffee Mapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coffee Mapper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coffee Mapper/Pods-Coffee Mapper.release.xcconfig"; sourceTree = "<group>"; };
+		BFA474AA1CBEEC4200BA3928 /* CMLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMLoginViewController.swift; sourceTree = "<group>"; };
+		BFA474AE1CBEF38800BA3928 /* CMSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSignUpViewController.swift; sourceTree = "<group>"; };
+		BFA474BD1CBF162500BA3928 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BFA474C01CBF176100BA3928 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		BFA474C41CBF2E8000BA3928 /* CMHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMHomeViewController.swift; sourceTree = "<group>"; };
 		BFCF74591CBEDE23005733F9 /* Coffee Mapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coffee Mapper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFCF745C1CBEDE23005733F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BFCF745E1CBEDE23005733F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BFCF74611CBEDE23005733F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFCF74631CBEDE23005733F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFCF74661CBEDE23005733F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,6 +106,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BFA474BF1CBF173600BA3928 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				BFA474BD1CBF162500BA3928 /* Constants.swift */,
+				BFA474C01CBF176100BA3928 /* DataService.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
 		BFCF74501CBEDE23005733F9 = {
 			isa = PBXGroup;
 			children = (
@@ -122,13 +139,16 @@
 		BFCF745B1CBEDE23005733F9 /* Coffee Mapper */ = {
 			isa = PBXGroup;
 			children = (
-				BFCF748B1CBEDFDD005733F9 /* Resources */,
+				BFA474BF1CBF173600BA3928 /* Utility */,
 				BFCF745C1CBEDE23005733F9 /* AppDelegate.swift */,
-				BFCF745E1CBEDE23005733F9 /* ViewController.swift */,
+				BFA474AA1CBEEC4200BA3928 /* CMLoginViewController.swift */,
+				BFA474AE1CBEF38800BA3928 /* CMSignUpViewController.swift */,
+				BFA474C41CBF2E8000BA3928 /* CMHomeViewController.swift */,
 				BFCF74601CBEDE23005733F9 /* Main.storyboard */,
 				BFCF74631CBEDE23005733F9 /* Assets.xcassets */,
 				BFCF74651CBEDE23005733F9 /* LaunchScreen.storyboard */,
 				BFCF74681CBEDE23005733F9 /* Info.plist */,
+				BFCF748B1CBEDFDD005733F9 /* Resources */,
 			);
 			path = "Coffee Mapper";
 			sourceTree = "<group>";
@@ -355,8 +375,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFCF745F1CBEDE23005733F9 /* ViewController.swift in Sources */,
+				BFA474AF1CBEF38800BA3928 /* CMSignUpViewController.swift in Sources */,
+				BFA474C51CBF2E8000BA3928 /* CMHomeViewController.swift in Sources */,
+				BFA474AB1CBEEC4200BA3928 /* CMLoginViewController.swift in Sources */,
 				BFCF745D1CBEDE23005733F9 /* AppDelegate.swift in Sources */,
+				BFA474BE1CBF162500BA3928 /* Constants.swift in Sources */,
+				BFA474C11CBF176100BA3928 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
