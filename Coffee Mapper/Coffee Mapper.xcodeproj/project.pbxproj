@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5761F498A6B7791D22F97949 /* Pods_Coffee_Mapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E97D1A107812F063E9427C /* Pods_Coffee_Mapper.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		4D0822B44C8D4C53CBA7BB0E /* Pods_Coffee_Mapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1756AE2FEB795BB7C345213E /* Pods_Coffee_Mapper.framework */; };
+		BF1BE62E1CC0534A00776328 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1BE62D1CC0534A00776328 /* MapKit.framework */; };
+		BF1BE6301CC05B9D00776328 /* CMFoursquareAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BE62F1CC05B9D00776328 /* CMFoursquareAPI.swift */; };
+		BF1BE6321CC0634400776328 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BE6311CC0634400776328 /* Venue.swift */; };
+		BF1BE6341CC067BC00776328 /* CMCoffeeAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BE6331CC067BC00776328 /* CMCoffeeAnnotation.swift */; };
 		BFA474AB1CBEEC4200BA3928 /* CMLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474AA1CBEEC4200BA3928 /* CMLoginViewController.swift */; };
 		BFA474AF1CBEF38800BA3928 /* CMSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474AE1CBEF38800BA3928 /* CMSignUpViewController.swift */; };
 		BFA474BE1CBF162500BA3928 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474BD1CBF162500BA3928 /* Constants.swift */; };
@@ -40,8 +44,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		76E97D1A107812F063E9427C /* Pods_Coffee_Mapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coffee_Mapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE5C7DE6DB06F0FFDB524039 /* Pods-Coffee Mapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coffee Mapper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coffee Mapper/Pods-Coffee Mapper.release.xcconfig"; sourceTree = "<group>"; };
+		1756AE2FEB795BB7C345213E /* Pods_Coffee_Mapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coffee_Mapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		23A33960441F331DD906B998 /* Pods-Coffee Mapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coffee Mapper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coffee Mapper/Pods-Coffee Mapper.release.xcconfig"; sourceTree = "<group>"; };
+		7D08BCE3905AD427C414A047 /* Pods-Coffee Mapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coffee Mapper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Coffee Mapper/Pods-Coffee Mapper.debug.xcconfig"; sourceTree = "<group>"; };
+		BF1BE62D1CC0534A00776328 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		BF1BE62F1CC05B9D00776328 /* CMFoursquareAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMFoursquareAPI.swift; sourceTree = "<group>"; };
+		BF1BE6311CC0634400776328 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		BF1BE6331CC067BC00776328 /* CMCoffeeAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMCoffeeAnnotation.swift; sourceTree = "<group>"; };
 		BFA474AA1CBEEC4200BA3928 /* CMLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMLoginViewController.swift; sourceTree = "<group>"; };
 		BFA474AE1CBEF38800BA3928 /* CMSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSignUpViewController.swift; sourceTree = "<group>"; };
 		BFA474BD1CBF162500BA3928 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -60,7 +69,6 @@
 		BFCF747C1CBEDE24005733F9 /* Coffee_MapperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coffee_MapperUITests.swift; sourceTree = "<group>"; };
 		BFCF747E1CBEDE24005733F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFCF748C1CBEDFF0005733F9 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
-		C4727D316F0BF5DC955F48ED /* Pods-Coffee Mapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coffee Mapper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Coffee Mapper/Pods-Coffee Mapper.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5761F498A6B7791D22F97949 /* Pods_Coffee_Mapper.framework in Frameworks */,
+				BF1BE62E1CC0534A00776328 /* MapKit.framework in Frameworks */,
+				4D0822B44C8D4C53CBA7BB0E /* Pods_Coffee_Mapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,21 +98,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3E24F3B40469EEBEA3B59DF9 /* Pods */ = {
+		2CB61155CDA06E20192864DE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C4727D316F0BF5DC955F48ED /* Pods-Coffee Mapper.debug.xcconfig */,
-				BE5C7DE6DB06F0FFDB524039 /* Pods-Coffee Mapper.release.xcconfig */,
+				7D08BCE3905AD427C414A047 /* Pods-Coffee Mapper.debug.xcconfig */,
+				23A33960441F331DD906B998 /* Pods-Coffee Mapper.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		B484C8F441BC782F9E7426D1 /* Frameworks */ = {
+		4D8B682BE5C8D151E42D50D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				76E97D1A107812F063E9427C /* Pods_Coffee_Mapper.framework */,
+				BF1BE62D1CC0534A00776328 /* MapKit.framework */,
+				1756AE2FEB795BB7C345213E /* Pods_Coffee_Mapper.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF269CEE1CC039510052CC54 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BFA474AA1CBEEC4200BA3928 /* CMLoginViewController.swift */,
+				BFA474AE1CBEF38800BA3928 /* CMSignUpViewController.swift */,
+				BFA474C41CBF2E8000BA3928 /* CMHomeViewController.swift */,
+				BF1BE6331CC067BC00776328 /* CMCoffeeAnnotation.swift */,
+				BF1BE62F1CC05B9D00776328 /* CMFoursquareAPI.swift */,
+				BF1BE6311CC0634400776328 /* Venue.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		BFA474BF1CBF173600BA3928 /* Utility */ = {
@@ -121,8 +144,8 @@
 				BFCF745B1CBEDE23005733F9 /* Coffee Mapper */,
 				BFCF748A1CBEDFD4005733F9 /* Tests */,
 				BFCF745A1CBEDE23005733F9 /* Products */,
-				3E24F3B40469EEBEA3B59DF9 /* Pods */,
-				B484C8F441BC782F9E7426D1 /* Frameworks */,
+				2CB61155CDA06E20192864DE /* Pods */,
+				4D8B682BE5C8D151E42D50D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,11 +163,9 @@
 			isa = PBXGroup;
 			children = (
 				BFA474BF1CBF173600BA3928 /* Utility */,
-				BFCF745C1CBEDE23005733F9 /* AppDelegate.swift */,
-				BFA474AA1CBEEC4200BA3928 /* CMLoginViewController.swift */,
-				BFA474AE1CBEF38800BA3928 /* CMSignUpViewController.swift */,
-				BFA474C41CBF2E8000BA3928 /* CMHomeViewController.swift */,
+				BF269CEE1CC039510052CC54 /* View */,
 				BFCF74601CBEDE23005733F9 /* Main.storyboard */,
+				BFCF745C1CBEDE23005733F9 /* AppDelegate.swift */,
 				BFCF74631CBEDE23005733F9 /* Assets.xcassets */,
 				BFCF74651CBEDE23005733F9 /* LaunchScreen.storyboard */,
 				BFCF74681CBEDE23005733F9 /* Info.plist */,
@@ -196,12 +217,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFCF74811CBEDE24005733F9 /* Build configuration list for PBXNativeTarget "Coffee Mapper" */;
 			buildPhases = (
-				54A4AD28ADC31456D8BD86C6 /* Check Pods Manifest.lock */,
+				A0BF5640574E8D39A614BAB5 /* 📦 Check Pods Manifest.lock */,
 				BFCF74551CBEDE23005733F9 /* Sources */,
 				BFCF74561CBEDE23005733F9 /* Frameworks */,
 				BFCF74571CBEDE23005733F9 /* Resources */,
-				026F59E7EAC64647D325A660 /* Embed Pods Frameworks */,
-				CE58CA141FFDC1F623567103 /* Copy Pods Resources */,
+				A8838F4383417D3FA763C590 /* 📦 Embed Pods Frameworks */,
+				9F9F8D8F51DCC30C7F6DF7B0 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -323,29 +344,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		026F59E7EAC64647D325A660 /* Embed Pods Frameworks */ = {
+		9F9F8D8F51DCC30C7F6DF7B0 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Coffee Mapper/Pods-Coffee Mapper-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Coffee Mapper/Pods-Coffee Mapper-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		54A4AD28ADC31456D8BD86C6 /* Check Pods Manifest.lock */ = {
+		A0BF5640574E8D39A614BAB5 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,19 +374,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		CE58CA141FFDC1F623567103 /* Copy Pods Resources */ = {
+		A8838F4383417D3FA763C590 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Coffee Mapper/Pods-Coffee Mapper-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Coffee Mapper/Pods-Coffee Mapper-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -376,9 +397,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFA474AF1CBEF38800BA3928 /* CMSignUpViewController.swift in Sources */,
+				BF1BE6321CC0634400776328 /* Venue.swift in Sources */,
 				BFA474C51CBF2E8000BA3928 /* CMHomeViewController.swift in Sources */,
 				BFA474AB1CBEEC4200BA3928 /* CMLoginViewController.swift in Sources */,
 				BFCF745D1CBEDE23005733F9 /* AppDelegate.swift in Sources */,
+				BF1BE6341CC067BC00776328 /* CMCoffeeAnnotation.swift in Sources */,
+				BF1BE6301CC05B9D00776328 /* CMFoursquareAPI.swift in Sources */,
 				BFA474BE1CBF162500BA3928 /* Constants.swift in Sources */,
 				BFA474C11CBF176100BA3928 /* DataService.swift in Sources */,
 			);
@@ -520,7 +544,7 @@
 		};
 		BFCF74821CBEDE24005733F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C4727D316F0BF5DC955F48ED /* Pods-Coffee Mapper.debug.xcconfig */;
+			baseConfigurationReference = 7D08BCE3905AD427C414A047 /* Pods-Coffee Mapper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Coffee Mapper/Info.plist";
@@ -532,7 +556,7 @@
 		};
 		BFCF74831CBEDE24005733F9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE5C7DE6DB06F0FFDB524039 /* Pods-Coffee Mapper.release.xcconfig */;
+			baseConfigurationReference = 23A33960441F331DD906B998 /* Pods-Coffee Mapper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Coffee Mapper/Info.plist";

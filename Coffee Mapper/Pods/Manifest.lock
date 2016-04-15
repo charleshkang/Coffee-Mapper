@@ -1,13 +1,26 @@
 PODS:
   - DZNEmptyDataSet (1.7.3)
   - Firebase (2.5.1)
+  - QuadratTouch (1.1.1)
+  - Realm (0.98.7):
+    - Realm/Headers (= 0.98.7)
+  - Realm/Headers (0.98.7)
+  - RealmSwift (0.98.7):
+    - Realm (= 0.98.7)
 
 DEPENDENCIES:
   - DZNEmptyDataSet
-  - Firebase (>= 2.5.0)
+  - Firebase (~> 2.5.0)
+  - QuadratTouch (>= 1.0)
+  - RealmSwift
 
 SPEC CHECKSUMS:
   DZNEmptyDataSet: dd7cca17c1d07dfa78956859b1e70a52505678ef
   Firebase: 3565ea88b830f28f2c77ecc524622bc71a20d085
+  QuadratTouch: 296d83c63a4328f6f40af9fc728fe24f0e3b00d4
+  Realm: 46df2178359b6b57812e6cf957956febaba513a5
+  RealmSwift: 3056e6d7ad30ed50dd866185a615fccea73db5f5
 
-COCOAPODS: 0.38.2
+PODFILE CHECKSUM: f24d58910a6baeaa6e538f3a14db6e40bdd228bb
+
+COCOAPODS: 1.0.0.beta.6

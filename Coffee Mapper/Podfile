@@ -1,9 +1,11 @@
 # Uncomment this line to define a global platform for your project
+
 platform :ios, ‘9.2’
 use_frameworks!
 
-
 target ’Coffee Mapper’ do
 pod 'DZNEmptyDataSet'
-pod 'Firebase', '>= 2.5.0'
+pod 'Firebase', ‘~> 2.5.0'
+pod 'RealmSwift'
+pod 'QuadratTouch', '>= 1.0'
 end
