@@ -10,7 +10,11 @@ import UIKit
 import MapKit
 import RealmSwift
 
-class CMHomeViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class CMHomeViewController: UIViewController, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate
+{
+    
+    @IBOutlet var mapView: MKMapView!
+    @IBOutlet var tableView: UITableView?
     
     var locationManager: CLLocationManager?
     let distanceSpan: Double = 500
@@ -25,8 +29,15 @@ class CMHomeViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     {
         super.viewWillAppear(animated)
         
-        if let mapView = self.mapView {
+        if let mapView = self.mapView
+        {
             mapView.delegate = self
+        }
+        
+        if let tableView = self.tableView
+        {
+            tableView.delegate = self
+            tableView.dataSource = self
         }
     }
     
@@ -85,6 +96,7 @@ class CMHomeViewController: UIViewController, MKMapViewDelegate, CLLocationManag
                 let annotation = CoffeeAnnotation(title: venue.name, subtitle: venue.address, coordinate: CLLocationCoordinate2D(latitude: Double(venue.latitude), longitude: Double(venue.longitude)))
                 mapView?.addAnnotation(annotation)
             }
+            tableView?.reloadData()
         }
     }
     
@@ -131,5 +143,41 @@ class CMHomeViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         
     }
     
-    @IBOutlet var mapView: MKMapView!
+    // MARK: Table View Methods
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return venues?.count ?? 0
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        var cell = tableView.dequeueReusableCellWithIdentifier("cellIdentifier")
+        
+        if cell == nil
+        {
+            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cellIdentifier")
+        }
+        if let venue = venues?[indexPath.row]
+        {
+            cell!.textLabel?.text = venue.name
+            cell!.detailTextLabel?.text = venue.address
+        }
+        return cell!
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        if let venue = venues?[indexPath.row]
+        {
+            let region = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2D(latitude: Double(venue.latitude), longitude: Double(venue.longitude)), distanceSpan, distanceSpan)
+            mapView?.setRegion(region, animated: true)
+        }
+    }
+    
 }

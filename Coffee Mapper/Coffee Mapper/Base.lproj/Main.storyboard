@@ -439,7 +439,7 @@
                                 <rect key="frame" x="0.0" y="240" width="600" height="360"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="hOb-m7-CGq" rowHeight="46" style="IBUITableViewCellStyleDefault" id="cCg-Un-rlf">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellIdentifier" textLabel="hOb-m7-CGq" rowHeight="46" style="IBUITableViewCellStyleDefault" id="cCg-Un-rlf">
                                         <rect key="frame" x="0.0" y="92" width="600" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cCg-Un-rlf" id="DMt-gs-cIA">
@@ -483,6 +483,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="qY7-io-79y" id="T2g-kI-vqg"/>
+                        <outlet property="tableView" destination="JzH-WV-Z3j" id="7J1-T2-3I2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xtf-FU-ZcK" sceneMemberID="firstResponder"/>
