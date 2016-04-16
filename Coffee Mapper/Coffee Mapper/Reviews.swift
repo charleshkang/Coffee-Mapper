@@ -1,0 +1,45 @@
+//
+//  Reviews.swift
+//  Coffee Mapper
+//
+//  Created by Charles Kang on 4/15/16.
+//  Copyright © 2016 Charles Kang. All rights reserved.
+//
+
+import Foundation
+import Firebase
+
+class Reviews {
+    private var _reviewRef: Firebase!
+    
+    private var _reviewKey: String!
+    private var _reviewText: String!
+    private var _username: String!
+    
+    var reviewKey: String {
+        return _reviewKey
+    }
+    
+    var reviewText: String {
+        return _reviewText
+    }
+    
+    var username: String {
+        return _username
+    }
+    
+    init(key: String, dictionary: Dictionary<String, AnyObject>) {
+        self._reviewKey = key
+        
+        if let review = dictionary["reviewText"] as? String {
+            self._reviewText = review
+        }
+        
+        if let user = dictionary["author"] as? String {
+            self._username = user
+        } else {
+            self._username = ""
+        }
+        self._reviewRef = DataService.dataService.REVIEW_REF.childByAppendingPath(self._reviewKey)
+    }
+}

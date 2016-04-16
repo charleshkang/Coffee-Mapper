@@ -12,6 +12,9 @@
 		BF1BE6301CC05B9D00776328 /* CMFoursquareAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BE62F1CC05B9D00776328 /* CMFoursquareAPI.swift */; };
 		BF1BE6321CC0634400776328 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BE6311CC0634400776328 /* Venue.swift */; };
 		BF1BE6341CC067BC00776328 /* CMCoffeeAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BE6331CC067BC00776328 /* CMCoffeeAnnotation.swift */; };
+		BF1BE6391CC176A000776328 /* CMDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BE6381CC176A000776328 /* CMDetailViewController.swift */; };
+		BF1BE63B1CC19A3D00776328 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BE63A1CC19A3D00776328 /* User.swift */; };
+		BF1BE63D1CC1ACA900776328 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BE63C1CC1ACA800776328 /* Reviews.swift */; };
 		BFA474AB1CBEEC4200BA3928 /* CMLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474AA1CBEEC4200BA3928 /* CMLoginViewController.swift */; };
 		BFA474AF1CBEF38800BA3928 /* CMSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474AE1CBEF38800BA3928 /* CMSignUpViewController.swift */; };
 		BFA474BE1CBF162500BA3928 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474BD1CBF162500BA3928 /* Constants.swift */; };
@@ -51,6 +54,9 @@
 		BF1BE62F1CC05B9D00776328 /* CMFoursquareAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMFoursquareAPI.swift; sourceTree = "<group>"; };
 		BF1BE6311CC0634400776328 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		BF1BE6331CC067BC00776328 /* CMCoffeeAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMCoffeeAnnotation.swift; sourceTree = "<group>"; };
+		BF1BE6381CC176A000776328 /* CMDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMDetailViewController.swift; sourceTree = "<group>"; };
+		BF1BE63A1CC19A3D00776328 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BF1BE63C1CC1ACA800776328 /* Reviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
 		BFA474AA1CBEEC4200BA3928 /* CMLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMLoginViewController.swift; sourceTree = "<group>"; };
 		BFA474AE1CBEF38800BA3928 /* CMSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSignUpViewController.swift; sourceTree = "<group>"; };
 		BFA474BD1CBF162500BA3928 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -116,15 +122,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BF1BE6351CC1695A00776328 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BFA474C01CBF176100BA3928 /* DataService.swift */,
+				BF1BE63A1CC19A3D00776328 /* User.swift */,
+				BF1BE6331CC067BC00776328 /* CMCoffeeAnnotation.swift */,
+				BF1BE62F1CC05B9D00776328 /* CMFoursquareAPI.swift */,
+				BF1BE6311CC0634400776328 /* Venue.swift */,
+				BF1BE63C1CC1ACA800776328 /* Reviews.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		BF269CEE1CC039510052CC54 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				BFA474AA1CBEEC4200BA3928 /* CMLoginViewController.swift */,
 				BFA474AE1CBEF38800BA3928 /* CMSignUpViewController.swift */,
 				BFA474C41CBF2E8000BA3928 /* CMHomeViewController.swift */,
-				BF1BE6331CC067BC00776328 /* CMCoffeeAnnotation.swift */,
-				BF1BE62F1CC05B9D00776328 /* CMFoursquareAPI.swift */,
-				BF1BE6311CC0634400776328 /* Venue.swift */,
+				BF1BE6381CC176A000776328 /* CMDetailViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -133,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				BFA474BD1CBF162500BA3928 /* Constants.swift */,
-				BFA474C01CBF176100BA3928 /* DataService.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -163,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				BFA474BF1CBF173600BA3928 /* Utility */,
+				BF1BE6351CC1695A00776328 /* Model */,
 				BF269CEE1CC039510052CC54 /* View */,
 				BFCF74601CBEDE23005733F9 /* Main.storyboard */,
 				BFCF745C1CBEDE23005733F9 /* AppDelegate.swift */,
@@ -405,6 +422,9 @@
 				BF1BE6301CC05B9D00776328 /* CMFoursquareAPI.swift in Sources */,
 				BFA474BE1CBF162500BA3928 /* Constants.swift in Sources */,
 				BFA474C11CBF176100BA3928 /* DataService.swift in Sources */,
+				BF1BE63D1CC1ACA900776328 /* Reviews.swift in Sources */,
+				BF1BE6391CC176A000776328 /* CMDetailViewController.swift in Sources */,
+				BF1BE63B1CC19A3D00776328 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

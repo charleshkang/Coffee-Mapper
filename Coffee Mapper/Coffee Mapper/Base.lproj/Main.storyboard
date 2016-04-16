@@ -221,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KZq-0h-vEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130" y="-507"/>
+            <point key="canvasLocation" x="32" y="-745"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="DAc-ey-SRH">
@@ -421,7 +421,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bBP-i2-JuW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130" y="223"/>
+            <point key="canvasLocation" x="32" y="-65"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="Fqq-Pv-Kun">
@@ -455,6 +455,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="yDm-Fk-xUL" kind="show" id="Eyk-xh-c4p"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -489,6 +492,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xtf-FU-ZcK" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1484" y="-481"/>
+        </scene>
+        <!--Reviews-->
+        <scene sceneID="PFh-c0-sJY">
+            <objects>
+                <viewController id="yDm-Fk-xUL" customClass="CMDetailViewController" customModule="Coffee_Mapper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q9x-v6-f4K"/>
+                        <viewControllerLayoutGuide type="bottom" id="q9A-Rk-mjO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="arz-k5-6UA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p3r-FT-pvo">
+                                <rect key="frame" x="52" y="85" width="496" height="76"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OkA-e1-mc3">
+                                <rect key="frame" x="276" y="182" width="49" height="30"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitReviewButton:" destination="yDm-Fk-xUL" eventType="touchUpInside" id="VH8-yp-8zV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OkA-e1-mc3" firstAttribute="centerX" secondItem="arz-k5-6UA" secondAttribute="centerX" id="541-S3-L1U"/>
+                            <constraint firstItem="p3r-FT-pvo" firstAttribute="height" secondItem="arz-k5-6UA" secondAttribute="height" constant="-524" id="L5E-OC-ope"/>
+                            <constraint firstItem="OkA-e1-mc3" firstAttribute="top" secondItem="p3r-FT-pvo" secondAttribute="bottom" constant="21" id="LBH-QN-Mqc"/>
+                            <constraint firstItem="OkA-e1-mc3" firstAttribute="width" secondItem="arz-k5-6UA" secondAttribute="width" constant="-378" id="Nzj-Lg-mA2"/>
+                            <constraint firstItem="p3r-FT-pvo" firstAttribute="leading" secondItem="arz-k5-6UA" secondAttribute="leading" constant="52" id="XS4-fV-9Wq"/>
+                            <constraint firstItem="p3r-FT-pvo" firstAttribute="top" secondItem="Q9x-v6-f4K" secondAttribute="bottom" constant="21" id="YGZ-sh-bTt"/>
+                            <constraint firstAttribute="trailing" secondItem="p3r-FT-pvo" secondAttribute="trailing" constant="52" id="aJA-JD-194"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Nzj-Lg-mA2"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Reviews" id="dW1-5W-eeL">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ouZ-ZY-8JR">
+                            <connections>
+                                <action selector="submitReviewButtonTapped:" destination="yDm-Fk-xUL" id="vjP-qI-aCU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="reviewTextField" destination="p3r-FT-pvo" id="Ofg-oF-Vwa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WM0-If-2iI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2144" y="-481"/>
         </scene>
     </scenes>
     <resources>

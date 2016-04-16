@@ -15,7 +15,8 @@ class DataService
     
     private var _BASE_REF = Firebase(url: "\(BASE_URL)")
     private var _USER_REF = Firebase(url: "\(BASE_URL)/users")
-
+    private var _REVIEW_REF = Firebase(url: "\(BASE_URL)/reviews")
+    
     var BASE_REF: Firebase {
         return _BASE_REF
     }
@@ -30,7 +31,43 @@ class DataService
         return currentUser!
     }
     
+    var REVIEW_REF: Firebase {
+        return _REVIEW_REF
+    }
+    
     func createNewAccount(uid: String, user: Dictionary<String, String>) {
         USER_REF.childByAppendingPath(uid).setValue(user)
     }
+    
+    func createNewReview(review: Dictionary<String, AnyObject>) {
+        let firebaseNewReview = REVIEW_REF.childByAutoId()
+        firebaseNewReview.setValue(review)
+    }
 }
+
+struct ReviewItem
+{
+    let name: String!
+    let ref: Firebase?
+    var completed: Bool!
+    
+    init(name: String, completed: Bool) {
+        self.name = name
+        self.completed = completed
+        self.ref = nil
+    }
+    
+    init(snapshot: FDataSnapshot) {
+        name = snapshot.value["name"] as! String
+        completed = snapshot.value["completed"] as! Bool
+        ref = snapshot.ref
+    }
+    
+    func toAnyObject() -> AnyObject {
+        return [
+            "name" : name,
+            "completed" : completed
+        ]
+    }
+}
+

@@ -390,7 +390,7 @@ public class ObjectUtil: NSObject {
             } else if prop.value as? RLMOptionalBase != nil {
                 throwRealmException("'\(type)' is not a a valid RealmOptional type.")
             } else if mirror.displayStyle == .Optional {
-                properties[name] = NSNull()
+//                properties[name] = NSNull()
             }
             return properties
         }

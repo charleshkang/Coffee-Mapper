@@ -12,7 +12,6 @@ import RealmSwift
 
 class CMHomeViewController: UIViewController, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate
 {
-    
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var tableView: UITableView?
     
@@ -25,6 +24,7 @@ class CMHomeViewController: UIViewController, CLLocationManagerDelegate, UITable
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CMHomeViewController.onVenuesUpdated(_:)), name: API.notifications.venuesUpdated, object: nil)
     }
+    
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
