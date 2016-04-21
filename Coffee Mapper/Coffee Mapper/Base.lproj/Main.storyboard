@@ -16,6 +16,8 @@
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
+            <string>Roboto-Regular</string>
+            <string>Roboto-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -436,7 +438,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="46" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JzH-WV-Z3j">
-                                <rect key="frame" x="0.0" y="240" width="600" height="360"/>
+                                <rect key="frame" x="0.0" y="226" width="600" height="374"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellIdentifier" textLabel="hOb-m7-CGq" rowHeight="46" style="IBUITableViewCellStyleDefault" id="cCg-Un-rlf">
@@ -471,7 +473,7 @@
                             <constraint firstAttribute="trailing" secondItem="JzH-WV-Z3j" secondAttribute="trailing" id="5zO-lj-Q1Y"/>
                             <constraint firstItem="qY7-io-79y" firstAttribute="leading" secondItem="uWi-zw-Mu9" secondAttribute="leading" id="Kc1-PB-UNv"/>
                             <constraint firstItem="JzH-WV-Z3j" firstAttribute="leading" secondItem="uWi-zw-Mu9" secondAttribute="leading" id="P1R-tM-L9K"/>
-                            <constraint firstItem="JzH-WV-Z3j" firstAttribute="top" secondItem="qY7-io-79y" secondAttribute="bottom" constant="-40" id="Tjz-fz-d56"/>
+                            <constraint firstItem="JzH-WV-Z3j" firstAttribute="top" secondItem="qY7-io-79y" secondAttribute="bottom" constant="-54" id="Tjz-fz-d56"/>
                             <constraint firstItem="Mfw-4Q-0Y8" firstAttribute="top" secondItem="JzH-WV-Z3j" secondAttribute="bottom" id="WZZ-32-QgM"/>
                             <constraint firstItem="qY7-io-79y" firstAttribute="height" secondItem="uWi-zw-Mu9" secondAttribute="height" multiplier="0.4" constant="40" id="qmN-sm-hbA"/>
                             <constraint firstItem="qY7-io-79y" firstAttribute="top" secondItem="uWi-zw-Mu9" secondAttribute="top" id="sLV-TH-jQD"/>
@@ -493,7 +495,7 @@
             </objects>
             <point key="canvasLocation" x="1484" y="-481"/>
         </scene>
-        <!--Reviews-->
+        <!--Detail View Controller-->
         <scene sceneID="PFh-c0-sJY">
             <objects>
                 <viewController id="yDm-Fk-xUL" customClass="CMDetailViewController" customModule="Coffee_Mapper" customModuleProvider="target" sceneMemberID="viewController">
@@ -501,50 +503,94 @@
                         <viewControllerLayoutGuide type="top" id="Q9x-v6-f4K"/>
                         <viewControllerLayoutGuide type="bottom" id="q9A-Rk-mjO"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="arz-k5-6UA">
+                    <view key="view" contentMode="scaleToFill" id="arz-k5-6UA" userLabel="Main Container">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p3r-FT-pvo">
-                                <rect key="frame" x="52" y="85" width="496" height="76"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OkA-e1-mc3">
-                                <rect key="frame" x="276" y="182" width="49" height="30"/>
-                                <state key="normal" title="Submit"/>
-                                <connections>
-                                    <action selector="submitReviewButton:" destination="yDm-Fk-xUL" eventType="touchUpInside" id="VH8-yp-8zV"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rsQ-Nc-TuI" userLabel="Review Field View">
+                                <rect key="frame" x="0.0" y="94" width="600" height="282"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="Bnu-Sv-kjA">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="180" id="tme-gB-Dyk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bxu-xJ-0ne" userLabel="Bean Rating" customClass="HCSStarRatingView">
+                                        <rect key="frame" x="180" y="194" width="240" height="44"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="allowsHalfStars" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="accurateHalfStars" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="emptyStarImage" value="bean-empty"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="filledStarImage" value="bean-filled"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OkA-e1-mc3">
+                                        <rect key="frame" x="235" y="246" width="131" height="36"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="20"/>
+                                        <state key="normal" title="Submit Review">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="submitReviewButton:" destination="yDm-Fk-xUL" eventType="touchUpInside" id="VH8-yp-8zV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="OkA-e1-mc3" firstAttribute="top" secondItem="Bxu-xJ-0ne" secondAttribute="bottom" constant="8" id="53A-50-P2J"/>
+                                    <constraint firstItem="Bxu-xJ-0ne" firstAttribute="top" secondItem="Bnu-Sv-kjA" secondAttribute="bottom" constant="14" id="FQL-MH-MwQ"/>
+                                    <constraint firstItem="Bnu-Sv-kjA" firstAttribute="centerY" secondItem="rsQ-Nc-TuI" secondAttribute="centerY" constant="-51" id="Gtk-fI-2fX"/>
+                                    <constraint firstItem="Bxu-xJ-0ne" firstAttribute="centerX" secondItem="rsQ-Nc-TuI" secondAttribute="centerX" id="Qr0-Ew-CAz"/>
+                                    <constraint firstItem="OkA-e1-mc3" firstAttribute="top" secondItem="Bnu-Sv-kjA" secondAttribute="bottom" constant="66" id="Skp-Xm-u5w"/>
+                                    <constraint firstItem="OkA-e1-mc3" firstAttribute="centerX" secondItem="rsQ-Nc-TuI" secondAttribute="centerX" id="UUq-eG-FEr"/>
+                                    <constraint firstItem="Bnu-Sv-kjA" firstAttribute="leading" secondItem="rsQ-Nc-TuI" secondAttribute="leading" id="a1Z-az-ZtI"/>
+                                    <constraint firstItem="Bnu-Sv-kjA" firstAttribute="top" secondItem="rsQ-Nc-TuI" secondAttribute="top" id="aFm-yR-mFc"/>
+                                    <constraint firstItem="OkA-e1-mc3" firstAttribute="centerX" secondItem="rsQ-Nc-TuI" secondAttribute="centerX" id="bys-8g-WV8"/>
+                                    <constraint firstItem="Bxu-xJ-0ne" firstAttribute="top" secondItem="Bnu-Sv-kjA" secondAttribute="bottom" constant="15" id="czz-PB-Vh7"/>
+                                    <constraint firstAttribute="bottom" secondItem="OkA-e1-mc3" secondAttribute="bottom" constant="8" id="vTM-Mk-8ce"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bnu-Sv-kjA" secondAttribute="trailing" id="wfj-nQ-HEe"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="czz-PB-Vh7"/>
+                                        <exclude reference="Skp-Xm-u5w"/>
+                                        <exclude reference="bys-8g-WV8"/>
+                                        <exclude reference="vTM-Mk-8ce"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="OkA-e1-mc3" firstAttribute="centerX" secondItem="arz-k5-6UA" secondAttribute="centerX" id="541-S3-L1U"/>
-                            <constraint firstItem="p3r-FT-pvo" firstAttribute="height" secondItem="arz-k5-6UA" secondAttribute="height" constant="-524" id="L5E-OC-ope"/>
-                            <constraint firstItem="OkA-e1-mc3" firstAttribute="top" secondItem="p3r-FT-pvo" secondAttribute="bottom" constant="21" id="LBH-QN-Mqc"/>
-                            <constraint firstItem="OkA-e1-mc3" firstAttribute="width" secondItem="arz-k5-6UA" secondAttribute="width" constant="-378" id="Nzj-Lg-mA2"/>
-                            <constraint firstItem="p3r-FT-pvo" firstAttribute="leading" secondItem="arz-k5-6UA" secondAttribute="leading" constant="52" id="XS4-fV-9Wq"/>
-                            <constraint firstItem="p3r-FT-pvo" firstAttribute="top" secondItem="Q9x-v6-f4K" secondAttribute="bottom" constant="21" id="YGZ-sh-bTt"/>
-                            <constraint firstAttribute="trailing" secondItem="p3r-FT-pvo" secondAttribute="trailing" constant="52" id="aJA-JD-194"/>
+                            <constraint firstItem="rsQ-Nc-TuI" firstAttribute="width" secondItem="arz-k5-6UA" secondAttribute="height" multiplier="1:1" id="KW3-Cp-Mdr"/>
+                            <constraint firstAttribute="trailing" secondItem="rsQ-Nc-TuI" secondAttribute="trailing" id="Tt8-g8-Ldo"/>
+                            <constraint firstItem="rsQ-Nc-TuI" firstAttribute="centerY" secondItem="arz-k5-6UA" secondAttribute="centerY" constant="-65" id="dzB-tx-xyE"/>
+                            <constraint firstItem="rsQ-Nc-TuI" firstAttribute="width" secondItem="arz-k5-6UA" secondAttribute="height" multiplier="1:1" id="fVR-LD-dcV"/>
+                            <constraint firstItem="rsQ-Nc-TuI" firstAttribute="leading" secondItem="arz-k5-6UA" secondAttribute="leading" id="k3k-Rd-AXm"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="Nzj-Lg-mA2"/>
+                                <exclude reference="KW3-Cp-Mdr"/>
+                                <exclude reference="fVR-LD-dcV"/>
                             </mask>
                         </variation>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Reviews" id="dW1-5W-eeL">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ouZ-ZY-8JR">
-                            <connections>
-                                <action selector="submitReviewButtonTapped:" destination="yDm-Fk-xUL" id="vjP-qI-aCU"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="dW1-5W-eeL"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="reviewTextField" destination="p3r-FT-pvo" id="Ofg-oF-Vwa"/>
+                        <outlet property="reviewTextView" destination="Bnu-Sv-kjA" id="h1p-tY-An5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WM0-If-2iI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -553,6 +599,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bean-empty" width="156" height="156"/>
+        <image name="bean-filled" width="156" height="156"/>
         <image name="coffee-bg" width="4104" height="2736"/>
         <image name="signin" width="251" height="40"/>
         <image name="signup" width="251" height="40"/>

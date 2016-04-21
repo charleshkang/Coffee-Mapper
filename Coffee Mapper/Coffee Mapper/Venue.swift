@@ -20,7 +20,8 @@ class Venue: Object
     
     dynamic var address: String = ""
     
-    var coordinate: CLLocation {
+    var coordinate: CLLocation
+    {
         return CLLocation(latitude: Double(latitude), longitude:  Double(longitude))
     }
     

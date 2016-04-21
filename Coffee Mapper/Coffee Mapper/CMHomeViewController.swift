@@ -59,7 +59,8 @@ class CMHomeViewController: UIViewController, CLLocationManagerDelegate, UITable
         refreshVenues(nil)
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
+    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation)
+    {
         if let mapView = self.mapView {
             let region = MKCoordinateRegionMakeWithDistance(newLocation.coordinate, distanceSpan, distanceSpan)
             mapView.setRegion(region, animated: true)
@@ -82,9 +83,7 @@ class CMHomeViewController: UIViewController, CLLocationManagerDelegate, UITable
             }
             
             let (start, stop) = calculateCoordinatesWithRegion(location)
-            
             let predicate = NSPredicate(format: "latitude < %f AND latitude > %f AND longitude > %f AND longitude < %f", start.latitude, stop.latitude, start.longitude, stop.longitude)
-            
             let realm = try! Realm()
             
             venues = realm.objects(Venue).filter(predicate).sort {
@@ -175,9 +174,15 @@ class CMHomeViewController: UIViewController, CLLocationManagerDelegate, UITable
     {
         if let venue = venues?[indexPath.row]
         {
+            
             let region = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2D(latitude: Double(venue.latitude), longitude: Double(venue.longitude)), distanceSpan, distanceSpan)
             mapView?.setRegion(region, animated: true)
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let detailVC = segue.destinationViewController as UIViewController
+        let cell = sender as! UITableViewCell
+        detailVC.navigationItem.title = cell.textLabel?.text
+    }
 }

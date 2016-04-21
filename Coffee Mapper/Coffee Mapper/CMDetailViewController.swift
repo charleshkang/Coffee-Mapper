@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import HCSStarRatingView
+
 
 class CMDetailViewController: UIViewController
 {
@@ -15,57 +17,29 @@ class CMDetailViewController: UIViewController
     var user: User!
     let ref = Firebase(url: "https://coffee-mapper-charleshkang.firebaseio.com/reviews")
     var currentUsername = ""
+    let starRatingView = HCSStarRatingView()
     
-    @IBOutlet weak var reviewTextField: UITextField!
+    @IBOutlet var reviewTextView: UITextView!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         
+        starRatingView.maximumValue = 5
+        
         DataService.dataService.CURRENT_USER_REF.observeEventType(FEventType.Value, withBlock: { snapshot in
-            
+
             let currentUser = snapshot.value.objectForKey("username") as! String
-            
-            print("Username: \(currentUser)")
             self.currentUsername = currentUser
             }, withCancelBlock: { error in
                 print(error.description)
         })
     }
-    
-    
-    @IBAction func submitReviewButtonTapped(sender: AnyObject)
+
+    @IBAction func submitReviewButton(sender: AnyObject)
     {
-        let alert = UIAlertController(title: "Review",
-                                      message: "Submit your review!",
-                                      preferredStyle: .Alert)
-        
-        let saveAction = UIAlertAction(title: "Save",
-                                       style: .Default) { (action: UIAlertAction!) -> Void in
-                                        
-                                        let textField = alert.textFields![0]
-                                        let reviewItem = ReviewItem(name: textField.text!, completed: false)
-                                        let reviewItemRef = self.ref.childByAppendingPath(textField.text!.lowercaseString)
-                                        
-                                        reviewItemRef.setValue(reviewItem.toAnyObject())
-        }
-        let cancelAction = UIAlertAction(title: "Cancel",
-                                         style: .Default) { (action: UIAlertAction) -> Void in
-        }
-        
-        alert.addTextFieldWithConfigurationHandler {
-            (textField: UITextField!) -> Void in
-        }
-        
-        alert.addAction(saveAction)
-        alert.addAction(cancelAction)
-        
-        presentViewController(alert,
-                              animated: true,
-                              completion: nil)
-    }
-    @IBAction func submitReviewButton(sender: AnyObject) {
-        let reviewText = reviewTextField.text
+        let reviewText = reviewTextView.text
         
         if reviewText != "" {
             let newReview: Dictionary<String, AnyObject> = [
@@ -74,5 +48,16 @@ class CMDetailViewController: UIViewController
             ]
             DataService.dataService.createNewReview(newReview)
         }
+        else {
+            emptyReviewField("Oops!", message: "Make sure to leave some text in your review.")
+        }
+    }
+    
+    func emptyReviewField(title: String, message: String)
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let alertAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+        alert.addAction(alertAction)
+        presentViewController(alert, animated: true, completion: nil)
     }
 }

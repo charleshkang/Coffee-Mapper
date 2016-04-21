@@ -9,30 +9,45 @@
 import Foundation
 import Firebase
 
-class Reviews {
+class Reviews
+{
     private var _reviewRef: Firebase!
     
     private var _reviewKey: String!
     private var _reviewText: String!
     private var _username: String!
+    private var _coffeeShopName: String!
     
-    var reviewKey: String {
+    var reviewKey: String
+    {
         return _reviewKey
     }
     
-    var reviewText: String {
+    var reviewText: String
+    {
         return _reviewText
     }
     
-    var username: String {
+    var username: String
+    {
         return _username
     }
     
-    init(key: String, dictionary: Dictionary<String, AnyObject>) {
+    var coffeeShopName: String
+    {
+        return _coffeeShopName
+    }
+    
+    init(key: String, dictionary: Dictionary<String, AnyObject>)
+    {
         self._reviewKey = key
         
         if let review = dictionary["reviewText"] as? String {
             self._reviewText = review
+        }
+        
+        if let shopName = dictionary["shopName"] as? String {
+            self._coffeeShopName = shopName
         }
         
         if let user = dictionary["author"] as? String {
@@ -40,6 +55,7 @@ class Reviews {
         } else {
             self._username = ""
         }
+        
         self._reviewRef = DataService.dataService.REVIEW_REF.childByAppendingPath(self._reviewKey)
     }
 }

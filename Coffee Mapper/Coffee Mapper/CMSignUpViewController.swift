@@ -15,7 +15,8 @@ class CMSignUpViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
     }
@@ -46,16 +47,18 @@ class CMSignUpViewController: UIViewController {
             })
             
         } else {
-            signupErrorAlert("Oops!", message: "Don't forget to enter your email, password, and a username.")
+            signupErrorAlert("Oops!", message: "Don't forget to enter your email, password, and username.")
         }
         
     }
     
-    @IBAction func cancelCreateAccount(sender: AnyObject) {
+    @IBAction func cancelCreateAccount(sender: AnyObject)
+    {
         self.dismissViewControllerAnimated(true, completion: {})
     }
     
-    func signupErrorAlert(title: String, message: String) {
+    func signupErrorAlert(title: String, message: String)
+    {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
         alert.addAction(action)

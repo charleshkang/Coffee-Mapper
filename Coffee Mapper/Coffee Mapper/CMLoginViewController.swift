@@ -16,12 +16,14 @@ class CMLoginViewController: UIViewController
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(animated: Bool)
+    {
         super.viewDidAppear(animated)
         
         if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
@@ -57,13 +59,16 @@ class CMLoginViewController: UIViewController
     }
 }
 
-extension UIViewController {
-    func hideKeyboardWhenTappedAround() {
+extension UIViewController
+{
+    func hideKeyboardWhenTappedAround()
+    {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
     
-    func dismissKeyboard() {
+    func dismissKeyboard()
+    {
         view.endEditing(true)
     }
 }
