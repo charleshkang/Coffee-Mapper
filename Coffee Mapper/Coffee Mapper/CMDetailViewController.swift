@@ -42,14 +42,12 @@ class CMDetailViewController: UIViewController
         print("saved rating: \(reviewRatings)")
 
         let reviewText = reviewTextView.text
-        let reviewRating = sender.starRatingView.value
-        print("Rating: \(reviewRating)")
         
         if reviewText != "" {
             let newReview: Dictionary<String, AnyObject> = [
                 "reviewText": reviewText!,
                 "author": currentUsername,
-                "reviewRating": reviewRating
+                "reviewRating": reviewRatings
             ]
             DataService.dataService.createNewReview(newReview)
         }
