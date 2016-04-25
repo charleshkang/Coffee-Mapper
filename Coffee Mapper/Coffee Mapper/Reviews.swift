@@ -16,6 +16,7 @@ class Reviews
     private var _reviewKey: String!
     private var _reviewText: String!
     private var _username: String!
+    private var _reviewRating: Float!
     private var _coffeeShopName: String!
     
     var reviewKey: String
@@ -33,6 +34,11 @@ class Reviews
         return _username
     }
     
+    var rating: Float
+    {
+        return _reviewRating
+    }
+    
     var coffeeShopName: String
     {
         return _coffeeShopName
@@ -42,12 +48,16 @@ class Reviews
     {
         self._reviewKey = key
         
-        if let review = dictionary["reviewText"] as? String {
-            self._reviewText = review
+        if let rating = dictionary["reviewRating"] as? Float {
+            self._reviewRating = rating
         }
         
-        if let shopName = dictionary["shopName"] as? String {
+        if let shopName = dictionary["coffeeShopName"] as? String {
             self._coffeeShopName = shopName
+        }
+        
+        if let review = dictionary["reviewText"] as? String {
+            self._reviewText = review
         }
         
         if let user = dictionary["author"] as? String {

@@ -48,11 +48,6 @@ class DataService
         let firebaseNewReview = REVIEW_REF.childByAutoId()
         firebaseNewReview.setValue(review)
     }
-    
-    func nameOfCoffeeShop(shopName: Dictionary<String, AnyObject>) {
-        let firebaseShopName = COFFEESHOPNAME_REF.childByAutoId()
-        firebaseShopName.setValue(shopName)
-    }
 }
 
 struct ReviewItem

@@ -173,8 +173,10 @@ class CMHomeViewController: UIViewController, CLLocationManagerDelegate, UITable
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         if let venue = venues?[indexPath.row]
+
         {
-            
+            let shopName = venue.name
+            print(shopName)
             let region = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2D(latitude: Double(venue.latitude), longitude: Double(venue.longitude)), distanceSpan, distanceSpan)
             mapView?.setRegion(region, animated: true)
         }

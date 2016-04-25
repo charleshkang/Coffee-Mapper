@@ -131,10 +131,10 @@
 			children = (
 				BFA474C01CBF176100BA3928 /* DataService.swift */,
 				BF1BE63A1CC19A3D00776328 /* User.swift */,
-				BF1BE6331CC067BC00776328 /* CMCoffeeAnnotation.swift */,
-				BF1BE62F1CC05B9D00776328 /* CMFoursquareAPI.swift */,
 				BF1BE6311CC0634400776328 /* Venue.swift */,
 				BF1BE63C1CC1ACA800776328 /* Reviews.swift */,
+				BF1BE6331CC067BC00776328 /* CMCoffeeAnnotation.swift */,
+				BF1BE62F1CC05B9D00776328 /* CMFoursquareAPI.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";

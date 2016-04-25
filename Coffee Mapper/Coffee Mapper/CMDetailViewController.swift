@@ -10,7 +10,6 @@ import UIKit
 import Firebase
 import HCSStarRatingView
 
-
 class CMDetailViewController: UIViewController
 {
     var items = [ReviewItem]()
@@ -19,6 +18,7 @@ class CMDetailViewController: UIViewController
     var currentUsername = ""
     let starRatingView = HCSStarRatingView()
     
+    
     @IBOutlet var reviewTextView: UITextView!
     
     override func viewDidLoad()
@@ -26,10 +26,8 @@ class CMDetailViewController: UIViewController
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         
-        starRatingView.maximumValue = 5
-        
         DataService.dataService.CURRENT_USER_REF.observeEventType(FEventType.Value, withBlock: { snapshot in
-
+            
             let currentUser = snapshot.value.objectForKey("username") as! String
             self.currentUsername = currentUser
             }, withCancelBlock: { error in
@@ -39,12 +37,19 @@ class CMDetailViewController: UIViewController
 
     @IBAction func submitReviewButton(sender: AnyObject)
     {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let reviewRatings = defaults.floatForKey("reviews")
+        print("saved rating: \(reviewRatings)")
+
         let reviewText = reviewTextView.text
+        let reviewRating = sender.starRatingView.value
+        print("Rating: \(reviewRating)")
         
         if reviewText != "" {
             let newReview: Dictionary<String, AnyObject> = [
                 "reviewText": reviewText!,
-                "author": currentUsername
+                "author": currentUsername,
+                "reviewRating": reviewRating
             ]
             DataService.dataService.createNewReview(newReview)
         }
@@ -60,4 +65,15 @@ class CMDetailViewController: UIViewController
         alert.addAction(alertAction)
         presentViewController(alert, animated: true, completion: nil)
     }
+    
+    @IBAction func didChangeValue(sender: HCSStarRatingView)
+    {
+        let rating = sender.value
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setFloat(Float(rating), forKey: "reviews")
+            print("rating: \(rating)")
+        // save the sender.value, either write to Realm or send to firebase as another entry
+        
+    }
+    
 }

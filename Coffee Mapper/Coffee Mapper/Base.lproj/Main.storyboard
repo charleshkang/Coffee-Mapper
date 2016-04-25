@@ -534,6 +534,9 @@
                                             <userDefinedRuntimeAttribute type="image" keyPath="emptyStarImage" value="bean-empty"/>
                                             <userDefinedRuntimeAttribute type="image" keyPath="filledStarImage" value="bean-filled"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didChangeValue:" destination="yDm-Fk-xUL" eventType="valueChanged" id="srX-3X-qF1"/>
+                                        </connections>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OkA-e1-mc3">
                                         <rect key="frame" x="235" y="246" width="131" height="36"/>
