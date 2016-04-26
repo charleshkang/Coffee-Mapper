@@ -458,7 +458,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="yDm-Fk-xUL" kind="show" id="Eyk-xh-c4p"/>
+                                            <segue destination="yDm-Fk-xUL" kind="show" identifier="detailVCSegue" id="Eyk-xh-c4p"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

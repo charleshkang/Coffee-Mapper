@@ -12,13 +12,14 @@ import HCSStarRatingView
 
 class CMDetailViewController: UIViewController
 {
+    var venue: Venue!
     var items = [ReviewItem]()
     var user: User!
     let ref = Firebase(url: "https://coffee-mapper-charleshkang.firebaseio.com/reviews")
     var currentUsername = ""
     let starRatingView = HCSStarRatingView()
-    
-    
+    var venues = Venue?.self
+
     @IBOutlet var reviewTextView: UITextView!
     
     override func viewDidLoad()
@@ -26,6 +27,8 @@ class CMDetailViewController: UIViewController
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         
+        navigationItem.title = venue.name
+
         DataService.dataService.CURRENT_USER_REF.observeEventType(FEventType.Value, withBlock: { snapshot in
             
             let currentUser = snapshot.value.objectForKey("username") as! String
@@ -39,15 +42,16 @@ class CMDetailViewController: UIViewController
     {
         let defaults = NSUserDefaults.standardUserDefaults()
         let reviewRatings = defaults.floatForKey("reviews")
-        print("saved rating: \(reviewRatings)")
-
+        print("rating: \(reviewRatings)")
+        
         let reviewText = reviewTextView.text
         
         if reviewText != "" {
             let newReview: Dictionary<String, AnyObject> = [
                 "reviewText": reviewText!,
                 "author": currentUsername,
-                "reviewRating": reviewRatings
+                "reviewRating": reviewRatings,
+                "reviewShopName": venue.name
             ]
             DataService.dataService.createNewReview(newReview)
         }
@@ -69,9 +73,5 @@ class CMDetailViewController: UIViewController
         let rating = sender.value
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setFloat(Float(rating), forKey: "reviews")
-            print("rating: \(rating)")
-        // save the sender.value, either write to Realm or send to firebase as another entry
-        
     }
-    
 }
