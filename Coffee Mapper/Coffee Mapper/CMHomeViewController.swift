@@ -20,7 +20,8 @@ class CMHomeViewController: UIViewController, CLLocationManagerDelegate, UITable
     var lastLocation:CLLocation?
     var venues:[Venue]?
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CMHomeViewController.onVenuesUpdated(_:)), name: API.notifications.venuesUpdated, object: nil)
     }
@@ -62,6 +63,9 @@ class CMHomeViewController: UIViewController, CLLocationManagerDelegate, UITable
     func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation)
     {
         if let mapView = self.mapView {
+            let annotationView = MKPinAnnotationView()
+            annotationView.pinTintColor = UIColor.blueColor()
+            
             let region = MKCoordinateRegionMakeWithDistance(newLocation.coordinate, distanceSpan, distanceSpan)
             mapView.setRegion(region, animated: true)
             
@@ -127,6 +131,7 @@ class CMHomeViewController: UIViewController, CLLocationManagerDelegate, UITable
             view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "annotationIdentifier")
         }
         view?.canShowCallout = true
+        view?.tintColor = UIColor.blueColor()
         
         return view
     }
@@ -166,6 +171,7 @@ class CMHomeViewController: UIViewController, CLLocationManagerDelegate, UITable
         {
             cell!.textLabel?.text = venue.name
             cell!.detailTextLabel?.text = venue.address
+            
         }
         return cell!
     }

@@ -49,7 +49,7 @@ class CMDetailViewController: UIViewController
         if reviewText != "" {
             let newReview: Dictionary<String, AnyObject> = [
                 "reviewText": reviewText!,
-                "author": currentUsername,
+                "reviewAuthor": currentUsername,
                 "reviewRating": reviewRatings,
                 "reviewShopName": venue.name
             ]
