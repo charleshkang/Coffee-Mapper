@@ -20,6 +20,8 @@
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
             <string>Roboto-Regular</string>
+            <string>Roboto-Regular</string>
+            <string>Roboto-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -439,44 +441,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="46" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JzH-WV-Z3j">
-                                <rect key="frame" x="0.0" y="226" width="600" height="374"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qY7-io-79y">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="280"/>
+                            </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JzH-WV-Z3j">
+                                <rect key="frame" x="10" y="288" width="580" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellIdentifier" textLabel="hOb-m7-CGq" rowHeight="46" style="IBUITableViewCellStyleDefault" id="cCg-Un-rlf">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="46"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellIdentifier" textLabel="hOb-m7-CGq" detailTextLabel="AsV-wV-zPw" rowHeight="88" style="IBUITableViewCellStyleSubtitle" id="cCg-Un-rlf">
+                                        <rect key="frame" x="0.0" y="92" width="580" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cCg-Un-rlf" id="DMt-gs-cIA">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="45"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="580" height="87"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hOb-m7-CGq">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="45"/>
+                                                    <rect key="frame" x="15" y="27" width="32" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AsV-wV-zPw">
+                                                    <rect key="frame" x="15" y="47" width="41" height="14"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <segue destination="yDm-Fk-xUL" kind="show" identifier="detailVCSegue" id="Eyk-xh-c4p"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qY7-io-79y">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="280"/>
-                            </mapView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.90751848118279566" green="0.90751848118279566" blue="0.90751848118279566" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="qY7-io-79y" secondAttribute="trailing" id="3pA-Bj-Aaf"/>
-                            <constraint firstAttribute="trailing" secondItem="JzH-WV-Z3j" secondAttribute="trailing" id="5zO-lj-Q1Y"/>
+                            <constraint firstAttribute="trailing" secondItem="JzH-WV-Z3j" secondAttribute="trailing" constant="10" id="5zO-lj-Q1Y"/>
                             <constraint firstItem="qY7-io-79y" firstAttribute="leading" secondItem="uWi-zw-Mu9" secondAttribute="leading" id="Kc1-PB-UNv"/>
-                            <constraint firstItem="JzH-WV-Z3j" firstAttribute="leading" secondItem="uWi-zw-Mu9" secondAttribute="leading" id="P1R-tM-L9K"/>
-                            <constraint firstItem="JzH-WV-Z3j" firstAttribute="top" secondItem="qY7-io-79y" secondAttribute="bottom" constant="-54" id="Tjz-fz-d56"/>
-                            <constraint firstItem="Mfw-4Q-0Y8" firstAttribute="top" secondItem="JzH-WV-Z3j" secondAttribute="bottom" id="WZZ-32-QgM"/>
+                            <constraint firstItem="JzH-WV-Z3j" firstAttribute="leading" secondItem="uWi-zw-Mu9" secondAttribute="leading" constant="10" id="P1R-tM-L9K"/>
+                            <constraint firstItem="JzH-WV-Z3j" firstAttribute="top" secondItem="qY7-io-79y" secondAttribute="bottom" constant="8" id="Tjz-fz-d56"/>
+                            <constraint firstItem="Mfw-4Q-0Y8" firstAttribute="top" secondItem="JzH-WV-Z3j" secondAttribute="bottom" constant="12" id="WZZ-32-QgM"/>
                             <constraint firstItem="qY7-io-79y" firstAttribute="height" secondItem="uWi-zw-Mu9" secondAttribute="height" multiplier="0.4" constant="40" id="qmN-sm-hbA"/>
                             <constraint firstItem="qY7-io-79y" firstAttribute="top" secondItem="uWi-zw-Mu9" secondAttribute="top" id="sLV-TH-jQD"/>
                         </constraints>
@@ -510,7 +520,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rsQ-Nc-TuI" userLabel="Review Field View">
-                                <rect key="frame" x="0.0" y="94" width="600" height="282"/>
+                                <rect key="frame" x="0.0" y="199" width="600" height="327"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="Bnu-Sv-kjA">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
@@ -518,12 +528,16 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="180" id="tme-gB-Dyk"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bxu-xJ-0ne" userLabel="Bean Rating" customClass="HCSStarRatingView">
-                                        <rect key="frame" x="180" y="194" width="240" height="44"/>
+                                        <rect key="frame" x="200" y="191" width="200" height="36"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="NTk-kX-WP8"/>
+                                            <constraint firstAttribute="width" constant="200" id="ScM-Cp-PHG"/>
+                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
                                                 <integer key="value" value="5"/>
@@ -541,7 +555,7 @@
                                         </connections>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OkA-e1-mc3">
-                                        <rect key="frame" x="235" y="246" width="131" height="36"/>
+                                        <rect key="frame" x="235" y="283" width="131" height="36"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="20"/>
                                         <state key="normal" title="Submit Review">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -553,9 +567,9 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="OkA-e1-mc3" firstAttribute="top" secondItem="Bxu-xJ-0ne" secondAttribute="bottom" constant="8" id="53A-50-P2J"/>
-                                    <constraint firstItem="Bxu-xJ-0ne" firstAttribute="top" secondItem="Bnu-Sv-kjA" secondAttribute="bottom" constant="14" id="FQL-MH-MwQ"/>
-                                    <constraint firstItem="Bnu-Sv-kjA" firstAttribute="centerY" secondItem="rsQ-Nc-TuI" secondAttribute="centerY" constant="-51" id="Gtk-fI-2fX"/>
+                                    <constraint firstItem="OkA-e1-mc3" firstAttribute="top" secondItem="Bxu-xJ-0ne" secondAttribute="bottom" constant="56" id="53A-50-P2J"/>
+                                    <constraint firstItem="Bxu-xJ-0ne" firstAttribute="top" secondItem="Bnu-Sv-kjA" secondAttribute="bottom" constant="11" id="FQL-MH-MwQ"/>
+                                    <constraint firstItem="Bnu-Sv-kjA" firstAttribute="centerY" secondItem="rsQ-Nc-TuI" secondAttribute="centerY" constant="-73.5" id="Gtk-fI-2fX"/>
                                     <constraint firstItem="Bxu-xJ-0ne" firstAttribute="centerX" secondItem="rsQ-Nc-TuI" secondAttribute="centerX" id="Qr0-Ew-CAz"/>
                                     <constraint firstItem="OkA-e1-mc3" firstAttribute="top" secondItem="Bnu-Sv-kjA" secondAttribute="bottom" constant="66" id="Skp-Xm-u5w"/>
                                     <constraint firstItem="OkA-e1-mc3" firstAttribute="centerX" secondItem="rsQ-Nc-TuI" secondAttribute="centerX" id="UUq-eG-FEr"/>
@@ -580,7 +594,7 @@
                         <constraints>
                             <constraint firstItem="rsQ-Nc-TuI" firstAttribute="width" secondItem="arz-k5-6UA" secondAttribute="height" multiplier="1:1" id="KW3-Cp-Mdr"/>
                             <constraint firstAttribute="trailing" secondItem="rsQ-Nc-TuI" secondAttribute="trailing" id="Tt8-g8-Ldo"/>
-                            <constraint firstItem="rsQ-Nc-TuI" firstAttribute="centerY" secondItem="arz-k5-6UA" secondAttribute="centerY" constant="-65" id="dzB-tx-xyE"/>
+                            <constraint firstItem="rsQ-Nc-TuI" firstAttribute="centerY" secondItem="arz-k5-6UA" secondAttribute="centerY" constant="62.5" id="dzB-tx-xyE"/>
                             <constraint firstItem="rsQ-Nc-TuI" firstAttribute="width" secondItem="arz-k5-6UA" secondAttribute="height" multiplier="1:1" id="fVR-LD-dcV"/>
                             <constraint firstItem="rsQ-Nc-TuI" firstAttribute="leading" secondItem="arz-k5-6UA" secondAttribute="leading" id="k3k-Rd-AXm"/>
                         </constraints>

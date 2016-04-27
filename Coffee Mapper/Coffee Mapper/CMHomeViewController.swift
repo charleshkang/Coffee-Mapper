@@ -96,7 +96,7 @@ class CMHomeViewController: UIViewController, CLLocationManagerDelegate, UITable
             
             for venue in venues!
             {
-                let annotation = CoffeeAnnotation(title: venue.name, subtitle: venue.address, coordinate: CLLocationCoordinate2D(latitude: Double(venue.latitude), longitude: Double(venue.longitude)))
+                let annotation = CoffeeAnnotation(title: venue.name, coordinate: CLLocationCoordinate2D(latitude: Double(venue.latitude), longitude: Double(venue.longitude)))
                 mapView?.addAnnotation(annotation)
             }
             tableView?.reloadData()
@@ -131,7 +131,7 @@ class CMHomeViewController: UIViewController, CLLocationManagerDelegate, UITable
             view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "annotationIdentifier")
         }
         view?.canShowCallout = true
-        view?.tintColor = UIColor.blueColor()
+
         
         return view
     }
