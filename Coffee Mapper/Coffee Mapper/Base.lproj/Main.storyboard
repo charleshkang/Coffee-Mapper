@@ -656,6 +656,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="reviewTextView" destination="Bnu-Sv-kjA" id="h1p-tY-An5"/>
+                        <outlet property="userReviewsTableView" destination="cBu-tV-agW" id="MbD-3j-4ae"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WM0-If-2iI" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -21,6 +21,7 @@ class CMDetailViewController: UIViewController
     var venues = Venue?.self
 
     @IBOutlet var reviewTextView: UITextView!
+    @IBOutlet var userReviewsTableView: UITableView!
     
     override func viewDidLoad()
     {
@@ -73,5 +74,29 @@ class CMDetailViewController: UIViewController
         let rating = sender.value
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setFloat(Float(rating), forKey: "reviews")
+    }
+    
+    // MARK: Table View Methods
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return 6
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        var cell = tableView.dequeueReusableCellWithIdentifier("cellIdentifier")
+        
+        if cell == nil
+        {
+            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cellIdentifier")
+        }
+       
+        return cell!
     }
 }

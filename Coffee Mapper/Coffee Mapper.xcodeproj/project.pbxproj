@@ -21,6 +21,7 @@
 		BFA474BE1CBF162500BA3928 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474BD1CBF162500BA3928 /* Constants.swift */; };
 		BFA474C11CBF176100BA3928 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474C01CBF176100BA3928 /* DataService.swift */; };
 		BFA474C51CBF2E8000BA3928 /* CMHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474C41CBF2E8000BA3928 /* CMHomeViewController.swift */; };
+		BFA90C1B1CDEF5DE0055070C /* CMCustomReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA90C1A1CDEF5DE0055070C /* CMCustomReviewCell.xib */; };
 		BFCF745D1CBEDE23005733F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF745C1CBEDE23005733F9 /* AppDelegate.swift */; };
 		BFCF74621CBEDE23005733F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFCF74601CBEDE23005733F9 /* Main.storyboard */; };
 		BFCF74641CBEDE23005733F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFCF74631CBEDE23005733F9 /* Assets.xcassets */; };
@@ -64,6 +65,7 @@
 		BFA474BD1CBF162500BA3928 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BFA474C01CBF176100BA3928 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		BFA474C41CBF2E8000BA3928 /* CMHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMHomeViewController.swift; sourceTree = "<group>"; };
+		BFA90C1A1CDEF5DE0055070C /* CMCustomReviewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMCustomReviewCell.xib; sourceTree = "<group>"; };
 		BFCF74591CBEDE23005733F9 /* Coffee Mapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coffee Mapper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFCF745C1CBEDE23005733F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFCF74611CBEDE23005733F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				BFA474AE1CBEF38800BA3928 /* CMSignUpViewController.swift */,
 				BFA474C41CBF2E8000BA3928 /* CMHomeViewController.swift */,
 				BF1BE6381CC176A000776328 /* CMDetailViewController.swift */,
+				BFA90C1A1CDEF5DE0055070C /* CMCustomReviewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				BFCF74641CBEDE23005733F9 /* Assets.xcassets in Resources */,
 				BFCF748D1CBEDFF0005733F9 /* Roboto-Regular.ttf in Resources */,
 				BFCF74621CBEDE23005733F9 /* Main.storyboard in Resources */,
+				BFA90C1B1CDEF5DE0055070C /* CMCustomReviewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
