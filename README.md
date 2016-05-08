@@ -19,7 +19,7 @@ I wanted to make an app similar to <a href="https://untappd.com">Untappd</a>, bu
   <li>Include info about origins, roasting, etc</li>
 </ul>
 
-# Dependencies Used
+# Frameworks Used
 <ul>
   <li>Realm</li>
   <li>QuadratTouch</li>
