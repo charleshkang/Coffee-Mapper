@@ -30,6 +30,8 @@ class CMDetailViewController: UIViewController, UITableViewDelegate, UITableView
     {
         super.viewDidLoad()
         
+        self.userReviewsTableView.rowHeight = 110
+        
         userReviewsTableView.registerNib(UINib(nibName: "CMCustomReviewCell", bundle: nil), forCellReuseIdentifier: "customReviewCellIdentifier")
         
         self.hideKeyboardWhenTappedAround()
@@ -99,8 +101,9 @@ class CMDetailViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCellWithIdentifier("customReviewCellIdentifier", forIndexPath: indexPath) as! CMCustomTableViewCell
         
         cell.reviewerNameLabel.text = stuff[indexPath.row]
-        cell.reviewText.text = stuff[indexPath.row]
-        cell.reviewRating.text = stuff[indexPath.row]
+        cell.reviewText.text = "test review test review test review test review test review test review test review test review test review test review test review test review test review test review test review test review test review test review test review test review"   
+        cell.reviewRating.text = "5"
+
         
         return cell
     }
