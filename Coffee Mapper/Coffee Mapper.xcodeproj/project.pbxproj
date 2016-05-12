@@ -16,6 +16,7 @@
 		BF1BE63B1CC19A3D00776328 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BE63A1CC19A3D00776328 /* User.swift */; };
 		BF1BE63D1CC1ACA900776328 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BE63C1CC1ACA800776328 /* Reviews.swift */; };
 		BF4B19021CC874030074EB43 /* HCSStarRatingView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF4B19011CC874030074EB43 /* HCSStarRatingView.framework */; };
+		BF5FD1A51CE3DC2F00AE5579 /* CMCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5FD1A41CE3DC2F00AE5579 /* CMCustomTableViewCell.swift */; };
 		BFA474AB1CBEEC4200BA3928 /* CMLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474AA1CBEEC4200BA3928 /* CMLoginViewController.swift */; };
 		BFA474AF1CBEF38800BA3928 /* CMSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474AE1CBEF38800BA3928 /* CMSignUpViewController.swift */; };
 		BFA474BE1CBF162500BA3928 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474BD1CBF162500BA3928 /* Constants.swift */; };
@@ -60,6 +61,7 @@
 		BF1BE63A1CC19A3D00776328 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BF1BE63C1CC1ACA800776328 /* Reviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
 		BF4B19011CC874030074EB43 /* HCSStarRatingView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HCSStarRatingView.framework; path = "Pods/../build/Debug-iphoneos/HCSStarRatingView/HCSStarRatingView.framework"; sourceTree = "<group>"; };
+		BF5FD1A41CE3DC2F00AE5579 /* CMCustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMCustomTableViewCell.swift; sourceTree = "<group>"; };
 		BFA474AA1CBEEC4200BA3928 /* CMLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMLoginViewController.swift; sourceTree = "<group>"; };
 		BFA474AE1CBEF38800BA3928 /* CMSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSignUpViewController.swift; sourceTree = "<group>"; };
 		BFA474BD1CBF162500BA3928 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				BFA474AE1CBEF38800BA3928 /* CMSignUpViewController.swift */,
 				BFA474C41CBF2E8000BA3928 /* CMHomeViewController.swift */,
 				BF1BE6381CC176A000776328 /* CMDetailViewController.swift */,
+				BF5FD1A41CE3DC2F00AE5579 /* CMCustomTableViewCell.swift */,
 				BFA90C1A1CDEF5DE0055070C /* CMCustomReviewCell.xib */,
 			);
 			name = View;
@@ -428,6 +431,7 @@
 				BFCF745D1CBEDE23005733F9 /* AppDelegate.swift in Sources */,
 				BF1BE6341CC067BC00776328 /* CMCoffeeAnnotation.swift in Sources */,
 				BF1BE6301CC05B9D00776328 /* CMFoursquareAPI.swift in Sources */,
+				BF5FD1A51CE3DC2F00AE5579 /* CMCustomTableViewCell.swift in Sources */,
 				BFA474BE1CBF162500BA3928 /* Constants.swift in Sources */,
 				BFA474C11CBF176100BA3928 /* DataService.swift in Sources */,
 				BF1BE63D1CC1ACA900776328 /* Reviews.swift in Sources */,

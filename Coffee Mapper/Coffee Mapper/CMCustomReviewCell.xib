@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="customReviewCellIdentifier" rowHeight="105" id="d42-9J-wpi">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="customReviewCellIdentifier" rowHeight="105" id="d42-9J-wpi" customClass="CMCustomTableViewCell" customModule="Coffee_Mapper" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="379" height="105"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d42-9J-wpi" id="1go-rN-Cyv">
@@ -27,13 +27,18 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOX-x7-GZL">
-                        <rect key="frame" x="122" y="8" width="68" height="21"/>
+                        <rect key="frame" x="121" y="8" width="68" height="21"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="reviewRating" destination="IOX-x7-GZL" id="Vez-EQ-xp3"/>
+                <outlet property="reviewText" destination="yp1-qQ-x0S" id="5sl-pf-Snr"/>
+                <outlet property="reviewerNameLabel" destination="4P3-HF-VAN" id="gGq-oJ-AgJ"/>
+            </connections>
             <point key="canvasLocation" x="289.5" y="243.5"/>
         </tableViewCell>
     </objects>

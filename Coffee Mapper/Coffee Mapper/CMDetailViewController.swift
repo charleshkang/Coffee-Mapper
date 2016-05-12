@@ -10,7 +10,8 @@ import UIKit
 import Firebase
 import HCSStarRatingView
 
-class CMDetailViewController: UIViewController
+class CMDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
+    
 {
     var venue: Venue!
     var items = [ReviewItem]()
@@ -19,17 +20,22 @@ class CMDetailViewController: UIViewController
     var currentUsername = ""
     let starRatingView = HCSStarRatingView()
     var venues = Venue?.self
-
+    
     @IBOutlet var reviewTextView: UITextView!
     @IBOutlet var userReviewsTableView: UITableView!
+    
+    let stuff = ["Item 1", "Item2", "Item3", "Item4"]
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        userReviewsTableView.registerNib(UINib(nibName: "CMCustomReviewCell", bundle: nil), forCellReuseIdentifier: "customReviewCellIdentifier")
+        
         self.hideKeyboardWhenTappedAround()
         
         navigationItem.title = venue.name
-
+        
         DataService.dataService.CURRENT_USER_REF.observeEventType(FEventType.Value, withBlock: { snapshot in
             
             let currentUser = snapshot.value.objectForKey("username") as! String
@@ -38,7 +44,7 @@ class CMDetailViewController: UIViewController
                 print(error.description)
         })
     }
-
+    
     @IBAction func submitReviewButton(sender: AnyObject)
     {
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -80,7 +86,7 @@ class CMDetailViewController: UIViewController
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 6
+        return stuff.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int
@@ -90,13 +96,12 @@ class CMDetailViewController: UIViewController
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        var cell = tableView.dequeueReusableCellWithIdentifier("cellIdentifier")
+        let cell = tableView.dequeueReusableCellWithIdentifier("customReviewCellIdentifier", forIndexPath: indexPath) as! CMCustomTableViewCell
         
-        if cell == nil
-        {
-            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cellIdentifier")
-        }
-       
-        return cell!
+        cell.reviewerNameLabel.text = stuff[indexPath.row]
+        cell.reviewText.text = stuff[indexPath.row]
+        cell.reviewRating.text = stuff[indexPath.row]
+        
+        return cell
     }
 }
