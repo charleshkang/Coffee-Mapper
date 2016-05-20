@@ -7,6 +7,7 @@ I wanted to make an app similar to <a href="https://untappd.com">Untappd</a>, bu
 <img src="https://github.com/charleshkang/Coffee-Mapper/blob/master/CM1.png" width="220" />
 <img src="https://github.com/charleshkang/Coffee-Mapper/blob/master/CM2.png" width="220" />
 <img src="https://github.com/charleshkang/Coffee-Mapper/blob/master/CM3.png" width="220" />
+<img src="https://github.com/charleshkang/Coffee-Mapper/blob/master/CM4.png" width="220" />
 
 # Base Features
 <ul>
