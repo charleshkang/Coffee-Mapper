@@ -4,10 +4,10 @@ A <strong>WIP</strong> social platform for coffee lovers
 # The Idea
 I wanted to make an app similar to <a href="https://untappd.com">Untappd</a>, but specifically for coffee! I want users to be able to post pictures of the coffee they're drinking, where they're drinking at, and make the social aspect of coffee even more awesome.
 
-<img src="https://github.com/charleshkang/Coffee-Mapper/blob/master/CM1.png" width="220" />
-<img src="https://github.com/charleshkang/Coffee-Mapper/blob/master/CM2.png" width="220" />
-<img src="https://github.com/charleshkang/Coffee-Mapper/blob/master/CM3.png" width="220" />
-<img src="https://github.com/charleshkang/Coffee-Mapper/blob/master/CM4.png" width="220" />
+<img src="https://github.com/charleshkang/Coffee-Mapper/blob/master/Images/CM1.png" width="220" />
+<img src="https://github.com/charleshkang/Coffee-Mapper/blob/master/Images/CM2.png" width="220" />
+<img src="https://github.com/charleshkang/Coffee-Mapper/blob/master/Images/CM3.png" width="220" />
+<img src="https://github.com/charleshkang/Coffee-Mapper/blob/master/Images/CM4.png" width="220" />
 
 # Base Features
 <ul>
