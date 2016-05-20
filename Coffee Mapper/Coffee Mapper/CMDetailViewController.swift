@@ -24,7 +24,7 @@ class CMDetailViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet var reviewTextView: UITextView!
     @IBOutlet var userReviewsTableView: UITableView!
     
-    let stuff = ["Item 1", "Item2", "Item3", "Item4"]
+    let stuff = ["Starbucks", "Toby's Estate", "Blue Bottle", "Joe Coffee"]
     
     override func viewDidLoad()
     {
@@ -101,9 +101,8 @@ class CMDetailViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCellWithIdentifier("customReviewCellIdentifier", forIndexPath: indexPath) as! CMCustomTableViewCell
         
         cell.reviewerNameLabel.text = stuff[indexPath.row]
-        cell.reviewText.text = "test review test review test review test review test review test review test review test review test review test review test review test review test review test review test review test review test review test review test review test review"   
-        cell.reviewRating.text = "5"
-
+        cell.reviewRating.text = "4"
+        cell.reviewText.text = "Really good place to work, the espresso is fantastic!"
         
         return cell
     }
