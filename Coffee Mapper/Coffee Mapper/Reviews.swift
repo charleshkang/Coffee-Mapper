@@ -52,7 +52,7 @@ class Reviews
             self._reviewRating = rating
         }
         
-        if let shopName = dictionary["coffeeShopName"] as? String {
+        if let shopName = dictionary["reviewShopName"] as? String {
             self._coffeeShopName = shopName
         }
         
@@ -60,7 +60,7 @@ class Reviews
             self._reviewText = review
         }
         
-        if let user = dictionary["author"] as? String {
+        if let user = dictionary["reviewAuthor"] as? String {
             self._username = user
         } else {
             self._username = ""

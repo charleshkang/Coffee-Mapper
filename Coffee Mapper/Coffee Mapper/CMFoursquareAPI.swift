@@ -18,7 +18,6 @@ struct API
     }
 }
 
-// Make a constants folder for the API keys
 class FoursquareAPI
 {
     static let sharedInstance = FoursquareAPI()
@@ -119,4 +118,3 @@ extension CLLocation
         return parameters
     }
 }
-

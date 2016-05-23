@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CMCustomTableViewCell: UITableViewCell {
     
@@ -14,4 +15,14 @@ class CMCustomTableViewCell: UITableViewCell {
     @IBOutlet var reviewRating: UILabel!
     @IBOutlet var reviewText: UILabel!
     
+    var review: Reviews!
+    var reviewRef: Firebase!
+    
+    func configureCell(review: Reviews) {
+        self.review = review
+        
+        self.reviewText.text = review.reviewText
+        self.reviewRating.text = "\(review.rating)"
+        self.reviewerNameLabel.text = review.username
+    }
 }

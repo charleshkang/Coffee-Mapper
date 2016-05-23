@@ -642,8 +642,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQ7-ke-Dm4" userLabel="Other Reviews Bar">
                                         <rect key="frame" x="0.0" y="8" width="600" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inN-v3-Xd5">
-                                                <rect key="frame" x="245" y="5" width="111" height="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inN-v3-Xd5">
+                                                <rect key="frame" x="252" y="5" width="104" height="20"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -651,7 +651,7 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="inN-v3-Xd5" firstAttribute="centerX" secondItem="rQ7-ke-Dm4" secondAttribute="centerX" id="Z4i-en-5RX"/>
+                                            <constraint firstItem="inN-v3-Xd5" firstAttribute="centerX" secondItem="rQ7-ke-Dm4" secondAttribute="centerX" constant="4" id="Z4i-en-5RX"/>
                                             <constraint firstAttribute="bottom" secondItem="inN-v3-Xd5" secondAttribute="bottom" constant="5" id="iyD-jv-j9r"/>
                                             <constraint firstItem="inN-v3-Xd5" firstAttribute="top" secondItem="rQ7-ke-Dm4" secondAttribute="top" constant="5" id="sAI-Pe-UUo"/>
                                         </constraints>

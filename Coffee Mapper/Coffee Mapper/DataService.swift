@@ -76,29 +76,29 @@ struct ReviewItem
     }
 }
 
-struct CoffeeShopItem
-{
-    let shopName: String!
-    let ref: Firebase?
-    var completed: Bool
-    
-    init(shopName: String, completed: Bool) {
-        self.shopName = shopName
-        self.completed = completed
-        self.ref = nil
-    }
-    
-    init(snapshot: FDataSnapshot) {
-        shopName = snapshot.value["shopName"] as! String
-        completed = snapshot.value["completed"] as! Bool
-        ref = snapshot.ref
-    }
-    
-    func toAnyObject() -> AnyObject {
-        return [
-            "shopName": shopName,
-            "completed": completed
-        ]
-    }
-}
+//struct CoffeeShopItem
+//{
+//    let shopName: String!
+//    let ref: Firebase?
+//    var completed: Bool
+//    
+//    init(shopName: String, completed: Bool) {
+//        self.shopName = shopName
+//        self.completed = completed
+//        self.ref = nil
+//    }
+//    
+//    init(snapshot: FDataSnapshot) {
+//        shopName = snapshot.value["shopName"] as! String
+//        completed = snapshot.value["completed"] as! Bool
+//        ref = snapshot.ref
+//    }
+//    
+//    func toAnyObject() -> AnyObject {
+//        return [
+//            "shopName": shopName,
+//            "completed": completed
+//        ]
+//    }
+//}
 

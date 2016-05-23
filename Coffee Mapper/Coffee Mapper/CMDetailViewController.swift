@@ -13,6 +13,7 @@ import HCSStarRatingView
 class CMDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
     
 {
+    var reviews = [Reviews]()
     var venue: Venue!
     var items = [ReviewItem]()
     var user: User!
@@ -24,7 +25,6 @@ class CMDetailViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet var reviewTextView: UITextView!
     @IBOutlet var userReviewsTableView: UITableView!
     
-    let stuff = ["Starbucks", "Toby's Estate", "Blue Bottle", "Joe Coffee"]
     
     override func viewDidLoad()
     {
@@ -38,12 +38,34 @@ class CMDetailViewController: UIViewController, UITableViewDelegate, UITableView
         
         navigationItem.title = venue.name
         
+        // this block just gets the current user's username
         DataService.dataService.CURRENT_USER_REF.observeEventType(FEventType.Value, withBlock: { snapshot in
             
             let currentUser = snapshot.value.objectForKey("username") as! String
+            
+            print("Username: \(currentUser)")
             self.currentUsername = currentUser
             }, withCancelBlock: { error in
                 print(error.description)
+        })
+        
+        DataService.dataService.REVIEW_REF.observeEventType(FEventType.Value, withBlock: { snapshot in
+            
+            print(snapshot.value)
+            
+            self.reviews = []
+            
+            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+                for snap in snapshots {
+                    
+                    if let reviewsDictionary = snap.value as? Dictionary<String, AnyObject> {
+                        let key = snap.key
+                        let review = Reviews(key: key, dictionary: reviewsDictionary)
+                        self.reviews.insert(review, atIndex: 0)
+                    }
+                }
+            }
+            self.userReviewsTableView.reloadData()
         })
     }
     
@@ -88,7 +110,7 @@ class CMDetailViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return stuff.count
+        return reviews.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int
@@ -98,12 +120,15 @@ class CMDetailViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("customReviewCellIdentifier", forIndexPath: indexPath) as! CMCustomTableViewCell
+        let review = reviews[indexPath.row]
         
-        cell.reviewerNameLabel.text = stuff[indexPath.row]
-        cell.reviewRating.text = "4"
-        cell.reviewText.text = "Really good place to work, the espresso is fantastic!"
+        if let cell = tableView.dequeueReusableCellWithIdentifier("customReviewCellIdentifier") as? CMCustomTableViewCell {
+            cell.configureCell(review)
+            
+            return cell
+        } else {
+            return CMCustomTableViewCell()
+        }
         
-        return cell
     }
 }
