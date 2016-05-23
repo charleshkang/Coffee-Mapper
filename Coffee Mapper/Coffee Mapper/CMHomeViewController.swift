@@ -23,6 +23,7 @@ class CMHomeViewController: UIViewController, CLLocationManagerDelegate, UITable
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CMHomeViewController.onVenuesUpdated(_:)), name: API.notifications.venuesUpdated, object: nil)
     }
     
