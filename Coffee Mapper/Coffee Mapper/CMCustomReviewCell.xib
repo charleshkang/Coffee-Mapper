@@ -7,39 +7,50 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="customReviewCellIdentifier" rowHeight="105" id="d42-9J-wpi" customClass="CMCustomTableViewCell" customModule="Coffee_Mapper" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="379" height="105"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="customReviewCellIdentifier" rowHeight="135" id="d42-9J-wpi" customClass="CMCustomTableViewCell" customModule="Coffee_Mapper" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="135"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d42-9J-wpi" id="1go-rN-Cyv">
-                <rect key="frame" x="0.0" y="0.0" width="379" height="104"/>
+                <rect key="frame" x="0.0" y="0.0" width="393" height="134"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reviewer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4P3-HF-VAN">
-                        <rect key="frame" x="8" y="8" width="105" height="21"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviewer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4P3-HF-VAN">
+                        <rect key="frame" x="8" y="17" width="62" height="18"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Review Text" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yp1-qQ-x0S">
-                        <rect key="frame" x="8" y="36" width="362" height="60"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review Text" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yp1-qQ-x0S">
+                        <rect key="frame" x="8" y="38" width="365" height="88"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOX-x7-GZL">
-                        <rect key="frame" x="121" y="8" width="68" height="21"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOX-x7-GZL">
+                        <rect key="frame" x="78" y="17" width="48" height="18"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="4P3-HF-VAN" firstAttribute="leading" secondItem="1go-rN-Cyv" secondAttribute="leading" constant="8" id="3wd-eY-TGL"/>
+                    <constraint firstItem="4P3-HF-VAN" firstAttribute="top" secondItem="1go-rN-Cyv" secondAttribute="top" constant="17" id="5Xv-Dk-0xE"/>
+                    <constraint firstItem="yp1-qQ-x0S" firstAttribute="top" secondItem="4P3-HF-VAN" secondAttribute="bottom" constant="3" id="F2W-gr-xsG"/>
+                    <constraint firstItem="IOX-x7-GZL" firstAttribute="leading" secondItem="4P3-HF-VAN" secondAttribute="trailing" constant="8" id="Hgr-iG-Ybu"/>
+                    <constraint firstAttribute="bottom" secondItem="yp1-qQ-x0S" secondAttribute="bottom" constant="8" id="NXP-hR-8RO"/>
+                    <constraint firstItem="yp1-qQ-x0S" firstAttribute="top" secondItem="IOX-x7-GZL" secondAttribute="bottom" constant="3" id="Nqg-jM-SfD"/>
+                    <constraint firstItem="yp1-qQ-x0S" firstAttribute="leading" secondItem="1go-rN-Cyv" secondAttribute="leading" constant="8" id="QR5-Dw-jnW"/>
+                    <constraint firstAttribute="trailing" secondItem="yp1-qQ-x0S" secondAttribute="trailing" constant="20" id="VqB-r1-f0r"/>
+                    <constraint firstItem="IOX-x7-GZL" firstAttribute="top" secondItem="1go-rN-Cyv" secondAttribute="top" constant="17" id="bQj-NK-nz1"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="reviewRating" destination="IOX-x7-GZL" id="Vez-EQ-xp3"/>
                 <outlet property="reviewText" destination="yp1-qQ-x0S" id="5sl-pf-Snr"/>
                 <outlet property="reviewerNameLabel" destination="4P3-HF-VAN" id="gGq-oJ-AgJ"/>
             </connections>
-            <point key="canvasLocation" x="289.5" y="243.5"/>
+            <point key="canvasLocation" x="292.5" y="227.5"/>
         </tableViewCell>
     </objects>
 </document>

@@ -21,8 +21,10 @@ class CMSignUpViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
     }
     
+    
+    
     @IBAction func signUpButtonTapped(sender: AnyObject)
-    {        
+    {
         let username = usernameTextField.text
         let email = emailTextField.text
         let password = passwordTextField.text
@@ -38,7 +40,7 @@ class CMSignUpViewController: UIViewController {
                         err, authData in
                         
                         let user = ["provider": authData.provider!, "email": email!, "username": username!]
-                    
+                        
                         DataService.dataService.createNewAccount(authData.uid, user: user)
                     })
                     NSUserDefaults.standardUserDefaults().setValue(result ["uid"], forKey: "uid")
@@ -49,7 +51,6 @@ class CMSignUpViewController: UIViewController {
         } else {
             signupErrorAlert("Oops!", message: "Don't forget to enter your email, password, and username.")
         }
-        
     }
     
     @IBAction func cancelCreateAccount(sender: AnyObject)
@@ -65,3 +66,5 @@ class CMSignUpViewController: UIViewController {
         presentViewController(alert, animated: true, completion: nil)
     }
 }
+
+

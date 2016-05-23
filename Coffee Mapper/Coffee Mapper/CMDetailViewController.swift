@@ -29,9 +29,7 @@ class CMDetailViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-        self.userReviewsTableView.rowHeight = 110
-        
+    
         userReviewsTableView.registerNib(UINib(nibName: "CMCustomReviewCell", bundle: nil), forCellReuseIdentifier: "customReviewCellIdentifier")
         
         self.hideKeyboardWhenTappedAround()
@@ -129,6 +127,12 @@ class CMDetailViewController: UIViewController, UITableViewDelegate, UITableView
         } else {
             return CMCustomTableViewCell()
         }
-        
+    }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
 }
