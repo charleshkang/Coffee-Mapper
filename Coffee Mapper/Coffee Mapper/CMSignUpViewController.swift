@@ -29,7 +29,9 @@ class CMSignUpViewController: UIViewController {
         let email = emailTextField.text
         let password = passwordTextField.text
         
-        if username != "" && email != "" && password != "" {
+        
+        
+        if usernameTextField.hasText() && emailTextField.hasText() && passwordTextField.hasText() {
             DataService.dataService.BASE_REF.createUser(email, password: password, withValueCompletionBlock: { error, result in
                 
                 if error != nil {
@@ -44,6 +46,7 @@ class CMSignUpViewController: UIViewController {
                         DataService.dataService.createNewAccount(authData.uid, user: user)
                     })
                     NSUserDefaults.standardUserDefaults().setValue(result ["uid"], forKey: "uid")
+                    print(result["uid"])
                     self.performSegueWithIdentifier("NewUserLoggedIn", sender: nil)
                 }
             })

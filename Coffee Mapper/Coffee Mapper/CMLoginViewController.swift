@@ -20,36 +20,36 @@ class CMLoginViewController: UIViewController
     {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-    }
-    
-    override func viewDidAppear(animated: Bool)
-    {
-        super.viewDidAppear(animated)
         
         if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
-            self.performSegueWithIdentifier("CurrentlyLoggedIn", sender: nil)
+            
+            let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("homeVCIdentifier") as! CMHomeViewController
+            
+            self.showViewController(homeVC, sender: self)
+//            self.presentViewController(homeVC, animated: true, completion: nil)
+            
         }
     }
     
     @IBAction func signInButtonTapped(sender: AnyObject)
     {
-        let email = emailTextField.text
-        let password = passwordTextField.text
+        guard
+            let email = emailTextField.text,
+            let password = passwordTextField.text
+            where !email.isEmpty && !password.isEmpty
+            else { return loginErrorAlert("Oops!", message: "Don't forget to enter your email and password.") }
         
-        if email != "" && password != "" {
-            DataService.dataService.BASE_REF.authUser(email, password: password, withCompletionBlock: { error, authData in
-                if error != nil {
-                    print(error)
-                    self.loginErrorAlert("Oops!", message: "Check your username and password.")
-                } else {
-                    NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
-                    
-                    self.performSegueWithIdentifier("CurrentlyLoggedIn", sender: nil)
-                }
-            })
-        } else {
-            loginErrorAlert("Oops!", message: "Don't forget to enter your email and password.")
-        }
+        DataService.dataService.BASE_REF.authUser(email, password: password, withCompletionBlock: { error, authData in
+            if error != nil {
+                print(error)
+                self.loginErrorAlert("Oops!", message: "Check your username and password.")
+            } else {
+                NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
+                print("user logged in with uid:\(authData.uid)")
+                let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("homeVCIdentifier") as! CMHomeViewController
+                self.presentViewController(homeVC, animated: true, completion: nil)
+            }
+        })
     }
     func loginErrorAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)

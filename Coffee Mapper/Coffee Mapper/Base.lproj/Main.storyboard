@@ -39,7 +39,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TPu-bH-L3W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="716" y="-23"/>
+            <point key="canvasLocation" x="570" y="-193"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="6Ut-RE-XJI">
@@ -103,7 +103,6 @@
                                         <state key="normal" image="signin"/>
                                         <connections>
                                             <action selector="signInButtonTapped:" destination="4Lb-gv-Krh" eventType="touchUpInside" id="U9w-6X-Yaz"/>
-                                            <segue destination="xJ3-Zq-Vb6" kind="show" identifier="CurrentlyLoggedIn" id="dzF-gj-OAU"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -227,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KZq-0h-vEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-258" y="-985"/>
+            <point key="canvasLocation" x="-318" y="-1117"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="DAc-ey-SRH">
@@ -383,7 +382,6 @@
                                         <state key="normal" image="signup"/>
                                         <connections>
                                             <action selector="signUpButtonTapped:" destination="d2V-Cc-1r4" eventType="touchUpInside" id="nFf-ks-hKy"/>
-                                            <segue destination="xJ3-Zq-Vb6" kind="show" identifier="NewUserLoggedIn" id="Vik-4t-ija"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -427,12 +425,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bBP-i2-JuW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-258" y="-285"/>
+            <point key="canvasLocation" x="-318" y="-331"/>
         </scene>
         <!--Coffee Mapper-->
         <scene sceneID="Fqq-Pv-Kun">
             <objects>
-                <viewController id="d2Z-xd-UJX" customClass="CMHomeViewController" customModule="Coffee_Mapper" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeVCIdentifier" id="d2Z-xd-UJX" customClass="CMHomeViewController" customModule="Coffee_Mapper" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="klW-Ue-Uq4"/>
                         <viewControllerLayoutGuide type="bottom" id="Mfw-4Q-0Y8"/>
@@ -507,7 +505,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xtf-FU-ZcK" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1388" y="-23"/>
+            <point key="canvasLocation" x="1258" y="-193"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="H0C-Dv-4li">
@@ -526,7 +524,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SzH-ok-O18" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="722" y="-835"/>
+            <point key="canvasLocation" x="570" y="-949"/>
         </scene>
         <!--Something Else-->
         <scene sceneID="G5v-zm-e4m">
@@ -545,7 +543,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmN-jl-xCp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1560" y="-1081"/>
+            <point key="canvasLocation" x="1258" y="-957"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="PFh-c0-sJY">
@@ -704,7 +702,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WM0-If-2iI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2052" y="-23"/>
+            <point key="canvasLocation" x="1928" y="-193"/>
         </scene>
     </scenes>
     <resources>
@@ -716,7 +714,4 @@
         <image name="signup" width="290" height="50"/>
         <image name="submitreview" width="290" height="50"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Vik-4t-ija"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -141,6 +141,7 @@ class CMHomeViewController: UIViewController, CLLocationManagerDelegate, UITable
     {
         DataService.dataService.CURRENT_USER_REF.unauth()
         NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "uid")
+        print("logged out: \(NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "uid"))")
         
         let loginViewController = self.storyboard!.instantiateViewControllerWithIdentifier("loginIdentifier")
         UIApplication.sharedApplication().keyWindow?.rootViewController = loginViewController
