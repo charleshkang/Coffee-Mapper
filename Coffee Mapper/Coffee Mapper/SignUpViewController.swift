@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class CMSignUpViewController: UIViewController {
+class SignUpViewController: UIViewController {
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -21,15 +21,30 @@ class CMSignUpViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
     }
     
-    
-    
     @IBAction func signUpButtonTapped(sender: AnyObject)
+    {
+        signIn()
+    }
+    
+    @IBAction func cancelCreateAccount(sender: AnyObject)
+    {
+        self.dismissViewControllerAnimated(true, completion: {})
+    }
+    
+    func signupErrorAlert(title: String, message: String)
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+        alert.addAction(action)
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: Sign In Logic
+    func signIn()
     {
         let username = usernameTextField.text
         let email = emailTextField.text
         let password = passwordTextField.text
-        
-        
         
         if usernameTextField.hasText() && emailTextField.hasText() && passwordTextField.hasText() {
             DataService.dataService.BASE_REF.createUser(email, password: password, withValueCompletionBlock: { error, result in
@@ -55,19 +70,4 @@ class CMSignUpViewController: UIViewController {
             signupErrorAlert("Oops!", message: "Don't forget to enter your email, password, and username.")
         }
     }
-    
-    @IBAction func cancelCreateAccount(sender: AnyObject)
-    {
-        self.dismissViewControllerAnimated(true, completion: {})
-    }
-    
-    func signupErrorAlert(title: String, message: String)
-    {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
-        alert.addAction(action)
-        presentViewController(alert, animated: true, completion: nil)
-    }
 }
-
-

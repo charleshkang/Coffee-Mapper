@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class CMCustomTableViewCell: UITableViewCell {
+class CustomTableViewCell: UITableViewCell {
     
     @IBOutlet var reviewerNameLabel: UILabel!
     @IBOutlet var reviewRating: UILabel!

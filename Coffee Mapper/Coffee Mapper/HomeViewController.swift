@@ -10,13 +10,13 @@ import UIKit
 import MapKit
 import RealmSwift
 
-class CMHomeViewController: UIViewController, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate
+class HomeViewController: UIViewController, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate
 {
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var tableView: UITableView?
     
     var locationManager: CLLocationManager?
-    let distanceSpan: Double = 500
+    let distanceSpan: Double = 1200
     var lastLocation:CLLocation?
     var venues:[Venue]?
     
@@ -24,7 +24,7 @@ class CMHomeViewController: UIViewController, CLLocationManagerDelegate, UITable
     {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CMHomeViewController.onVenuesUpdated(_:)), name: API.notifications.venuesUpdated, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.onVenuesUpdated(_:)), name: API.notifications.venuesUpdated, object: nil)
     }
     
     override func viewWillAppear(animated: Bool)
@@ -150,7 +150,6 @@ class CMHomeViewController: UIViewController, CLLocationManagerDelegate, UITable
     }
     
     // MARK: Table View Methods
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return venues?.count ?? 0
@@ -191,7 +190,7 @@ class CMHomeViewController: UIViewController, CLLocationManagerDelegate, UITable
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         guard let indexPath = tableView?.indexPathForSelectedRow,
             venue = venues?[indexPath.row],
-            detailVC = segue.destinationViewController as? CMDetailViewController else {
+            detailVC = segue.destinationViewController as? DetailViewController else {
                 return
         }
         

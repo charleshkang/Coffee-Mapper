@@ -16,7 +16,7 @@ class DataService
     private var _BASE_REF = Firebase(url: "\(BASE_URL)")
     private var _USER_REF = Firebase(url: "\(BASE_URL)/users")
     private var _REVIEW_REF = Firebase(url: "\(BASE_URL)/reviews")
-    private var _COFFEESHOPNAME_REF = Firebase(url: "\(BASE_URL)/reviews/shopName")
+    private var _COFFEESHOP_REF = Firebase(url: "\(BASE_URL)/coffee-shops")
     
     var BASE_REF: Firebase {
         return _BASE_REF
@@ -36,8 +36,8 @@ class DataService
         return _REVIEW_REF
     }
     
-    var COFFEESHOPNAME_REF: Firebase {
-        return _COFFEESHOPNAME_REF
+    var COFFEESHOP_REF: Firebase {
+        return _COFFEESHOP_REF
     }
     
     func createNewAccount(uid: String, user: Dictionary<String, String>) {
@@ -47,6 +47,11 @@ class DataService
     func createNewReview(review: Dictionary<String, AnyObject>) {
         let firebaseNewReview = REVIEW_REF.childByAutoId()
         firebaseNewReview.setValue(review)
+    }
+    
+    func addNewCoffeeShop(coffeeShop: Dictionary<String, AnyObject>) {
+        let firebaseNewCoffeeShop = COFFEESHOP_REF.childByAutoId()
+        firebaseNewCoffeeShop.setValue(coffeeShop)
     }
 }
 
@@ -75,30 +80,3 @@ struct ReviewItem
         ]
     }
 }
-
-//struct CoffeeShopItem
-//{
-//    let shopName: String!
-//    let ref: Firebase?
-//    var completed: Bool
-//    
-//    init(shopName: String, completed: Bool) {
-//        self.shopName = shopName
-//        self.completed = completed
-//        self.ref = nil
-//    }
-//    
-//    init(snapshot: FDataSnapshot) {
-//        shopName = snapshot.value["shopName"] as! String
-//        completed = snapshot.value["completed"] as! Bool
-//        ref = snapshot.ref
-//    }
-//    
-//    func toAnyObject() -> AnyObject {
-//        return [
-//            "shopName": shopName,
-//            "completed": completed
-//        ]
-//    }
-//}
-

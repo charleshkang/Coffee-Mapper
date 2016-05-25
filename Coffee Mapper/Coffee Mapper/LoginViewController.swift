@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CMLoginViewController: UIViewController
+class LoginViewController: UIViewController
 {
     @IBOutlet weak var signUpButtonTapped: UIButton!
     @IBOutlet weak var signInButtonTapped: UIButton!
@@ -23,12 +23,9 @@ class CMLoginViewController: UIViewController
         
         if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
             
-            let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("homeVCIdentifier") as! CMHomeViewController
-
+            let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("homeVCIdentifier") as! HomeViewController
             
             self.showViewController(homeVC, sender: self)
-//            self.presentViewController(homeVC, animated: true, completion: nil)
-            
         }
     }
     
@@ -47,7 +44,8 @@ class CMLoginViewController: UIViewController
             } else {
                 NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
                 print("user logged in with uid:\(authData.uid)")
-                let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("homeVCIdentifier") as! CMHomeViewController
+                
+                let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("homeVCIdentifier") as! HomeViewController
                 self.presentViewController(homeVC, animated: true, completion: nil)
             }
         })

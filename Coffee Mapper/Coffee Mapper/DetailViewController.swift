@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import HCSStarRatingView
 
-class CMDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
+class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
     
 {
     var reviews = [Reviews]()
@@ -25,46 +25,18 @@ class CMDetailViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet var reviewTextView: UITextView!
     @IBOutlet var userReviewsTableView: UITableView!
     
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
-    
-        userReviewsTableView.registerNib(UINib(nibName: "CMCustomReviewCell", bundle: nil), forCellReuseIdentifier: "customReviewCellIdentifier")
+        
+        userReviewsTableView.registerNib(UINib(nibName: "CustomReviewCell", bundle: nil), forCellReuseIdentifier: "customReviewCellIdentifier")
         
         self.hideKeyboardWhenTappedAround()
         
         navigationItem.title = venue.name
         
-        // this block just gets the current user's username
-        DataService.dataService.CURRENT_USER_REF.observeEventType(FEventType.Value, withBlock: { snapshot in
-            
-            let currentUser = snapshot.value.objectForKey("username") as! String
-            
-            print("Username: \(currentUser)")
-            self.currentUsername = currentUser
-            }, withCancelBlock: { error in
-                print(error.description)
-        })
-        
-        DataService.dataService.REVIEW_REF.observeEventType(FEventType.Value, withBlock: { snapshot in
-            
-            print(snapshot.value)
-            
-            self.reviews = []
-            
-            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
-                for snap in snapshots {
-                    
-                    if let reviewsDictionary = snap.value as? Dictionary<String, AnyObject> {
-                        let key = snap.key
-                        let review = Reviews(key: key, dictionary: reviewsDictionary)
-                        self.reviews.insert(review, atIndex: 0)
-                    }
-                }
-            }
-            self.userReviewsTableView.reloadData()
-        })
+        getCurrentUsersName()
+        updateReviewsOnFirebase()
     }
     
     @IBAction func submitReviewButton(sender: AnyObject)
@@ -82,7 +54,14 @@ class CMDetailViewController: UIViewController, UITableViewDelegate, UITableView
                 "reviewRating": reviewRatings,
                 "reviewShopName": venue.name
             ]
+            let newCoffeeShop: Dictionary<String, AnyObject> = [
+                "coffeeShopName": venue.name,
+                "coffeeShopRating": reviewRatings,
+                "coffeeShopReview": reviewText,
+                "coffeeShopReviewerName": currentUsername
+            ]
             DataService.dataService.createNewReview(newReview)
+            DataService.dataService.addNewCoffeeShop(newCoffeeShop)
         }
         else {
             emptyReviewField("Oops!", message: "Make sure to leave some text in your review.")
@@ -104,6 +83,42 @@ class CMDetailViewController: UIViewController, UITableViewDelegate, UITableView
         defaults.setFloat(Float(rating), forKey: "reviews")
     }
     
+    // MARK: Get Username and Update Reviews
+    func getCurrentUsersName()
+    {
+        DataService.dataService.CURRENT_USER_REF.observeEventType(FEventType.Value, withBlock: { snapshot in
+            
+            let currentUser = snapshot.value.objectForKey("username") as! String
+            
+            print("Username: \(currentUser)")
+            self.currentUsername = currentUser
+            }, withCancelBlock: { error in
+                print(error.description)
+        })
+        
+    }
+    func updateReviewsOnFirebase()
+    {
+        DataService.dataService.REVIEW_REF.observeEventType(FEventType.Value, withBlock: { snapshot in
+            
+            self.reviews = []
+            
+            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+                for snap in snapshots {
+                    
+                    if let reviewsDictionary = snap.value as? Dictionary<String, AnyObject> {
+                        let key = snap.key
+                        let review = Reviews(key: key, dictionary: reviewsDictionary)
+                        self.reviews.insert(review, atIndex: 0)
+                    }
+                }
+            }
+            self.userReviewsTableView.reloadData()
+        })
+    }
+    
+
+    
     // MARK: Table View Methods
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -120,12 +135,12 @@ class CMDetailViewController: UIViewController, UITableViewDelegate, UITableView
     {
         let review = reviews[indexPath.row]
         
-        if let cell = tableView.dequeueReusableCellWithIdentifier("customReviewCellIdentifier") as? CMCustomTableViewCell {
+        if let cell = tableView.dequeueReusableCellWithIdentifier("customReviewCellIdentifier") as? CustomTableViewCell {
             cell.configureCell(review)
             
             return cell
         } else {
-            return CMCustomTableViewCell()
+            return CustomTableViewCell()
         }
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
