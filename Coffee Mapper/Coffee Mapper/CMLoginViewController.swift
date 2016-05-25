@@ -24,6 +24,7 @@ class CMLoginViewController: UIViewController
         if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
             
             let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("homeVCIdentifier") as! CMHomeViewController
+
             
             self.showViewController(homeVC, sender: self)
 //            self.presentViewController(homeVC, animated: true, completion: nil)

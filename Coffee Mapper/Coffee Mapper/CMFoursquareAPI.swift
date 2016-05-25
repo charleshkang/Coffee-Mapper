@@ -38,7 +38,7 @@ class FoursquareAPI
         {
             var parameters = location.parameters()
             parameters += [Parameter.categoryId: "4bf58dd8d48988d1e0931735"]
-            parameters += [Parameter.radius: "5000"]
+            parameters += [Parameter.radius: "20000"]
             parameters += [Parameter.limit: "50"]
             
             let searchTask = session.venues.search(parameters)
