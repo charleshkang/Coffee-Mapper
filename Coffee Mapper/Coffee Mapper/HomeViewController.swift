@@ -16,7 +16,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UITableVi
     @IBOutlet var tableView: UITableView?
     
     var locationManager: CLLocationManager?
-    let distanceSpan: Double = 1200
+    let distanceSpan: Double = 3000
     var lastLocation:CLLocation?
     var venues:[Venue]?
     
@@ -139,7 +139,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UITableVi
     
     @IBAction func logoutButtonTapped(sender: AnyObject)
     {
-        DataService.dataService.CURRENT_USER_REF.unauth()
+        DataService.dataService.USER_REF.unauth()
         NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "uid")
         print("logged out: \(NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "uid"))")
         

@@ -40,7 +40,7 @@ class CoffeeShop {
     
     init(key: String, dictionary: Dictionary<String, AnyObject>) {
         self._coffeeShopKey = key
-        
+        print(self._coffeeShopKey)
         if let coffeeShop = dictionary["coffeeShopName"] as? String {
             self._coffeeShopName = coffeeShop
         }
@@ -60,5 +60,6 @@ class CoffeeShop {
         }
         
         self._coffeeShopRef = DataService.dataService.COFFEESHOP_REF.childByAppendingPath(self._coffeeShopKey)
+        
     }
 }

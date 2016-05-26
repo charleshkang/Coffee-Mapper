@@ -26,11 +26,6 @@ class SignUpViewController: UIViewController {
         signIn()
     }
     
-    @IBAction func cancelCreateAccount(sender: AnyObject)
-    {
-        self.dismissViewControllerAnimated(true, completion: {})
-    }
-    
     func signupErrorAlert(title: String, message: String)
     {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
@@ -42,32 +37,26 @@ class SignUpViewController: UIViewController {
     // MARK: Sign In Logic
     func signIn()
     {
-        let username = usernameTextField.text
-        let email = emailTextField.text
-        let password = passwordTextField.text
+        guard
+            let username = usernameTextField.text,
+            let email = emailTextField.text,
+            let password = passwordTextField.text
+            where !username.isEmpty && !email.isEmpty && !password.isEmpty
+            else { return signupErrorAlert("Oops!", message: "Having some trouble creating your account. Try again.") }
         
-        if usernameTextField.hasText() && emailTextField.hasText() && passwordTextField.hasText() {
-            DataService.dataService.BASE_REF.createUser(email, password: password, withValueCompletionBlock: { error, result in
+        DataService.dataService.BASE_REF.createUser(email, password: password, withValueCompletionBlock: { error, result in
+            if error != nil {
+                print(error)
+                self.signupErrorAlert("Oops!", message: "Don't forget to enter your email, password, and username.")
+            } else {
+                DataService.dataService.BASE_REF.authUser(email, password: password, withCompletionBlock: { err, authData in
+                    let user = ["provider": authData.provider!, "email": email, "username": username]
+                    DataService.dataService.createNewAccount(authData.uid, user: user)
+                })
+                NSUserDefaults.standardUserDefaults().setValue(result["uid"], forKey: "uid")
                 
-                if error != nil {
-                    self.signupErrorAlert("Oops!", message: "Having some trouble creating your account. Try again.")
-                    
-                } else {
-                    DataService.dataService.BASE_REF.authUser(email, password: password, withCompletionBlock: {
-                        err, authData in
-                        
-                        let user = ["provider": authData.provider!, "email": email!, "username": username!]
-                        
-                        DataService.dataService.createNewAccount(authData.uid, user: user)
-                    })
-                    NSUserDefaults.standardUserDefaults().setValue(result ["uid"], forKey: "uid")
-                    print(result["uid"])
-                    self.performSegueWithIdentifier("NewUserLoggedIn", sender: nil)
-                }
-            })
-            
-        } else {
-            signupErrorAlert("Oops!", message: "Don't forget to enter your email, password, and username.")
-        }
-    }
-}
+                let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("homeVCIdentifier") as! HomeViewController
+                self.presentViewController(homeVC, animated: true, completion: nil)
+            }
+        })
+    }}

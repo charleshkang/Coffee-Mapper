@@ -24,7 +24,6 @@ class LoginViewController: UIViewController
         if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
             
             let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("homeVCIdentifier") as! HomeViewController
-            
             self.showViewController(homeVC, sender: self)
         }
     }
@@ -46,7 +45,7 @@ class LoginViewController: UIViewController
                 print("user logged in with uid:\(authData.uid)")
                 
                 let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("homeVCIdentifier") as! HomeViewController
-                self.presentViewController(homeVC, animated: true, completion: nil)
+                self.showViewController(homeVC, sender: self)
             }
         })
     }

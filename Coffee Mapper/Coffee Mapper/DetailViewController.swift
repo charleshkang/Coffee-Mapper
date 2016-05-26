@@ -62,6 +62,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             ]
             DataService.dataService.createNewReview(newReview)
             DataService.dataService.addNewCoffeeShop(newCoffeeShop)
+            
         }
         else {
             emptyReviewField("Oops!", message: "Make sure to leave some text in your review.")
@@ -95,8 +96,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }, withCancelBlock: { error in
                 print(error.description)
         })
-        
     }
+    
     func updateReviewsOnFirebase()
     {
         DataService.dataService.REVIEW_REF.observeEventType(FEventType.Value, withBlock: { snapshot in
@@ -116,11 +117,9 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.userReviewsTableView.reloadData()
         })
     }
-    
-
+    /* loop over the reviews array, get the uid of all the reviews, and do something */
     
     // MARK: Table View Methods
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return reviews.count
