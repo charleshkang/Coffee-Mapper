@@ -44,11 +44,13 @@ class LoginViewController: UIViewController
                 NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
                 print("user logged in with uid:\(authData.uid)")
                 
-                let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("homeVCIdentifier") as! HomeViewController
-                self.showViewController(homeVC, sender: self)
+                let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("homeVCIdentifier")
+                self.navigationController?.pushViewController(homeVC!, animated: true)
+                self.showViewController(homeVC!, sender: self)
             }
         })
     }
+    
     func loginErrorAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)

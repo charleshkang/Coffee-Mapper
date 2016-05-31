@@ -41,6 +41,8 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UITableVi
             tableView.delegate = self
             tableView.dataSource = self
         }
+        navigationController?.navigationBar.hidden = false
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     override func viewDidAppear(animated: Bool)
@@ -132,7 +134,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UITableVi
             view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "annotationIdentifier")
         }
         view?.canShowCallout = true
-
+        
         
         return view
     }
@@ -143,10 +145,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UITableVi
         NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "uid")
         print("logged out: \(NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "uid"))")
         
-        let loginViewController = self.storyboard!.instantiateViewControllerWithIdentifier("loginIdentifier")
-        UIApplication.sharedApplication().keyWindow?.rootViewController = loginViewController
-        presentViewController(loginViewController, animated: true, completion: nil)
+        //        let loginViewController = self.storyboard!.instantiateViewControllerWithIdentifier("loginIdentifier")
+        //        UIApplication.sharedApplication().keyWindow?.rootViewController = loginViewController
+        //        presentViewController(loginViewController, animated: true, completion: nil)
         
+        
+        let loginVC = self.storyboard!.instantiateViewControllerWithIdentifier("loginIdentifier") as! LoginViewController
+        presentViewController(loginVC, animated: true, completion: nil)
     }
     
     // MARK: Table View Methods

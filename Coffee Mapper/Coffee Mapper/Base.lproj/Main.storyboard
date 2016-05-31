@@ -23,6 +23,7 @@
         <!--Coffee Shops-->
         <scene sceneID="QRg-XN-htf">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TPu-bH-L3W" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="76b-1L-L1q" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Coffee Shops" image="cup" id="VCz-u9-7X9"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="t0e-Jl-qey">
@@ -30,10 +31,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="d2Z-xd-UJX" kind="relationship" relationship="rootViewController" id="KwX-XX-AAQ"/>
+                        <segue destination="d2Z-xd-UJX" kind="relationship" relationship="rootViewController" id="Fue-uQ-sb9"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TPu-bH-L3W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="698" y="-197"/>
         </scene>
@@ -81,7 +81,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <segue destination="yDm-Fk-xUL" kind="show" identifier="detailVCSegue" id="Eyk-xh-c4p"/>
+                                            <segue destination="yDm-Fk-xUL" kind="show" id="Xp4-Bp-vas"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -107,7 +107,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="mapView" destination="qY7-io-79y" id="T2g-kI-vqg"/>
                         <outlet property="tableView" destination="JzH-WV-Z3j" id="7J1-T2-3I2"/>
@@ -115,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xtf-FU-ZcK" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1332" y="-197"/>
+            <point key="canvasLocation" x="1326" y="-197"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="H0C-Dv-4li">
@@ -128,13 +127,13 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="76b-1L-L1q" kind="relationship" relationship="viewControllers" id="Rqv-Xk-exS"/>
+                        <segue destination="76b-1L-L1q" kind="relationship" relationship="viewControllers" id="SVb-xF-dZb"/>
                         <segue destination="wDl-Ui-wPv" kind="relationship" relationship="viewControllers" id="SSe-cD-4qp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SzH-ok-O18" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-46" y="-771"/>
+            <point key="canvasLocation" x="62" y="-197"/>
         </scene>
         <!--Something Else-->
         <scene sceneID="G5v-zm-e4m">
@@ -312,7 +311,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WM0-If-2iI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1994" y="-197"/>
+            <point key="canvasLocation" x="1954" y="-197"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="bw5-Fb-H4J">
@@ -714,7 +713,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ja3-yP-ALf" userLabel="Login View">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="474"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Coffee Mapper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ox5-rd-DmX">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coffee Mapper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ox5-rd-DmX">
                                         <rect key="frame" x="25" y="35" width="550" height="50"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="42"/>
                                         <nil key="highlightedColor"/>
@@ -834,7 +833,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9lf-wk-cT3" userLabel="Bottom textContainer">
                                 <rect key="frame" x="0.0" y="557" width="600" height="43"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Don’t have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjt-qa-g8c">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don’t have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjt-qa-g8c">
                                         <rect key="frame" x="192" y="11" width="144" height="20"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
@@ -843,7 +842,7 @@
                                             <rect key="frame" x="104" y="83" width="149" height="221"/>
                                         </variation>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsa-tq-reQ" userLabel="Sign Up Segue">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsa-tq-reQ" userLabel="Sign Up Segue">
                                         <rect key="frame" x="339" y="7" width="48" height="29"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                         <state key="normal" title="Sign Up">
