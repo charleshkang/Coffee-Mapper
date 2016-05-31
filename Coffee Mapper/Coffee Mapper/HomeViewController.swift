@@ -144,12 +144,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UITableVi
         DataService.dataService.USER_REF.unauth()
         NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "uid")
         print("logged out: \(NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "uid"))")
-        
-        //        let loginViewController = self.storyboard!.instantiateViewControllerWithIdentifier("loginIdentifier")
-        //        UIApplication.sharedApplication().keyWindow?.rootViewController = loginViewController
-        //        presentViewController(loginViewController, animated: true, completion: nil)
-        
-        
+    
         let loginVC = self.storyboard!.instantiateViewControllerWithIdentifier("loginIdentifier") as! LoginViewController
         presentViewController(loginVC, animated: true, completion: nil)
     }

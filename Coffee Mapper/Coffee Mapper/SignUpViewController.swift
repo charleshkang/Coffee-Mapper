@@ -55,8 +55,10 @@ class SignUpViewController: UIViewController {
                 })
                 NSUserDefaults.standardUserDefaults().setValue(result["uid"], forKey: "uid")
                 
-                let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("homeVCIdentifier") as! HomeViewController
-                self.presentViewController(homeVC, animated: true, completion: nil)
+                let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("navControllerID")
+                self.navigationController?.pushViewController(homeVC!, animated: true)
+                self.showViewController(homeVC!, sender: self)
+
             }
         })
     }}
