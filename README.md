@@ -12,11 +12,13 @@ I wanted to make an app similar to <a href="https://untappd.com">Untappd</a>, bu
 <ul>
   <li>User Reviews</li>
   <li>Leave ratings in the form of beans or cups</li>
-  <li>Keep track of the shops you visit</li>
+  <li>Find coffee shops near you</li>
+
 </ul>
 
 # Later Features
 <ul>
+  <li>Keep track of the shops you visit</li>
   <li>Post photos of what you're drinking</li>
   <li>Connect with friends</li>
   <li>Rank coffee shops based on coffee</li>
@@ -29,6 +31,3 @@ I wanted to make an app similar to <a href="https://untappd.com">Untappd</a>, bu
   <li>QuadratTouch</li>
   <li>Firebase</li>
 </ul>
-
-
-# More to be added later!  

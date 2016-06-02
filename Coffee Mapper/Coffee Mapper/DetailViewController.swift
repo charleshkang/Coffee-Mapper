@@ -10,14 +10,12 @@ import UIKit
 import Firebase
 import HCSStarRatingView
 
-class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
+class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate
     
 {
     var reviews = [Reviews]()
     var venue: Venue!
-    var items = [ReviewItem]()
     var user: User!
-    let ref = Firebase(url: "https://coffee-mapper-charleshkang.firebaseio.com/reviews")
     var currentUsername = ""
     let starRatingView = HCSStarRatingView()
     var venues = Venue?.self
@@ -28,6 +26,9 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        self.reviewTextView.delegate = self
+        
         
         userReviewsTableView.registerNib(UINib(nibName: "CustomReviewCell", bundle: nil), forCellReuseIdentifier: "customReviewCellIdentifier")
         
@@ -67,6 +68,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         else {
             emptyReviewField("Oops!", message: "Make sure to leave some text in your review.")
         }
+        self.reviewTextView.text = ""
     }
     
     func emptyReviewField(title: String, message: String)
