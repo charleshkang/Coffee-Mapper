@@ -48,6 +48,9 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let reviewText = reviewTextView.text
         
+        let coffeeId = String(Firebase(url: "https://coffee-mapper-charleshkang.firebaseio.com/coffee-shops/coffeeShopName"))
+        
+        
         if reviewText != "" {
             let newReview: Dictionary<String, AnyObject> = [
                 "reviewText": reviewText!,
@@ -59,7 +62,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 "coffeeShopName": venue.name,
                 "coffeeShopRating": reviewRatings,
                 "coffeeShopReview": reviewText,
-                "coffeeShopReviewerName": currentUsername
+                "coffeeShopReviewerName": currentUsername,
+                "coffeeShopId": coffeeId
             ]
             DataService.dataService.createNewReview(newReview)
             DataService.dataService.addNewCoffeeShop(newCoffeeShop)
