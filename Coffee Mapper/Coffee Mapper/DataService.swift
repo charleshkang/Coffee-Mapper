@@ -55,28 +55,28 @@ class DataService
     }
 }
 
-struct ReviewItem
-{
-    let name: String!
-    let ref: Firebase?
-    var completed: Bool!
-    
-    init(name: String, completed: Bool) {
-        self.name = name
-        self.completed = completed
-        self.ref = nil
-    }
-    
-    init(snapshot: FDataSnapshot) {
-        name = snapshot.value["name"] as! String
-        completed = snapshot.value["completed"] as! Bool
-        ref = snapshot.ref
-    }
-    
-    func toAnyObject() -> AnyObject {
-        return [
-            "name" : name,
-            "completed" : completed
-        ]
-    }
-}
+//struct ReviewItem
+//{
+//    let name: String!
+//    let ref: Firebase?
+//    var completed: Bool!
+//    
+//    init(name: String, completed: Bool) {
+//        self.name = name
+//        self.completed = completed
+//        self.ref = nil
+//    }
+//    
+//    init(snapshot: FDataSnapshot) {
+//        name = snapshot.value["name"] as! String
+//        completed = snapshot.value["completed"] as! Bool
+//        ref = snapshot.ref
+//    }
+//    
+//    func toAnyObject() -> AnyObject {
+//        return [
+//            "name" : name,
+//            "completed" : completed
+//        ]
+//    }
+//}

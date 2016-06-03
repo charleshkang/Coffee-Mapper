@@ -148,6 +148,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return CustomTableViewCell()
         }
     }
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }

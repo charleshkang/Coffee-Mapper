@@ -60,6 +60,5 @@ class CoffeeShop {
         }
         
         self._coffeeShopRef = DataService.dataService.COFFEESHOP_REF.childByAppendingPath(self._coffeeShopKey)
-        
     }
 }
