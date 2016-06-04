@@ -23,7 +23,7 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signUpButtonTapped(sender: AnyObject)
     {
-        signIn()
+        signUp()
     }
     
     func signupErrorAlert(title: String, message: String)
@@ -34,8 +34,8 @@ class SignUpViewController: UIViewController {
         presentViewController(alert, animated: true, completion: nil)
     }
     
-    // MARK: Sign In Logic
-    func signIn()
+    // MARK: Sign Up Logic
+    func signUp()
     {
         guard
             let username = usernameTextField.text,

@@ -11,6 +11,9 @@ import QuadratTouch
 import RealmSwift
 import MapKit
 
+
+// 4bf58dd8d48988d1e0931735 is the id for coffee shops
+
 struct API
 {
     struct notifications {
@@ -91,6 +94,7 @@ class FoursquareAPI
                                     print("Realm isn't working \(error)")
                                 }
                         }
+                        print(response)
                         NSNotificationCenter.defaultCenter().postNotificationName(API.notifications.venuesUpdated, object: nil, userInfo: nil)
                     }
                 }

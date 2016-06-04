@@ -29,7 +29,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         self.reviewTextView.delegate = self
         
-        
         userReviewsTableView.registerNib(UINib(nibName: "CustomReviewCell", bundle: nil), forCellReuseIdentifier: "customReviewCellIdentifier")
         
         self.hideKeyboardWhenTappedAround()
@@ -95,10 +94,11 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     {
         DataService.dataService.CURRENT_USER_REF.observeEventType(FEventType.Value, withBlock: { snapshot in
             
-            let currentUser = snapshot.value.objectForKey("username") as! String
+//            let currentUser = snapshot.value.objectForKey("username") as! String
+            let currentUser = snapshot.value.valueForKey("username") as? String
             
             print("Username: \(currentUser)")
-            self.currentUsername = currentUser
+            self.currentUsername = currentUser!
             }, withCancelBlock: { error in
                 print(error.description)
         })

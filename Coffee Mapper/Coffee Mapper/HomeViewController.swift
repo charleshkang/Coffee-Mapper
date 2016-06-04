@@ -31,13 +31,11 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UITableVi
     {
         super.viewWillAppear(animated)
         
-        if let mapView = self.mapView
-        {
+        if let mapView = self.mapView {
             mapView.delegate = self
         }
         
-        if let tableView = self.tableView
-        {
+        if let tableView = self.tableView {
             tableView.delegate = self
             tableView.dataSource = self
         }
@@ -78,14 +76,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UITableVi
     
     func refreshVenues(location: CLLocation?, getDataFromFoursquare:Bool = false)
     {
-        if location != nil
-        {
+        if location != nil {
             lastLocation = location
         }
-        if let location = lastLocation
-        {
-            if getDataFromFoursquare == true
-            {
+        
+        if let location = lastLocation {
+            if getDataFromFoursquare == true {
                 FoursquareAPI.sharedInstance.getCoffeeShopsWithLocation(location)
             }
             
@@ -97,8 +93,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UITableVi
                 location.distanceFromLocation($0.coordinate) < location.distanceFromLocation($1.coordinate)
             }
             
-            for venue in venues!
-            {
+            for venue in venues! {
                 let annotation = CoffeeAnnotation(title: venue.name, coordinate: CLLocationCoordinate2D(latitude: Double(venue.latitude), longitude: Double(venue.longitude)))
                 mapView?.addAnnotation(annotation)
             }
@@ -123,14 +118,12 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UITableVi
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?
     {
-        if annotation.isKindOfClass(MKAnnotation)
-        {
+        if annotation.isKindOfClass(MKAnnotation) {
             return nil
         }
         
         var view = mapView.dequeueReusableAnnotationViewWithIdentifier("annotationIdentifier")
-        if view == nil
-        {
+        if view == nil {
             view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "annotationIdentifier")
         }
         view?.canShowCallout = true
@@ -164,12 +157,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UITableVi
     {
         var cell = tableView.dequeueReusableCellWithIdentifier("cellIdentifier")
         
-        if cell == nil
-        {
+        if cell == nil {
             cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cellIdentifier")
         }
-        if let venue = venues?[indexPath.row]
-        {
+        if let venue = venues?[indexPath.row] {
             cell!.textLabel?.text = venue.name
             cell!.detailTextLabel?.text = venue.address
             
@@ -179,21 +170,19 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UITableVi
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        if let venue = venues?[indexPath.row]
-            
-        {
+        if let venue = venues?[indexPath.row] {
             let region = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2D(latitude: Double(venue.latitude), longitude: Double(venue.longitude)), distanceSpan, distanceSpan)
             mapView?.setRegion(region, animated: true)
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
         guard let indexPath = tableView?.indexPathForSelectedRow,
             venue = venues?[indexPath.row],
             detailVC = segue.destinationViewController as? DetailViewController else {
                 return
         }
-        
         detailVC.venue = venue
     }
 }
