@@ -11,7 +11,7 @@ import Firebase
 
 class Reviews
 {
-    private var _reviewRef: Firebase!
+    var _reviewRef: Firebase!
     
     private var _reviewKey: String!
     private var _reviewText: String!
@@ -67,5 +67,6 @@ class Reviews
         }
         
         self._reviewRef = DataService.dataService.REVIEW_REF.childByAppendingPath(self._reviewKey)
+        
     }
 }
