@@ -17,8 +17,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var venue: Venue!
     var user: User!
     var currentUsername = ""
+    var newCoffeeShop = ""
     let starRatingView = HCSStarRatingView()
-    var venues = Venue?.self
     
     @IBOutlet var reviewTextView: UITextView!
     @IBOutlet var userReviewsTableView: UITableView!
@@ -28,46 +28,44 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         
         self.reviewTextView.delegate = self
-        
-        
-        userReviewsTableView.registerNib(UINib(nibName: "CustomReviewCell", bundle: nil), forCellReuseIdentifier: "customReviewCellIdentifier")
-        
         self.hideKeyboardWhenTappedAround()
+        self.updateReviewsOnFirebase()
+        self.navigationItem.title = venue.name
         
-        navigationItem.title = venue.name
+        self.userReviewsTableView.registerNib(UINib(nibName: "CustomReviewCell", bundle: nil), forCellReuseIdentifier: "customReviewCellIdentifier")
         
-        getCurrentUsersName()
-        updateReviewsOnFirebase()
+        DataService.dataService.CURRENT_USER_REF.observeEventType(FEventType.Value, withBlock: { snapshot in
+    
+            
+            let currentUser = snapshot.value.objectForKey("username") as! String
+            
+//            print("Username: \(currentUser)")
+            self.currentUsername = currentUser
+            }, withCancelBlock: { error in
+                print(error.description)
+        })
     }
     
     @IBAction func submitReviewButton(sender: AnyObject)
     {
         let defaults = NSUserDefaults.standardUserDefaults()
-        let reviewRatings = defaults.floatForKey("reviews")
-        print("rating: \(reviewRatings)")
+        let reviewRating = defaults.floatForKey("reviews")
         
         let reviewText = reviewTextView.text
         
-        let coffeeId = String(Firebase(url: "https://coffee-mapper-charleshkang.firebaseio.com/coffee-shops/coffeeShopName"))
-        
-        
         if reviewText != "" {
-            let newReview: Dictionary<String, AnyObject> = [
-                "reviewText": reviewText!,
-                "reviewAuthor": currentUsername,
-                "reviewRating": reviewRatings,
-                "reviewShopName": venue.name
-            ]
-            let newCoffeeShop: Dictionary<String, AnyObject> = [
-                "coffeeShopName": venue.name,
-                "coffeeShopRating": reviewRatings,
-                "coffeeShopReview": reviewText,
-                "coffeeShopReviewerName": currentUsername,
-                "coffeeShopId": coffeeId
-            ]
-            DataService.dataService.createNewReview(newReview)
-            DataService.dataService.addNewCoffeeShop(newCoffeeShop)
+//            let newReview: Dictionary<String, AnyObject> = [
+//                "reviewText": reviewText!,
+//                "reviewAuthor": currentUsername,
+//                "reviewRating": reviewRatings,
+//                "reviewShopName": venue.name
+//            ]
             
+            let reviewContent = ["reviewRating": reviewRating, "reviewText": reviewText]
+            let coffeeShop = ["\(venue.id)" : reviewContent]
+//            self.newCoffeeShop = venue.id
+//            DataService.dataService.createNewReview(newReview)
+            DataService.dataService.addNewCoffeeShopID(coffeeShop)
         }
         else {
             emptyReviewField("Oops!", message: "Make sure to leave some text in your review.")
@@ -90,19 +88,24 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         defaults.setFloat(Float(rating), forKey: "reviews")
     }
     
-    // MARK: Get Username and Update Reviews
-    func getCurrentUsersName()
+    func checkForCoffeeShopID()
     {
-        DataService.dataService.CURRENT_USER_REF.observeEventType(FEventType.Value, withBlock: { snapshot in
-            
-            let currentUser = snapshot.value.objectForKey("username") as! String
-            
-            print("Username: \(currentUser)")
-            self.currentUsername = currentUser
-            }, withCancelBlock: { error in
-                print(error.description)
-        })
+        
     }
+    
+    // MARK: Get Username and Update Reviews
+//    func getCurrentUsersName()
+//    {
+//        DataService.dataService.CURRENT_USER_REF.observeEventType(FEventType.Value, withBlock: { snapshot in
+//            
+//            let currentUser = snapshot.value.objectForKey("username") as! String
+//            
+//            print("Username: \(currentUser)")
+//            self.currentUsername = currentUser
+//            }, withCancelBlock: { error in
+//                print(error.description)
+//        })
+//    }
     
     func updateReviewsOnFirebase()
     {
@@ -138,10 +141,10 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let review = reviews[indexPath.row]
+//        let review = reviews[indexPath.row]
         
         if let cell = tableView.dequeueReusableCellWithIdentifier("customReviewCellIdentifier") as? CustomTableViewCell {
-            cell.configureCell(review)
+//            cell.configureCell(review)
             
             return cell
         } else {

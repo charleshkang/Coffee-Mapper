@@ -12,18 +12,21 @@ import Firebase
 class DataService
 {
     static let dataService = DataService()
+    var venue = Venue()
     
-    private var _BASE_REF = Firebase(url: "\(BASE_URL)")
-    private var _USER_REF = Firebase(url: "\(BASE_URL)/users")
-    private var _REVIEW_REF = Firebase(url: "\(BASE_URL)/reviews")
-    private var _COFFEESHOP_REF = Firebase(url: "\(BASE_URL)/coffee-shops")
+    var FB_BASE_REF = Firebase(url: "\(BASE_URL)")
+    var FB_USER_REF = Firebase(url: "\(BASE_URL)/users")
+    var FB_REVIEW_REF = Firebase(url: "\(BASE_URL)/reviews")
+    //    var FB_FOURSQUAREID_REF = Firebase(url: "\(BASE_URL)/reviews")
+    
+    //    private var _COFFEESHOP_REF = Firebase(url: "\(BASE_URL)/coffee-shops")
     
     var BASE_REF: Firebase {
-        return _BASE_REF
+        return FB_BASE_REF
     }
     
     var USER_REF: Firebase {
-        return _USER_REF
+        return FB_USER_REF
     }
     
     var CURRENT_USER_REF: Firebase {
@@ -33,50 +36,82 @@ class DataService
     }
     
     var REVIEW_REF: Firebase {
-        return _REVIEW_REF
+        return FB_REVIEW_REF
     }
     
-    var COFFEESHOP_REF: Firebase {
-        return _COFFEESHOP_REF
-    }
     
-    func createNewAccount(uid: String, user: Dictionary<String, String>) {
+    //    var COFFEESHOP_REF: Firebase {
+    //        return _COFFEESHOP_REF
+    //    }
+    
+    func createNewAccount(uid: String, user: Dictionary<String, String>)
+    {
         USER_REF.childByAppendingPath(uid).setValue(user)
     }
     
-    func createNewReview(review: Dictionary<String, AnyObject>) {
+    func createNewReview(review: Dictionary<String, AnyObject>)
+    {
         let firebaseNewReview = REVIEW_REF.childByAutoId()
         firebaseNewReview.setValue(review)
     }
     
-    func addNewCoffeeShop(coffeeShop: Dictionary<String, AnyObject>) {
-        let firebaseNewCoffeeShop = COFFEESHOP_REF.childByAutoId()
-        firebaseNewCoffeeShop.setValue(coffeeShop)
+    func addNewCoffeeShopID(review: AnyObject)
+    {
+        let coffeeKey = review.allKeys.first
+        // make a function to search if current coffeeshop exist in FB
+        let newCoffeeShop = FB_REVIEW_REF
+        isCoffeeShopExist("\(coffeeKey)") { (doesExist) in
+            
+            if doesExist {
+                newCoffeeShop.childByAppendingPath("\(coffeeKey)").childByAutoId()
+                let reviewContent = review.objectForKey("\(coffeeKey)")
+                newCoffeeShop.setValue(reviewContent)
+            } else {
+                newCoffeeShop.setValue(review)
+            }
+        }
     }
+    
+    func isCoffeeShopExist(shopID: String, completion: (doesExist: Bool) -> ()) {
+        let queryCS = FB_REVIEW_REF
+        queryCS.childByAppendingPath("\(shopID)")
+        queryCS.observeEventType(FEventType.Value, withBlock: { snapshot in
+            if snapshot.value is NSNull {
+                completion(doesExist: false)
+            } else {
+                completion(doesExist: true)
+            }
+        })
+    }
+    
+    //    func addNewCoffeeShop(coffeeShop: Dictionary<String, AnyObject>) {
+    //        let firebaseNewCoffeeShop = COFFEESHOP_REF.childByAutoId()
+    //        firebaseNewCoffeeShop.setValue(coffeeShop)
+    //    }
 }
 
-struct ReviewItem
-{
-    let name: String!
-    let ref: Firebase?
-    var completed: Bool!
-    
-    init(name: String, completed: Bool) {
-        self.name = name
-        self.completed = completed
-        self.ref = nil
-    }
-    
-    init(snapshot: FDataSnapshot) {
-        name = snapshot.value["name"] as! String
-        completed = snapshot.value["completed"] as! Bool
-        ref = snapshot.ref
-    }
-    
-    func toAnyObject() -> AnyObject {
-        return [
-            "name" : name,
-            "completed" : completed
-        ]
-    }
-}
+//struct ReviewItem
+//{
+//    let name: String!
+//    let ref: Firebase?
+//    var completed: Bool!
+//
+//    init(name: String, completed: Bool) {
+//        self.name = name
+//        self.completed = completed
+//        self.ref = nil
+//    }
+//
+//    init(snapshot: FDataSnapshot) {
+//        name = snapshot.value["name"] as! String
+//        completed = snapshot.value["completed"] as! Bool
+//        ref = snapshot.ref
+//    }
+//
+//    func toAnyObject() -> AnyObject {
+//        return [
+//            "name" : name,
+//            "completed" : completed
+//        ]
+//    }
+//}

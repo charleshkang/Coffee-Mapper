@@ -59,7 +59,7 @@ class CoffeeShop {
             self._coffeeShopRating = rating
         }
         
-        self._coffeeShopRef = DataService.dataService.COFFEESHOP_REF.childByAppendingPath(self._coffeeShopKey)
+//        self._coffeeShopRef = DataService.dataService.COFFEESHOP_REF.childByAppendingPath(self._coffeeShopKey)
         
     }
 }
