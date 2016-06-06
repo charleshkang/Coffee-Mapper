@@ -27,27 +27,26 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         
         self.reviewTextView.delegate = self
-    
+        
         self.hideKeyboardWhenTappedAround()
         self.updateReviewsOnFirebase()
         self.getCurrentUsersName()
         self.navigationItem.title = venue.name
         
         self.userReviewsTableView.registerNib(UINib(nibName: "CustomReviewCell", bundle: nil), forCellReuseIdentifier: "customReviewCellIdentifier")
-        }
+    }
     
     @IBAction func submitReviewButton(sender: AnyObject)
     {
         let defaults = NSUserDefaults.standardUserDefaults()
         let reviewRating = defaults.floatForKey("reviews")
         let reviewText = reviewTextView.text
-
+        
         if reviewText != "" {
             let reviewContent = [
                 "reviewRating": reviewRating,
                 "reviewText": reviewText,
-                "reviewAuthor": currentUsername,
-                "reviewLocation": venue.name
+                "reviewAuthor": currentUsername
             ]
             DataService.dataService.addReviewForCoffeeShop(venue.id, review: reviewContent)
             print(reviewContent)
@@ -72,24 +71,30 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setFloat(Float(rating), forKey: "reviews")
     }
-
+    
+    
     // MARK: Get Username and Update Reviews
     func getCurrentUsersName()
     {
-        DataService.dataService.CURRENT_USER_REF.observeEventType(FEventType.Value, withBlock: { snapshot in
-            
-            let currentUser = snapshot.value.objectForKey("username") as! String
+        DataService.dataService.FB_REVIEW_REF.childByAppendingPath("\(venue.id)").observeEventType(FEventType.Value, withBlock: { snapshot in
+        
+//            let currentUser = snapshot.value.objectForKey("username")
+            let currentUser = NSUserDefaults.standardUserDefaults().stringForKey("uid")
+            DataService.dataService.FB_USER_REF.childByAppendingPath("\(currentUser!)").observeSingleEventOfType(.Value, withBlock: { (dataSnapShot) in
+                print("\(dataSnapShot.value)")
+                self.currentUsername = dataSnapShot.value.objectForKey("username") as! String
+            })
             
             print("Username: \(currentUser)")
-            self.currentUsername = currentUser
+//            self.currentUsername = currentUser
             }, withCancelBlock: { error in
-                print(error.description)
+//                print(error.description)
         })
     }
-
+    
     func updateReviewsOnFirebase()
     {
-        DataService.dataService.REVIEW_REF.observeEventType(FEventType.Value, withBlock: { snapshot in
+        DataService.dataService.REVIEW_REF.childByAppendingPath("\(venue.id)").observeEventType(FEventType.Value, withBlock: { snapshot in
             
             self.reviews = []
             
@@ -97,9 +102,9 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 for snap in snapshots {
                     
                     if let reviewsDictionary = snap.value as? Dictionary<String, AnyObject> {
-                        let key = snap.key
-                        let review = Reviews(key: key, dictionary: reviewsDictionary)
-                        self.reviews.insert(review, atIndex: 0)
+                                                let review = Reviews(dictionary: reviewsDictionary)
+                                                print("\(review.reviewText)")
+                                                self.reviews.insert(review, atIndex: 0)
                     }
                 }
             }
@@ -124,7 +129,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         
         if let cell = tableView.dequeueReusableCellWithIdentifier("customReviewCellIdentifier") as? CustomTableViewCell {
-            cell.configureCell(review)
+                        cell.configureCell(review)
             
             return cell
         } else {

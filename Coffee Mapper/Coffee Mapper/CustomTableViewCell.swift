@@ -22,7 +22,7 @@ class CustomTableViewCell: UITableViewCell {
         self.review = review
         
         self.reviewText.text = review.reviewText
-        self.reviewRating.text = "\(review.rating)"
-        self.reviewerNameLabel.text = review.username
+        self.reviewRating.text = String(review.reviewRating)
+        self.reviewerNameLabel.text = review.reviewAuthor
     }
 }
