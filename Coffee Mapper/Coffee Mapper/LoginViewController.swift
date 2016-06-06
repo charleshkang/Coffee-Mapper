@@ -48,9 +48,9 @@ class LoginViewController: UIViewController
             } else {
                 NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
                 print("user logged in with uid:\(authData.uid)")
-
                 
-                let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("navControllerID")
+                
+                let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("tabBarControllerID")
                 self.navigationController?.pushViewController(homeVC!, animated: true)
                 self.showViewController(homeVC!, sender: self)
             }

@@ -6,7 +6,6 @@
 //  Copyright © 2016 Charles Kang. All rights reserved.
 //
 
-import Foundation
 import RealmSwift
 import MapKit
 

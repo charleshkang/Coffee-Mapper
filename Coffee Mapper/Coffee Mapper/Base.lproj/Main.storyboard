@@ -25,17 +25,22 @@
             <objects>
                 <navigationController storyboardIdentifier="navControllerID" id="76b-1L-L1q" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Coffee Shops" image="cup" id="VCz-u9-7X9"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="t0e-Jl-qey">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="wN9-SW-tEq">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="d2Z-xd-UJX" kind="relationship" relationship="rootViewController" id="Fue-uQ-sb9"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TPu-bH-L3W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="698" y="-197"/>
+            <point key="canvasLocation" x="644" y="-197"/>
         </scene>
         <!--Coffee Mapper-->
         <scene sceneID="Fqq-Pv-Kun">
@@ -119,7 +124,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="H0C-Dv-4li">
             <objects>
-                <tabBarController id="xJ3-Zq-Vb6" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarControllerID" id="xJ3-Zq-Vb6" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="DFn-jx-8te"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="yJw-rr-QJR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -133,7 +138,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SzH-ok-O18" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="62" y="-197"/>
+            <point key="canvasLocation" x="-42" y="-197"/>
         </scene>
         <!--Something Else-->
         <scene sceneID="G5v-zm-e4m">
@@ -169,8 +174,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUH-7A-8jn" userLabel="Other Reviews View">
                                 <rect key="frame" x="0.0" y="311" width="600" height="243"/>
                                 <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cBu-tV-agW">
+                                        <rect key="frame" x="0.0" y="58" width="600" height="230"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="yDm-Fk-xUL" id="QwV-JV-quI"/>
+                                            <outlet property="delegate" destination="yDm-Fk-xUL" id="4IB-dj-N6O"/>
+                                        </connections>
+                                    </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rQ7-ke-Dm4" userLabel="Other Reviews Bar">
-                                        <rect key="frame" x="0.0" y="63" width="600" height="30"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inN-v3-Xd5">
                                                 <rect key="frame" x="252" y="5" width="104" height="20"/>
@@ -186,22 +199,14 @@
                                             <constraint firstItem="inN-v3-Xd5" firstAttribute="top" secondItem="rQ7-ke-Dm4" secondAttribute="top" constant="5" id="sAI-Pe-UUo"/>
                                         </constraints>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cBu-tV-agW">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="196"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="yDm-Fk-xUL" id="QwV-JV-quI"/>
-                                            <outlet property="delegate" destination="yDm-Fk-xUL" id="4IB-dj-N6O"/>
-                                        </connections>
-                                    </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="cBu-tV-agW" secondAttribute="trailing" id="FxR-GM-LKN"/>
-                                    <constraint firstItem="rQ7-ke-Dm4" firstAttribute="top" secondItem="aUH-7A-8jn" secondAttribute="top" constant="63" id="O0t-en-xb9"/>
+                                    <constraint firstItem="rQ7-ke-Dm4" firstAttribute="top" secondItem="aUH-7A-8jn" secondAttribute="top" constant="28" id="O0t-en-xb9"/>
                                     <constraint firstAttribute="trailing" secondItem="rQ7-ke-Dm4" secondAttribute="trailing" id="P2M-wI-heo"/>
                                     <constraint firstAttribute="bottom" secondItem="cBu-tV-agW" secondAttribute="bottom" constant="-45" id="bIm-w9-XOI"/>
-                                    <constraint firstItem="cBu-tV-agW" firstAttribute="top" secondItem="rQ7-ke-Dm4" secondAttribute="bottom" constant="-1" id="bvw-Sm-gDb"/>
+                                    <constraint firstItem="cBu-tV-agW" firstAttribute="top" secondItem="rQ7-ke-Dm4" secondAttribute="bottom" id="bvw-Sm-gDb"/>
                                     <constraint firstItem="rQ7-ke-Dm4" firstAttribute="leading" secondItem="aUH-7A-8jn" secondAttribute="leading" id="hEG-OH-V9U"/>
                                     <constraint firstItem="cBu-tV-agW" firstAttribute="centerY" secondItem="aUH-7A-8jn" secondAttribute="centerY" constant="17.5" id="la7-7W-gf0"/>
                                     <constraint firstItem="cBu-tV-agW" firstAttribute="leading" secondItem="aUH-7A-8jn" secondAttribute="leading" id="m51-90-f5m"/>
@@ -314,7 +319,7 @@
                             <constraint firstAttribute="trailing" secondItem="aUH-7A-8jn" secondAttribute="trailing" id="ZcD-9x-JPi"/>
                             <constraint firstItem="rsQ-Nc-TuI" firstAttribute="centerY" secondItem="arz-k5-6UA" secondAttribute="centerY" constant="-106" id="dzB-tx-xyE"/>
                             <constraint firstItem="rsQ-Nc-TuI" firstAttribute="width" secondItem="arz-k5-6UA" secondAttribute="height" multiplier="1:1" id="fVR-LD-dcV"/>
-                            <constraint firstItem="q9A-Rk-mjO" firstAttribute="top" secondItem="aUH-7A-8jn" secondAttribute="bottom" constant="2" id="i6F-YT-5DU"/>
+                            <constraint firstItem="q9A-Rk-mjO" firstAttribute="top" secondItem="aUH-7A-8jn" secondAttribute="bottom" constant="-3" id="i6F-YT-5DU"/>
                             <constraint firstItem="rsQ-Nc-TuI" firstAttribute="leading" secondItem="arz-k5-6UA" secondAttribute="leading" id="k3k-Rd-AXm"/>
                         </constraints>
                         <variation key="default">
@@ -326,7 +331,6 @@
                         </variation>
                     </view>
                     <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="reviewTextView" destination="Bnu-Sv-kjA" id="h1p-tY-An5"/>
                         <outlet property="userReviewsTableView" destination="cBu-tV-agW" id="i0A-U2-eJP"/>

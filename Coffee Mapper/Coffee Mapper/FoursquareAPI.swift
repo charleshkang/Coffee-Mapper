@@ -11,7 +11,6 @@ import QuadratTouch
 import RealmSwift
 import MapKit
 
-
 // 4bf58dd8d48988d1e0931735 is the id for coffee shops
 
 struct API
@@ -41,7 +40,7 @@ class FoursquareAPI
         {
             var parameters = location.parameters()
             parameters += [Parameter.categoryId: "4bf58dd8d48988d1e0931735"]
-            parameters += [Parameter.radius: "20000"]
+            parameters += [Parameter.radius: "2000"]
             parameters += [Parameter.limit: "50"]
             
             let searchTask = session.venues.search(parameters)
