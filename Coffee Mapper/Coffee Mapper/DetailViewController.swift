@@ -65,7 +65,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let coffeeShop = ["\(venue.id)" : reviewContent]
 //            self.newCoffeeShop = venue.id
 //            DataService.dataService.createNewReview(newReview)
-            DataService.dataService.addNewCoffeeShopID(coffeeShop)
+            DataService.dataService.addReviewForCoffeeShop(venue.id, review: reviewContent)
+//            DataService.dataService.addNewCoffeeShopID(coffeeShop)
         }
         else {
             emptyReviewField("Oops!", message: "Make sure to leave some text in your review.")
@@ -87,12 +88,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setFloat(Float(rating), forKey: "reviews")
     }
-    
-    func checkForCoffeeShopID()
-    {
-        
-    }
-    
+
     // MARK: Get Username and Update Reviews
 //    func getCurrentUsersName()
 //    {

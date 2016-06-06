@@ -39,7 +39,6 @@ class DataService
         return FB_REVIEW_REF
     }
     
-    
     //    var COFFEESHOP_REF: Firebase {
     //        return _COFFEESHOP_REF
     //    }
@@ -55,34 +54,37 @@ class DataService
         firebaseNewReview.setValue(review)
     }
     
-    func addNewCoffeeShopID(review: AnyObject)
-    {
-        let coffeeKey = review.allKeys.first
-        // make a function to search if current coffeeshop exist in FB
-        let newCoffeeShop = FB_REVIEW_REF
-        isCoffeeShopExist("\(coffeeKey)") { (doesExist) in
-            
-            if doesExist {
-                newCoffeeShop.childByAppendingPath("\(coffeeKey)").childByAutoId()
-                let reviewContent = review.objectForKey("\(coffeeKey)")
-                newCoffeeShop.setValue(reviewContent)
-            } else {
-                newCoffeeShop.setValue(review)
-            }
-        }
+    func addReviewForCoffeeShop(shopId: String, review: AnyObject) {
+        FB_REVIEW_REF.childByAppendingPath(shopId).childByAutoId().setValue(review)
     }
-    
-    func isCoffeeShopExist(shopID: String, completion: (doesExist: Bool) -> ()) {
-        let queryCS = FB_REVIEW_REF
-        queryCS.childByAppendingPath("\(shopID)")
-        queryCS.observeEventType(FEventType.Value, withBlock: { snapshot in
-            if snapshot.value is NSNull {
-                completion(doesExist: false)
-            } else {
-                completion(doesExist: true)
-            }
-        })
-    }
+//    func addNewCoffeeShopID(review: AnyObject)
+//    {
+//        let coffeeKey = review.allKeys.first
+//        // make a function to search if current coffeeshop exist in FB
+//        let newCoffeeShop = FB_REVIEW_REF
+//        doesCoffeeShopExist("\(coffeeKey)") { (doesExist) in
+//            
+//            if doesExist {
+//                newCoffeeShop.childByAppendingPath("\(coffeeKey)").childByAutoId()
+//                let reviewContent = review.objectForKey("\(coffeeKey)")
+//                newCoffeeShop.setValue(reviewContent)
+//            } else {
+//                newCoffeeShop.setValue(review)
+//            }
+//        }
+//    }
+//    
+//    func doesCoffeeShopExist(shopID: String, completion: (doesExist: Bool) -> ()) {
+//        let queryCS = FB_REVIEW_REF
+//        queryCS.childByAppendingPath("\(shopID)")
+//        queryCS.observeEventType(FEventType.Value, withBlock: { snapshot in
+//            if snapshot.value is NSNull {
+//                completion(doesExist: false)
+//            } else {
+//                completion(doesExist: true)
+//            }
+//        })
+//    }
     
     //    func addNewCoffeeShop(coffeeShop: Dictionary<String, AnyObject>) {
     //        let firebaseNewCoffeeShop = COFFEESHOP_REF.childByAutoId()
