@@ -50,7 +50,7 @@ class LoginViewController: UIViewController
                 print("user logged in with uid:\(authData.uid)")
                 
                 
-                let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("tabBarControllerID")
+                let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("navControllerID")
                 self.navigationController?.pushViewController(homeVC!, animated: true)
                 self.showViewController(homeVC!, sender: self)
             }
