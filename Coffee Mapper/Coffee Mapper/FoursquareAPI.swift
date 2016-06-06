@@ -39,7 +39,7 @@ class FoursquareAPI
         if let session = self.session
         {
             var parameters = location.parameters()
-            parameters += [Parameter.categoryId: "4bf58dd8d48988d1e0931735"]
+            parameters += [Parameter.categoryId: "4bf58dd8d48988d16d941735, 4bf58dd8d48988d1e0931735"]
             parameters += [Parameter.radius: "2000"]
             parameters += [Parameter.limit: "50"]
             
@@ -93,7 +93,7 @@ class FoursquareAPI
                                     print("Realm isn't working \(error)")
                                 }
                         }
-//                        print(response)
+                        print(response)
                         NSNotificationCenter.defaultCenter().postNotificationName(API.notifications.venuesUpdated, object: nil, userInfo: nil)
                     }
                 }
