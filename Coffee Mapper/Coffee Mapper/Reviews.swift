@@ -67,6 +67,5 @@ class Reviews
         }
         
         self._reviewRef = DataService.dataService.REVIEW_REF.childByAppendingPath(self._reviewKey)
-        
     }
 }
