@@ -58,7 +58,6 @@ class SignUpViewController: UIViewController {
                 let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("navControllerID")
                 self.navigationController?.pushViewController(homeVC!, animated: true)
                 self.showViewController(homeVC!, sender: self)
-
             }
         })
     }}

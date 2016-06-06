@@ -13,8 +13,9 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet var reviewerNameLabel: UILabel!
     @IBOutlet var reviewRating: UILabel!
     @IBOutlet var reviewText: UILabel!
-
+    
     var review: Reviews!
+    
     var reviewRef: Firebase!
     
     func configureCell(review: Reviews) {

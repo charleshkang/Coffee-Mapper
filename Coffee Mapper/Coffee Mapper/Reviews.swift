@@ -11,61 +11,61 @@ import Firebase
 
 class Reviews
 {
-    var _reviewRef: Firebase!
+    var reviewRef: Firebase!
     
-    private var _reviewKey: String!
-    private var _reviewText: String!
-    private var _username: String!
-    private var _reviewRating: Float!
-    private var _coffeeShopName: String!
+    var reviewKey: String!
+    var reviewText: String!
+    var reviewAuthor: String!
+    var reviewRating: Float!
+    var reviewLocation: String!
     
-    var reviewKey: String
+    var key: String
     {
-        return _reviewKey
+        return reviewKey
     }
     
-    var reviewText: String
+    var text: String
     {
-        return _reviewText
+        return reviewText
     }
     
     var username: String
     {
-        return _username
+        return reviewAuthor
     }
     
     var rating: Float
     {
-        return _reviewRating
+        return reviewRating
     }
     
-    var coffeeShopName: String
+    var location: String
     {
-        return _coffeeShopName
+        return reviewLocation
     }
     
     init(key: String, dictionary: Dictionary<String, AnyObject>)
     {
-        self._reviewKey = key
+        self.reviewKey = key
         
         if let rating = dictionary["reviewRating"] as? Float {
-            self._reviewRating = rating
+            self.reviewRating = rating
         }
         
         if let shopName = dictionary["reviewShopName"] as? String {
-            self._coffeeShopName = shopName
+            self.reviewLocation = shopName
         }
         
         if let review = dictionary["reviewText"] as? String {
-            self._reviewText = review
+            self.reviewText = review
         }
         
         if let user = dictionary["reviewAuthor"] as? String {
-            self._username = user
+            self.reviewAuthor = user
         } else {
-            self._username = ""
+            self.reviewAuthor = ""
         }
         
-        self._reviewRef = DataService.dataService.REVIEW_REF.childByAppendingPath(self._reviewKey)
+        self.reviewRef = DataService.dataService.REVIEW_REF.childByAppendingPath(self.key)
     }
 }

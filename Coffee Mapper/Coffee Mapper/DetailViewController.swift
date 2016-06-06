@@ -40,20 +40,17 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     {
         let defaults = NSUserDefaults.standardUserDefaults()
         let reviewRating = defaults.floatForKey("reviews")
-        
         let reviewText = reviewTextView.text
 
         if reviewText != "" {
-            let newReview: Dictionary<String, AnyObject> = [
-                "reviewText": reviewText!,
-                "reviewAuthor": currentUsername,
+            let reviewContent = [
                 "reviewRating": reviewRating,
-                "reviewShopName": venue.name
+                "reviewText": reviewText,
+                "reviewAuthor": currentUsername,
+                "reviewLocation": venue.name
             ]
-            DataService.dataService.createNewReview(newReview)
-            
-            let reviewContent = ["reviewRating": reviewRating, "reviewText": reviewText]
             DataService.dataService.addReviewForCoffeeShop(venue.id, review: reviewContent)
+            print(reviewContent)
         }
         else {
             emptyReviewField("Oops!", message: "Make sure to leave some text in your review.")
@@ -77,7 +74,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     // MARK: Get Username and Update Reviews
-
     func getCurrentUsersName()
     {
         DataService.dataService.CURRENT_USER_REF.observeEventType(FEventType.Value, withBlock: { snapshot in
@@ -125,6 +121,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let review = reviews[indexPath.row]
+        
         
         if let cell = tableView.dequeueReusableCellWithIdentifier("customReviewCellIdentifier") as? CustomTableViewCell {
             cell.configureCell(review)
