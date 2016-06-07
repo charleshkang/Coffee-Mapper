@@ -14,16 +14,14 @@
 		BF1BE63B1CC19A3D00776328 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BE63A1CC19A3D00776328 /* User.swift */; };
 		BF1BE63D1CC1ACA900776328 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BE63C1CC1ACA800776328 /* Reviews.swift */; };
 		BF5FD1A51CE3DC2F00AE5579 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5FD1A41CE3DC2F00AE5579 /* CustomTableViewCell.swift */; };
-		BF7B3EC51D067EF500D2DC04 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7B3EC41D067EF500D2DC04 /* RealmSwift.framework */; };
+		BF72E0C11D06AE5F00EF1BA2 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7B3EC21D067EF200D2DC04 /* Realm.framework */; };
+		BF72E0C21D06AE5F00EF1BA2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7B3EC41D067EF500D2DC04 /* RealmSwift.framework */; };
 		BF7B3EC91D067F6C00D2DC04 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7B3EC61D067F6C00D2DC04 /* Firebase.framework */; };
 		BF7B3ECA1D067F6C00D2DC04 /* HCSStarRatingView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7B3EC71D067F6C00D2DC04 /* HCSStarRatingView.framework */; };
 		BF7B3ECB1D067F6C00D2DC04 /* QuadratTouch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7B3EC81D067F6C00D2DC04 /* QuadratTouch.framework */; };
-		BF850DC41D06838F00B0A5CA /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7B3EC21D067EF200D2DC04 /* Realm.framework */; };
 		BF850DC61D06838F00B0A5CA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1BE62D1CC0534A00776328 /* MapKit.framework */; };
 		BF850DC81D06838F00B0A5CA /* Pods_Coffee_Mapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1756AE2FEB795BB7C345213E /* Pods_Coffee_Mapper.framework */; };
-		BF850DCB1D0683BA00B0A5CA /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7B3EC41D067EF500D2DC04 /* RealmSwift.framework */; };
 		BF850DCC1D0683BA00B0A5CA /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF7B3EC41D067EF500D2DC04 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BF850DCD1D0683BA00B0A5CA /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7B3EC21D067EF200D2DC04 /* Realm.framework */; };
 		BF850DCE1D0683BA00B0A5CA /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF7B3EC21D067EF200D2DC04 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BFA474AB1CBEEC4200BA3928 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474AA1CBEEC4200BA3928 /* LoginViewController.swift */; };
 		BFA474AF1CBEF38800BA3928 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474AE1CBEF38800BA3928 /* SignUpViewController.swift */; };
@@ -115,14 +113,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF850DCD1D0683BA00B0A5CA /* Realm.framework in Frameworks */,
-				BF850DC41D06838F00B0A5CA /* Realm.framework in Frameworks */,
+				BF72E0C11D06AE5F00EF1BA2 /* Realm.framework in Frameworks */,
+				BF72E0C21D06AE5F00EF1BA2 /* RealmSwift.framework in Frameworks */,
 				BF7B3EC91D067F6C00D2DC04 /* Firebase.framework in Frameworks */,
 				BF7B3ECA1D067F6C00D2DC04 /* HCSStarRatingView.framework in Frameworks */,
 				BF7B3ECB1D067F6C00D2DC04 /* QuadratTouch.framework in Frameworks */,
-				BF7B3EC51D067EF500D2DC04 /* RealmSwift.framework in Frameworks */,
 				BF850DC81D06838F00B0A5CA /* Pods_Coffee_Mapper.framework in Frameworks */,
-				BF850DCB1D0683BA00B0A5CA /* RealmSwift.framework in Frameworks */,
 				BF850DC61D06838F00B0A5CA /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
