@@ -367,14 +367,14 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ja3-yP-ALf" userLabel="Login View">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="421"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="491"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coffee Mapper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ox5-rd-DmX">
                                         <rect key="frame" x="25" y="35" width="550" height="50"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="42"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="U2R-Rk-xB1" userLabel="Username TextField">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="U2R-Rk-xB1" userLabel="Username TextField">
                                         <rect key="frame" x="150" y="214" width="300" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="Bwa-Ux-1WH"/>
@@ -432,7 +432,7 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OUl-fk-jf2" userLabel="Username TextField">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OUl-fk-jf2" userLabel="Username TextField">
                                         <rect key="frame" x="150" y="293" width="300" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="yj2-0c-xrD"/>
@@ -491,7 +491,7 @@
                             <constraint firstAttribute="trailing" secondItem="8Lp-BV-JNI" secondAttribute="trailing" id="DGM-lX-PYm"/>
                             <constraint firstAttribute="trailing" secondItem="Ja3-yP-ALf" secondAttribute="trailing" id="EyW-gK-XiP"/>
                             <constraint firstItem="Ja3-yP-ALf" firstAttribute="leading" secondItem="d6L-kJ-R9j" secondAttribute="leading" id="KU1-Vf-oIH"/>
-                            <constraint firstItem="7EZ-Oo-Dia" firstAttribute="top" secondItem="Ja3-yP-ALf" secondAttribute="bottom" constant="78" id="WbH-zg-uYG"/>
+                            <constraint firstItem="7EZ-Oo-Dia" firstAttribute="top" secondItem="Ja3-yP-ALf" secondAttribute="bottom" constant="8" id="WbH-zg-uYG"/>
                             <constraint firstItem="7EZ-Oo-Dia" firstAttribute="top" secondItem="Ja3-yP-ALf" secondAttribute="bottom" constant="25" id="XjH-Ky-Kl8"/>
                             <constraint firstItem="unU-Xn-OZH" firstAttribute="top" secondItem="9lf-wk-cT3" secondAttribute="bottom" id="Yew-9P-v9a"/>
                             <constraint firstItem="9lf-wk-cT3" firstAttribute="centerY" secondItem="d6L-kJ-R9j" secondAttribute="centerY" constant="242.5" id="b5m-Zk-53D"/>
@@ -538,7 +538,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RtL-I5-xGr" userLabel="Login View">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="421"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="491"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coffee Mapper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kTP-jY-REu">
                                         <rect key="frame" x="25" y="35" width="550" height="50"/>
@@ -546,7 +546,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9Ko-th-GjB" userLabel="Username TextField">
-                                        <rect key="frame" x="150" y="307" width="300" height="30"/>
+                                        <rect key="frame" x="150" y="298" width="300" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="Sa9-FP-e6t"/>
                                         </constraints>
@@ -565,7 +565,7 @@
                                         </variation>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2TB-qw-xgS">
-                                        <rect key="frame" x="234" y="261" width="133" height="36"/>
+                                        <rect key="frame" x="234" y="258" width="133" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="a1P-4k-bwb"/>
                                         </constraints>
@@ -584,7 +584,7 @@
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="852-ZP-FDm">
-                                        <rect key="frame" x="263" y="179" width="75" height="36"/>
+                                        <rect key="frame" x="263" y="176" width="75" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="X0J-gE-xhe"/>
                                         </constraints>
@@ -642,7 +642,7 @@
                                         </variation>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2rp-8s-8kr" userLabel="Username TextField">
-                                        <rect key="frame" x="150" y="225" width="300" height="30"/>
+                                        <rect key="frame" x="150" y="216" width="300" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="Xhy-OM-tzI"/>
                                             <constraint firstAttribute="width" constant="300" id="ZPE-PI-J8N"/>
@@ -667,10 +667,10 @@
                                     <constraint firstItem="852-ZP-FDm" firstAttribute="top" secondItem="RtL-I5-xGr" secondAttribute="top" constant="45" id="7fT-AY-QKO"/>
                                     <constraint firstItem="9Ko-th-GjB" firstAttribute="centerX" secondItem="RtL-I5-xGr" secondAttribute="centerX" id="Kzv-Rn-Bq6"/>
                                     <constraint firstItem="kTP-jY-REu" firstAttribute="leading" secondItem="RtL-I5-xGr" secondAttribute="leading" constant="25" id="Pvj-aM-MYg"/>
-                                    <constraint firstItem="852-ZP-FDm" firstAttribute="top" secondItem="sDs-I6-gni" secondAttribute="bottom" constant="6" id="Q8G-z9-wPW"/>
-                                    <constraint firstItem="2rp-8s-8kr" firstAttribute="top" secondItem="852-ZP-FDm" secondAttribute="bottom" constant="10" id="SpV-I3-1jh"/>
+                                    <constraint firstItem="852-ZP-FDm" firstAttribute="top" secondItem="sDs-I6-gni" secondAttribute="bottom" constant="3" id="Q8G-z9-wPW"/>
+                                    <constraint firstItem="2rp-8s-8kr" firstAttribute="top" secondItem="852-ZP-FDm" secondAttribute="bottom" constant="4" id="SpV-I3-1jh"/>
                                     <constraint firstItem="561-V0-9AC" firstAttribute="top" secondItem="kTP-jY-REu" secondAttribute="bottom" constant="20" id="WDv-Lz-tXz"/>
-                                    <constraint firstItem="9Ko-th-GjB" firstAttribute="top" secondItem="2TB-qw-xgS" secondAttribute="bottom" constant="10" id="WM5-Mz-Y8H"/>
+                                    <constraint firstItem="9Ko-th-GjB" firstAttribute="top" secondItem="2TB-qw-xgS" secondAttribute="bottom" constant="4" id="WM5-Mz-Y8H"/>
                                     <constraint firstItem="561-V0-9AC" firstAttribute="centerX" secondItem="RtL-I5-xGr" secondAttribute="centerX" id="fFY-P5-7V5"/>
                                     <constraint firstItem="9Ko-th-GjB" firstAttribute="width" secondItem="2rp-8s-8kr" secondAttribute="width" id="gRs-VH-hsh"/>
                                     <constraint firstAttribute="trailing" secondItem="kTP-jY-REu" secondAttribute="trailing" constant="25" id="jbd-ky-qhY"/>
@@ -680,7 +680,7 @@
                                     <constraint firstItem="sDs-I6-gni" firstAttribute="top" secondItem="561-V0-9AC" secondAttribute="bottom" constant="2" id="qHi-7L-XJw"/>
                                     <constraint firstItem="sDs-I6-gni" firstAttribute="centerX" secondItem="RtL-I5-xGr" secondAttribute="centerX" id="rpq-Qp-6S2"/>
                                     <constraint firstItem="kTP-jY-REu" firstAttribute="top" secondItem="RtL-I5-xGr" secondAttribute="top" constant="35" id="vGv-WD-aSf"/>
-                                    <constraint firstItem="2TB-qw-xgS" firstAttribute="top" secondItem="2rp-8s-8kr" secondAttribute="bottom" constant="6" id="yf6-TS-8Ng"/>
+                                    <constraint firstItem="2TB-qw-xgS" firstAttribute="top" secondItem="2rp-8s-8kr" secondAttribute="bottom" constant="12" id="yf6-TS-8Ng"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -753,7 +753,7 @@
                             <constraint firstItem="Eo7-9Y-qZ6" firstAttribute="height" relation="lessThanOrEqual" secondItem="4Ce-Yc-n4T" secondAttribute="height" multiplier="0.4" id="GxL-fn-tnu"/>
                             <constraint firstAttribute="trailing" secondItem="JTB-RI-cs6" secondAttribute="trailing" id="HIV-Vv-smv"/>
                             <constraint firstItem="seW-r5-DxB" firstAttribute="top" secondItem="RtL-I5-xGr" secondAttribute="bottom" constant="240" id="LKN-So-drC"/>
-                            <constraint firstItem="Eo7-9Y-qZ6" firstAttribute="top" secondItem="RtL-I5-xGr" secondAttribute="bottom" constant="78" id="NGF-1M-H4D"/>
+                            <constraint firstItem="Eo7-9Y-qZ6" firstAttribute="top" secondItem="RtL-I5-xGr" secondAttribute="bottom" constant="8" id="NGF-1M-H4D"/>
                             <constraint firstItem="RtL-I5-xGr" firstAttribute="leading" secondItem="4Ce-Yc-n4T" secondAttribute="leading" id="Rgd-MS-ETN"/>
                             <constraint firstItem="JTB-RI-cs6" firstAttribute="top" secondItem="Eo7-9Y-qZ6" secondAttribute="bottom" constant="8" id="SIu-bZ-5fp"/>
                             <constraint firstItem="EUV-lf-05l" firstAttribute="top" secondItem="4Ce-Yc-n4T" secondAttribute="top" id="TB6-xe-Jz3"/>
