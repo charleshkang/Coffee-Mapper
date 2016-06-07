@@ -93,7 +93,6 @@ class FoursquareAPI
                                     print("Realm isn't working \(error)")
                                 }
                         }
-                        print(response)
                         NSNotificationCenter.defaultCenter().postNotificationName(API.notifications.venuesUpdated, object: nil, userInfo: nil)
                     }
                 }
