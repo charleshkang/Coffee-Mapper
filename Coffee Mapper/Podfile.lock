@@ -2,17 +2,25 @@ PODS:
   - Firebase (2.5.1)
   - HCSStarRatingView (1.4.4)
   - QuadratTouch (1.1.1)
+  - Realm (1.0.0):
+    - Realm/Headers (= 1.0.0)
+  - Realm/Headers (1.0.0)
+  - RealmSwift (1.0.0):
+    - Realm (= 1.0.0)
 
 DEPENDENCIES:
   - Firebase (~> 2.5.0)
   - HCSStarRatingView (~> 1.4.4)
   - QuadratTouch (>= 1.0)
+  - RealmSwift
 
 SPEC CHECKSUMS:
   Firebase: 3565ea88b830f28f2c77ecc524622bc71a20d085
   HCSStarRatingView: 25f2497549b80f71fd1b0a2ed3631e5ccaa73362
   QuadratTouch: 296d83c63a4328f6f40af9fc728fe24f0e3b00d4
+  Realm: e15cd8e7c11d3e576f628ba0b7cb855269b4991c
+  RealmSwift: 3229306d020d96f83b335f87a0dcbf2cef0e6a2b
 
-PODFILE CHECKSUM: 511e9065815792832e95864017684c7c28c9da5f
+PODFILE CHECKSUM: 6ce0f12bcf6cc0eeafa064dbe0fc496be6046344
 
 COCOAPODS: 1.0.1

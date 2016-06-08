@@ -7,4 +7,5 @@ target 'Coffee Mapper' do
 pod 'HCSStarRatingView', '~> 1.4.4'
 pod 'Firebase', '~> 2.5.0'
 pod 'QuadratTouch', '>= 1.0'
+pod 'RealmSwift'
 end

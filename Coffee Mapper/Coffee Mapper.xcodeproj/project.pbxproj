@@ -14,15 +14,13 @@
 		BF1BE63B1CC19A3D00776328 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BE63A1CC19A3D00776328 /* User.swift */; };
 		BF1BE63D1CC1ACA900776328 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BE63C1CC1ACA800776328 /* Reviews.swift */; };
 		BF5FD1A51CE3DC2F00AE5579 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5FD1A41CE3DC2F00AE5579 /* CustomTableViewCell.swift */; };
-		BF72E0C11D06AE5F00EF1BA2 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7B3EC21D067EF200D2DC04 /* Realm.framework */; };
-		BF72E0C21D06AE5F00EF1BA2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7B3EC41D067EF500D2DC04 /* RealmSwift.framework */; };
+		BF72E0CA1D06B0EC00EF1BA2 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF72E0C81D06B0EC00EF1BA2 /* Realm.framework */; };
+		BF72E0CB1D06B0EC00EF1BA2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF72E0C91D06B0EC00EF1BA2 /* RealmSwift.framework */; };
 		BF7B3EC91D067F6C00D2DC04 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7B3EC61D067F6C00D2DC04 /* Firebase.framework */; };
 		BF7B3ECA1D067F6C00D2DC04 /* HCSStarRatingView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7B3EC71D067F6C00D2DC04 /* HCSStarRatingView.framework */; };
 		BF7B3ECB1D067F6C00D2DC04 /* QuadratTouch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7B3EC81D067F6C00D2DC04 /* QuadratTouch.framework */; };
 		BF850DC61D06838F00B0A5CA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1BE62D1CC0534A00776328 /* MapKit.framework */; };
 		BF850DC81D06838F00B0A5CA /* Pods_Coffee_Mapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1756AE2FEB795BB7C345213E /* Pods_Coffee_Mapper.framework */; };
-		BF850DCC1D0683BA00B0A5CA /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF7B3EC41D067EF500D2DC04 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BF850DCE1D0683BA00B0A5CA /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF7B3EC21D067EF200D2DC04 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BFA474AB1CBEEC4200BA3928 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474AA1CBEEC4200BA3928 /* LoginViewController.swift */; };
 		BFA474AF1CBEF38800BA3928 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474AE1CBEF38800BA3928 /* SignUpViewController.swift */; };
 		BFA474BE1CBF162500BA3928 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474BD1CBF162500BA3928 /* Constants.swift */; };
@@ -55,21 +53,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		BF850DCF1D0683BA00B0A5CA /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				BF850DCE1D0683BA00B0A5CA /* Realm.framework in Embed Frameworks */,
-				BF850DCC1D0683BA00B0A5CA /* RealmSwift.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		1756AE2FEB795BB7C345213E /* Pods_Coffee_Mapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coffee_Mapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23A33960441F331DD906B998 /* Pods-Coffee Mapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coffee Mapper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coffee Mapper/Pods-Coffee Mapper.release.xcconfig"; sourceTree = "<group>"; };
@@ -82,8 +65,8 @@
 		BF1BE63A1CC19A3D00776328 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BF1BE63C1CC1ACA800776328 /* Reviews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
 		BF5FD1A41CE3DC2F00AE5579 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
-		BF7B3EC21D067EF200D2DC04 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../../../Downloads/realm-swift-1.0.0 2/ios/swift-2.2/Realm.framework"; sourceTree = "<group>"; };
-		BF7B3EC41D067EF500D2DC04 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../../../Downloads/realm-swift-1.0.0 2/ios/swift-2.2/RealmSwift.framework"; sourceTree = "<group>"; };
+		BF72E0C81D06B0EC00EF1BA2 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		BF72E0C91D06B0EC00EF1BA2 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		BF7B3EC61D067F6C00D2DC04 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Coffee_Mapper-dumeakvbrwabwcbfrrvpbuqwkrsk/Build/Products/Debug-iphonesimulator/Firebase/Firebase.framework"; sourceTree = "<group>"; };
 		BF7B3EC71D067F6C00D2DC04 /* HCSStarRatingView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HCSStarRatingView.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Coffee_Mapper-dumeakvbrwabwcbfrrvpbuqwkrsk/Build/Products/Debug-iphonesimulator/HCSStarRatingView/HCSStarRatingView.framework"; sourceTree = "<group>"; };
 		BF7B3EC81D067F6C00D2DC04 /* QuadratTouch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuadratTouch.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Coffee_Mapper-dumeakvbrwabwcbfrrvpbuqwkrsk/Build/Products/Debug-iphonesimulator/QuadratTouch/QuadratTouch.framework"; sourceTree = "<group>"; };
@@ -113,8 +96,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF72E0C11D06AE5F00EF1BA2 /* Realm.framework in Frameworks */,
-				BF72E0C21D06AE5F00EF1BA2 /* RealmSwift.framework in Frameworks */,
+				BF72E0CA1D06B0EC00EF1BA2 /* Realm.framework in Frameworks */,
+				BF72E0CB1D06B0EC00EF1BA2 /* RealmSwift.framework in Frameworks */,
 				BF7B3EC91D067F6C00D2DC04 /* Firebase.framework in Frameworks */,
 				BF7B3ECA1D067F6C00D2DC04 /* HCSStarRatingView.framework in Frameworks */,
 				BF7B3ECB1D067F6C00D2DC04 /* QuadratTouch.framework in Frameworks */,
@@ -152,11 +135,11 @@
 		4D8B682BE5C8D151E42D50D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF72E0C81D06B0EC00EF1BA2 /* Realm.framework */,
+				BF72E0C91D06B0EC00EF1BA2 /* RealmSwift.framework */,
 				BF7B3EC61D067F6C00D2DC04 /* Firebase.framework */,
 				BF7B3EC71D067F6C00D2DC04 /* HCSStarRatingView.framework */,
 				BF7B3EC81D067F6C00D2DC04 /* QuadratTouch.framework */,
-				BF7B3EC41D067EF500D2DC04 /* RealmSwift.framework */,
-				BF7B3EC21D067EF200D2DC04 /* Realm.framework */,
 				BF1BE62D1CC0534A00776328 /* MapKit.framework */,
 				1756AE2FEB795BB7C345213E /* Pods_Coffee_Mapper.framework */,
 			);
@@ -283,7 +266,6 @@
 				BFCF74571CBEDE23005733F9 /* Resources */,
 				A8838F4383417D3FA763C590 /* [CP] Embed Pods Frameworks */,
 				9F9F8D8F51DCC30C7F6DF7B0 /* [CP] Copy Pods Resources */,
-				BF850DCF1D0683BA00B0A5CA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -612,6 +594,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7D08BCE3905AD427C414A047 /* Pods-Coffee Mapper.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -636,6 +619,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 23A33960441F331DD906B998 /* Pods-Coffee Mapper.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

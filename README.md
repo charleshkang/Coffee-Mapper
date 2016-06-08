@@ -6,14 +6,15 @@ I wanted to make an app similar to <a href="https://untappd.com">Untappd</a>, bu
 
 <img src="https://github.com/charleshkang/Coffee-Mapper/blob/master/Images/CM1.png" width="220" />
 <img src="https://github.com/charleshkang/Coffee-Mapper/blob/master/Images/CM2.png" width="220" />
+<img src="https://github.com/charleshkang/Coffee-Mapper/blob/master/Images/CM3.png" width="220" />
 <img src="https://github.com/charleshkang/Coffee-Mapper/blob/master/Images/CM4.png" width="220" />
 
 # Base Features
 <ul>
   <li>User Reviews</li>
-  <li>Leave ratings in the form of beans or cups</li>
+  <li>Leave ratings in the form of beans</li>
   <li>Find coffee shops near you</li>
-
+  <li>See other user's reviews and talk about coffee!</li>
 </ul>
 
 # Later Features
@@ -28,6 +29,6 @@ I wanted to make an app similar to <a href="https://untappd.com">Untappd</a>, bu
 # Frameworks Used
 <ul>
   <li>Realm</li>
-  <li>QuadratTouch</li>
+  <li>Quadrat Touch</li>
   <li>Firebase</li>
 </ul>
