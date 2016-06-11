@@ -20,30 +20,28 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review Text" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yp1-qQ-x0S">
-                        <rect key="frame" x="14" y="38" width="365" height="88"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOX-x7-GZL">
                         <rect key="frame" x="300" y="12" width="48" height="18"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Shape" translatesAutoresizingMaskIntoConstraints="NO" id="d01-x8-Iey">
+                        <rect key="frame" x="358" y="69" width="15" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="Sct-tI-skW"/>
+                            <constraint firstAttribute="height" constant="25" id="drY-gz-6K1"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="4P3-HF-VAN" firstAttribute="leading" secondItem="1go-rN-Cyv" secondAttribute="leading" constant="14" id="3wd-eY-TGL"/>
                     <constraint firstItem="4P3-HF-VAN" firstAttribute="top" secondItem="1go-rN-Cyv" secondAttribute="top" constant="12" id="5Xv-Dk-0xE"/>
-                    <constraint firstItem="yp1-qQ-x0S" firstAttribute="top" secondItem="4P3-HF-VAN" secondAttribute="bottom" constant="8" id="F2W-gr-xsG"/>
                     <constraint firstItem="IOX-x7-GZL" firstAttribute="leading" secondItem="4P3-HF-VAN" secondAttribute="trailing" constant="226" id="Hgr-iG-Ybu"/>
-                    <constraint firstAttribute="bottom" secondItem="yp1-qQ-x0S" secondAttribute="bottom" constant="8" id="NXP-hR-8RO"/>
-                    <constraint firstItem="yp1-qQ-x0S" firstAttribute="top" secondItem="IOX-x7-GZL" secondAttribute="bottom" constant="8" id="Nqg-jM-SfD"/>
-                    <constraint firstItem="yp1-qQ-x0S" firstAttribute="leading" secondItem="1go-rN-Cyv" secondAttribute="leading" constant="14" id="QR5-Dw-jnW"/>
                     <constraint firstAttribute="trailing" secondItem="IOX-x7-GZL" secondAttribute="trailing" constant="45" id="QiE-3v-xMf"/>
-                    <constraint firstAttribute="trailing" secondItem="yp1-qQ-x0S" secondAttribute="trailing" constant="14" id="VqB-r1-f0r"/>
                     <constraint firstItem="IOX-x7-GZL" firstAttribute="top" secondItem="1go-rN-Cyv" secondAttribute="top" constant="12" id="bQj-NK-nz1"/>
+                    <constraint firstAttribute="bottom" secondItem="d01-x8-Iey" secondAttribute="bottom" constant="40" id="f68-NV-xhX"/>
+                    <constraint firstAttribute="trailing" secondItem="d01-x8-Iey" secondAttribute="trailing" constant="20" id="jqf-t8-Fo8"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
@@ -53,10 +51,12 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="reviewRating" destination="IOX-x7-GZL" id="Vez-EQ-xp3"/>
-                <outlet property="reviewText" destination="yp1-qQ-x0S" id="5sl-pf-Snr"/>
                 <outlet property="reviewerNameLabel" destination="4P3-HF-VAN" id="gGq-oJ-AgJ"/>
             </connections>
             <point key="canvasLocation" x="292.5" y="227.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Shape" width="177" height="310"/>
+    </resources>
 </document>

@@ -16,7 +16,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UITableVi
     @IBOutlet var tableView: UITableView?
     
     var locationManager: CLLocationManager?
-    let distanceSpan: Double = 2500
+    let distanceSpan: Double = 1000
     var lastLocation:CLLocation?
     var venues:[Venue]?
     

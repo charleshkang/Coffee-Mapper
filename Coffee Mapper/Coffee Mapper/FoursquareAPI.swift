@@ -32,6 +32,7 @@ class FoursquareAPI
         Session.setupSharedSessionWithConfiguration(config)
         
         self.session = Session.sharedSession()
+        
     }
     
     func getCoffeeShopsWithLocation(location:CLLocation)
@@ -42,6 +43,7 @@ class FoursquareAPI
             parameters += [Parameter.categoryId: "4bf58dd8d48988d1e0931735"]
             parameters += [Parameter.radius: "2000"]
             parameters += [Parameter.limit: "50"]
+            parameters += [Parameter.venuePhotos: "2"]
             
             let searchTask = session.venues.search(parameters)
             {
@@ -95,6 +97,7 @@ class FoursquareAPI
                         }
                         NSNotificationCenter.defaultCenter().postNotificationName(API.notifications.venuesUpdated, object: nil, userInfo: nil)
                     }
+//                    print(response)
                 }
             }
             searchTask.start()
