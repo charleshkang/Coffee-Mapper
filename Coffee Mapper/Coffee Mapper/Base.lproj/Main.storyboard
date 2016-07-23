@@ -203,8 +203,8 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="allowsHalfStars" value="YES"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="accurateHalfStars" value="NO"/>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="emptyStarImage" value="bean-empty"/>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="filledStarImage" value="bean-filled"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="emptyStarImage" value="bean_empty"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="filledStarImage" value="bean_filled"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="didChangeValue:" destination="yDm-Fk-xUL" eventType="valueChanged" id="srX-3X-qF1"/>
@@ -229,7 +229,7 @@
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OkA-e1-mc3">
                                         <rect key="frame" x="155" y="199" width="290" height="50"/>
-                                        <state key="normal" image="submitreview">
+                                        <state key="normal" image="submit_review">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -321,12 +321,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffee-bg" translatesAutoresizingMaskIntoConstraints="NO" id="8Lp-BV-JNI">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffee_bg" translatesAutoresizingMaskIntoConstraints="NO" id="8Lp-BV-JNI">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7EZ-Oo-Dia">
                                 <rect key="frame" x="155" y="499" width="290" height="50"/>
-                                <state key="normal" image="signin"/>
+                                <state key="normal" image="sign_in"/>
                                 <connections>
                                     <action selector="signInButtonTapped:" destination="UOd-OC-Z2S" eventType="touchUpInside" id="m8K-1J-F9A"/>
                                 </connections>
@@ -534,7 +534,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffee-bg" translatesAutoresizingMaskIntoConstraints="NO" id="EUV-lf-05l">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffee_bg" translatesAutoresizingMaskIntoConstraints="NO" id="EUV-lf-05l">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RtL-I5-xGr" userLabel="Login View">
@@ -697,7 +697,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eo7-9Y-qZ6">
                                 <rect key="frame" x="155" y="499" width="290" height="50"/>
-                                <state key="normal" image="signup"/>
+                                <state key="normal" image="sign_up"/>
                                 <connections>
                                     <action selector="signUpButtonTapped:" destination="Xn9-jH-wZs" eventType="touchUpInside" id="XNp-ct-dbi"/>
                                 </connections>
@@ -782,12 +782,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bean-empty" width="156" height="156"/>
-        <image name="bean-filled" width="156" height="156"/>
-        <image name="coffee-bg" width="4104" height="2736"/>
+        <image name="bean_empty" width="156" height="156"/>
+        <image name="bean_filled" width="156" height="156"/>
+        <image name="coffee_bg" width="4104" height="2736"/>
         <image name="cup" width="35" height="19"/>
-        <image name="signin" width="290" height="50"/>
-        <image name="signup" width="290" height="50"/>
-        <image name="submitreview" width="290" height="50"/>
+        <image name="sign_in" width="290" height="50"/>
+        <image name="sign_up" width="290" height="50"/>
+        <image name="submit_review" width="290" height="50"/>
     </resources>
 </document>

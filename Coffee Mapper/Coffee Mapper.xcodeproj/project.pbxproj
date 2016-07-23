@@ -27,9 +27,9 @@
 		BFA474C11CBF176100BA3928 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474C01CBF176100BA3928 /* DataService.swift */; };
 		BFA474C51CBF2E8000BA3928 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474C41CBF2E8000BA3928 /* HomeViewController.swift */; };
 		BFA90C1B1CDEF5DE0055070C /* CustomReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA90C1A1CDEF5DE0055070C /* CustomReviewCell.xib */; };
+		BFC4023F1D0BF93B0072A7D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC4023E1D0BF93B0072A7D0 /* Assets.xcassets */; };
 		BFCF745D1CBEDE23005733F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF745C1CBEDE23005733F9 /* AppDelegate.swift */; };
 		BFCF74621CBEDE23005733F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFCF74601CBEDE23005733F9 /* Main.storyboard */; };
-		BFCF74641CBEDE23005733F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFCF74631CBEDE23005733F9 /* Assets.xcassets */; };
 		BFCF74671CBEDE23005733F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFCF74651CBEDE23005733F9 /* LaunchScreen.storyboard */; };
 		BFCF74721CBEDE24005733F9 /* Coffee_MapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF74711CBEDE23005733F9 /* Coffee_MapperTests.swift */; };
 		BFCF747D1CBEDE24005733F9 /* Coffee_MapperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF747C1CBEDE24005733F9 /* Coffee_MapperUITests.swift */; };
@@ -76,10 +76,10 @@
 		BFA474C01CBF176100BA3928 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		BFA474C41CBF2E8000BA3928 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BFA90C1A1CDEF5DE0055070C /* CustomReviewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomReviewCell.xib; sourceTree = "<group>"; };
+		BFC4023E1D0BF93B0072A7D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFCF74591CBEDE23005733F9 /* Coffee Mapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coffee Mapper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFCF745C1CBEDE23005733F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFCF74611CBEDE23005733F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BFCF74631CBEDE23005733F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFCF74661CBEDE23005733F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFCF74681CBEDE23005733F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFCF746D1CBEDE23005733F9 /* Coffee MapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Coffee MapperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,8 +209,8 @@
 				BF269CEE1CC039510052CC54 /* View */,
 				BFCF74601CBEDE23005733F9 /* Main.storyboard */,
 				BFCF745C1CBEDE23005733F9 /* AppDelegate.swift */,
-				BFCF74631CBEDE23005733F9 /* Assets.xcassets */,
 				BFCF74651CBEDE23005733F9 /* LaunchScreen.storyboard */,
+				BFC4023E1D0BF93B0072A7D0 /* Assets.xcassets */,
 				BFCF74681CBEDE23005733F9 /* Info.plist */,
 				BFCF748B1CBEDFDD005733F9 /* Resources */,
 			);
@@ -364,10 +364,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFCF74671CBEDE23005733F9 /* LaunchScreen.storyboard in Resources */,
-				BFCF74641CBEDE23005733F9 /* Assets.xcassets in Resources */,
 				BFCF748D1CBEDFF0005733F9 /* Roboto-Regular.ttf in Resources */,
 				BFCF74621CBEDE23005733F9 /* Main.storyboard in Resources */,
 				BFA90C1B1CDEF5DE0055070C /* CustomReviewCell.xib in Resources */,
+				BFC4023F1D0BF93B0072A7D0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
