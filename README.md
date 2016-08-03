@@ -1,5 +1,5 @@
 # Coffee Mapper
-A <strong>WIP</strong> social platform for coffee lovers
+A social platform for coffee lovers
 
 # The Idea
 I wanted to make an app similar to <a href="https://untappd.com">Untappd</a>, but specifically for coffee! I want users to be able to post pictures of the coffee they're drinking, where they're drinking at, and make the social aspect of coffee even more awesome.
