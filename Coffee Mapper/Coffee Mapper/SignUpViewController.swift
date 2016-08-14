@@ -9,7 +9,8 @@
 import UIKit
 import Firebase
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController
+{
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -23,7 +24,7 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signUpButtonTapped(sender: AnyObject)
     {
-        signUp()
+        userSignup()
     }
     
     func signupErrorAlert(title: String, message: String)
@@ -35,7 +36,7 @@ class SignUpViewController: UIViewController {
     }
     
     // MARK: Sign Up Logic
-    func signUp()
+    func userSignup()
     {
         guard
             let username = usernameTextField.text,

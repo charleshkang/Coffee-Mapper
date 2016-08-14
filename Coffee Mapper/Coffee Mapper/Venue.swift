@@ -24,7 +24,8 @@ class Venue: Object
         return CLLocation(latitude: Double(latitude), longitude:  Double(longitude))
     }
     
-    override static func primaryKey() -> String? {
+    override static func primaryKey() -> String?
+    {
         return "id"
     }
 }

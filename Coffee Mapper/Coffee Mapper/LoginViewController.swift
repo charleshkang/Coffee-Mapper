@@ -30,10 +30,10 @@ class LoginViewController: UIViewController
     
     @IBAction func signInButtonTapped(sender: AnyObject)
     {
-        self.loginLogic()
+        self.userLogin()
     }
     
-    func loginLogic()
+    func userLogin()
     {
         guard
             let email = emailTextField.text,

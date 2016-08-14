@@ -12,7 +12,7 @@ import Firebase
 class DataService
 {
     static let dataService = DataService()
-    var venue = Venue()
+    let venue = Venue()
     
     var FB_BASE_REF = Firebase(url: "\(BASE_URL)")
     var FB_USER_REF = Firebase(url: "\(BASE_URL)/users")

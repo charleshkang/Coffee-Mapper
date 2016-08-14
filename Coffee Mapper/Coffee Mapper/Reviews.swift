@@ -15,7 +15,7 @@ class Reviews
     var reviewAuthor: String!
     var reviewRating: Float!
     
-    init(dictionary: Dictionary<String, AnyObject>)
+    init(dictionary: Dictionary<String,AnyObject>)
     {
         self.reviewRating = dictionary["reviewRating"] as! Float
         self.reviewText = dictionary["reviewText"] as! String

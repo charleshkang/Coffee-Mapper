@@ -8,8 +8,8 @@
 import UIKit
 import Firebase
 
-class CustomTableViewCell: UITableViewCell {
-    
+class CustomTableViewCell: UITableViewCell
+{
     @IBOutlet var reviewerNameLabel: UILabel!
     @IBOutlet var reviewRating: UILabel!
     @IBOutlet var reviewText: UILabel!
@@ -18,7 +18,8 @@ class CustomTableViewCell: UITableViewCell {
     
     var reviewRef: Firebase!
     
-    func configureCell(review: Reviews) {
+    func configureCell(review: Reviews)
+    {
         self.review = review
         
         self.reviewText.text = review.reviewText

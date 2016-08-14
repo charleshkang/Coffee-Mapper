@@ -11,8 +11,6 @@ import QuadratTouch
 import RealmSwift
 import MapKit
 
-// 4bf58dd8d48988d1e0931735 is the id for coffee shops
-
 struct API
 {
     struct notifications {
@@ -88,7 +86,6 @@ class FoursquareAPI
                                 }
                                 do {
                                     try realm.commitWrite()
-                                    print("Committing write...")
                                 }
                                 catch (let error)
                                 {
@@ -97,7 +94,6 @@ class FoursquareAPI
                         }
                         NSNotificationCenter.defaultCenter().postNotificationName(API.notifications.venuesUpdated, object: nil, userInfo: nil)
                     }
-//                    print(response)
                 }
             }
             searchTask.start()

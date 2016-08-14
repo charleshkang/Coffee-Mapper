@@ -162,14 +162,21 @@
 		BF269CEE1CC039510052CC54 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BFA474AA1CBEEC4200BA3928 /* LoginViewController.swift */,
-				BFA474AE1CBEF38800BA3928 /* SignUpViewController.swift */,
-				BFA474C41CBF2E8000BA3928 /* HomeViewController.swift */,
-				BF1BE6381CC176A000776328 /* DetailViewController.swift */,
 				BF5FD1A41CE3DC2F00AE5579 /* CustomTableViewCell.swift */,
 				BFA90C1A1CDEF5DE0055070C /* CustomReviewCell.xib */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		BF72F7011D60FE01001EFF87 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BFA474AA1CBEEC4200BA3928 /* LoginViewController.swift */,
+				BFA474AE1CBEF38800BA3928 /* SignUpViewController.swift */,
+				BFA474C41CBF2E8000BA3928 /* HomeViewController.swift */,
+				BF1BE6381CC176A000776328 /* DetailViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		BFA474BF1CBF173600BA3928 /* Utility */ = {
@@ -207,6 +214,7 @@
 				BFA474BF1CBF173600BA3928 /* Utility */,
 				BF1BE6351CC1695A00776328 /* Model */,
 				BF269CEE1CC039510052CC54 /* View */,
+				BF72F7011D60FE01001EFF87 /* Controller */,
 				BFCF74601CBEDE23005733F9 /* Main.storyboard */,
 				BFCF745C1CBEDE23005733F9 /* AppDelegate.swift */,
 				BFCF74651CBEDE23005733F9 /* LaunchScreen.storyboard */,

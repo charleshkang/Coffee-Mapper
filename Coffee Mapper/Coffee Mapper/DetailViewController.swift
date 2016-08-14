@@ -30,10 +30,14 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         self.hideKeyboardWhenTappedAround()
         self.updateReviewsOnFirebase()
-        self.getCurrentUsersName()
         self.navigationItem.title = venue.name
         
         self.userReviewsTableView.registerNib(UINib(nibName: "CustomReviewCell", bundle: nil), forCellReuseIdentifier: "customReviewCellIdentifier")
+    }
+    
+    override func viewDidAppear(animated: Bool)
+    {
+        self.getCurrentUsersName()
     }
     
     @IBAction func submitReviewButton(sender: AnyObject)
@@ -78,17 +82,13 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     {
         DataService.dataService.FB_REVIEW_REF.childByAppendingPath("\(venue.id)").observeEventType(FEventType.Value, withBlock: { snapshot in
         
-//            let currentUser = snapshot.value.objectForKey("username")
             let currentUser = NSUserDefaults.standardUserDefaults().stringForKey("uid")
             DataService.dataService.FB_USER_REF.childByAppendingPath("\(currentUser!)").observeSingleEventOfType(.Value, withBlock: { (dataSnapShot) in
                 print("\(dataSnapShot.value)")
                 self.currentUsername = dataSnapShot.value.objectForKey("username") as! String
             })
-            
-            print("Username: \(currentUser)")
-//            self.currentUsername = currentUser
             }, withCancelBlock: { error in
-//                print(error.description)
+                print(error.description)
         })
     }
     
@@ -137,11 +137,13 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
         return UITableViewAutomaticDimension
     }
     
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        return 45
     }
 }
