@@ -57,7 +57,8 @@ class LoginViewController: UIViewController
         })
     }
     
-    func loginErrorAlert(title: String, message: String) {
+    func loginErrorAlert(title: String, message: String)
+    {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
         alert.addAction(action)
