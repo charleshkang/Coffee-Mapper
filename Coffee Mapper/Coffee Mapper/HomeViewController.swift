@@ -6,35 +6,33 @@
 //  Copyright © 2016 Charles Kang. All rights reserved.
 //
 
-import UIKit
 import MapKit
+import UIKit
 import RealmSwift
 
-class HomeViewController: UIViewController, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate
-{
-    @IBOutlet var mapView: MKMapView!
-    @IBOutlet var tableView: UITableView?
+class HomeViewController: UIViewController, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate {
     
-    var locationManager: CLLocationManager?
+    // IBOutlets
+    @IBOutlet var mapView: MKMapView!
+    @IBOutlet var tableView: UITableView!
+    
+    // Properties
     let distanceSpan: Double = 1000
+    var locationManager: CLLocationManager?
     var lastLocation:CLLocation?
     var venues:[Venue]?
     
-    override func viewDidLoad()
-    {
+    // MARK: Lifecycle Methods
+    override func viewDidLoad() {
         super.viewDidLoad()
-                
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.onVenuesUpdated(_:)), name: API.notifications.venuesUpdated, object: nil)
     }
     
-    override func viewWillAppear(animated: Bool)
-    {
+    override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         if let mapView = self.mapView {
             mapView.delegate = self
         }
-        
         if let tableView = self.tableView {
             tableView.delegate = self
             tableView.dataSource = self
@@ -43,11 +41,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UITableVi
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    override func viewDidAppear(animated: Bool)
-    {
+    override func viewDidAppear(animated: Bool) {
         if locationManager == nil {
             locationManager = CLLocationManager()
-            
             locationManager!.delegate = self
             locationManager!.desiredAccuracy = kCLLocationAccuracyBestForNavigation
             locationManager!.requestAlwaysAuthorization()
@@ -56,30 +52,27 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate, UITableVi
         }
     }
     
-    func onVenuesUpdated(notification: NSNotification)
-    {
+    func onVenuesUpdated(notification: NSNotification) {
         refreshVenues(nil)
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation)
-    {
+    func locationManager(manager: CLLocationManager,
+                         didUpdateToLocation newLocation: CLLocation,
+                                             fromLocation oldLocation: CLLocation) {
         if let mapView = self.mapView {
             let annotationView = MKPinAnnotationView()
             annotationView.pinTintColor = UIColor.blueColor()
-            
             let region = MKCoordinateRegionMakeWithDistance(newLocation.coordinate, distanceSpan, distanceSpan)
             mapView.setRegion(region, animated: true)
-            
             refreshVenues(newLocation, getDataFromFoursquare: true)
         }
     }
     
-    func refreshVenues(location: CLLocation?, getDataFromFoursquare:Bool = false)
-    {
+    func refreshVenues(location: CLLocation?, getDataFromFoursquare:Bool = false) {
         if location != nil {
             lastLocation = location
         }
-        
+    
         if let location = lastLocation {
             if getDataFromFoursquare == true {
                 FoursquareAPI.sharedInstance.getCoffeeShopsWithLocation(location)

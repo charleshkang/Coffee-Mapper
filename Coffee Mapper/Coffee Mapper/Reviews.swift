@@ -9,16 +9,16 @@
 import Foundation
 import Firebase
 
-class Reviews
-{
-    var reviewText: String!
-    var reviewAuthor: String!
-    var reviewRating: Float!
+class Reviews {
     
-    init(dictionary: Dictionary<String,AnyObject>)
-    {
+    var reviewText: String
+    var reviewAuthor: String
+    var reviewRating: Float
+    
+    init(dictionary: Dictionary<String,AnyObject>) {
         self.reviewRating = dictionary["reviewRating"] as! Float
         self.reviewText = dictionary["reviewText"] as! String
         self.reviewAuthor = dictionary["reviewAuthor"] as! String
     }
+    
 }

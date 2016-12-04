@@ -8,47 +8,41 @@
 
 import UIKit
 
-class LoginViewController: UIViewController
-{
+class LoginViewController: UIViewController {
+    
     @IBOutlet weak var signUpButtonTapped: UIButton!
     @IBOutlet weak var signInButtonTapped: UIButton!
-    
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         
-        if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
-            
+        if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil
+            && DataService.dataService.CURRENT_USER_REF.authData != nil {
             let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("homeVCIdentifier") as! HomeViewController
             self.showViewController(homeVC, sender: self)
         }
     }
     
-    @IBAction func signInButtonTapped(sender: AnyObject)
-    {
+    @IBAction func signInButtonTapped(sender: AnyObject) {
         self.userLogin()
     }
     
-    func userLogin()
-    {
+    func userLogin() {
         guard
             let email = emailTextField.text,
             let password = passwordTextField.text
             where !email.isEmpty && !password.isEmpty
             else { return loginErrorAlert("Oops!", message: "Don't forget to enter your email and password.") }
-        
         DataService.dataService.BASE_REF.authUser(email, password: password, withCompletionBlock: { error, authData in
             if error != nil {
                 print(error)
                 self.loginErrorAlert("Oops!", message: "Check your username and password.")
             } else {
                 NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
-                print("user logged in with uid:\(authData.uid)")
-                
+                print("User logged in with uid:\(authData.uid)")
                 
                 let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("navControllerID")
                 self.navigationController?.pushViewController(homeVC!, animated: true)
@@ -57,8 +51,7 @@ class LoginViewController: UIViewController
         })
     }
     
-    func loginErrorAlert(title: String, message: String)
-    {
+    func loginErrorAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
         alert.addAction(action)
@@ -66,16 +59,13 @@ class LoginViewController: UIViewController
     }
 }
 
-extension UIViewController
-{
-    func hideKeyboardWhenTappedAround()
-    {
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
     
-    func dismissKeyboard()
-    {
+    func dismissKeyboard() {
         view.endEditing(true)
     }
 }

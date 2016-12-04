@@ -33,7 +33,6 @@
 		BFCF74671CBEDE23005733F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFCF74651CBEDE23005733F9 /* LaunchScreen.storyboard */; };
 		BFCF74721CBEDE24005733F9 /* Coffee_MapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF74711CBEDE23005733F9 /* Coffee_MapperTests.swift */; };
 		BFCF747D1CBEDE24005733F9 /* Coffee_MapperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF747C1CBEDE24005733F9 /* Coffee_MapperUITests.swift */; };
-		BFCF748D1CBEDFF0005733F9 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFCF748C1CBEDFF0005733F9 /* Roboto-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +87,6 @@
 		BFCF74781CBEDE24005733F9 /* Coffee MapperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Coffee MapperUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFCF747C1CBEDE24005733F9 /* Coffee_MapperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coffee_MapperUITests.swift; sourceTree = "<group>"; };
 		BFCF747E1CBEDE24005733F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BFCF748C1CBEDFF0005733F9 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,7 +253,6 @@
 		BFCF748B1CBEDFDD005733F9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BFCF748C1CBEDFF0005733F9 /* Roboto-Regular.ttf */,
 			);
 			name = Resources;
 			path = ..;
@@ -372,7 +369,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFCF74671CBEDE23005733F9 /* LaunchScreen.storyboard in Resources */,
-				BFCF748D1CBEDFF0005733F9 /* Roboto-Regular.ttf in Resources */,
 				BFCF74621CBEDE23005733F9 /* Main.storyboard in Resources */,
 				BFA90C1B1CDEF5DE0055070C /* CustomReviewCell.xib in Resources */,
 				BFC4023F1D0BF93B0072A7D0 /* Assets.xcassets in Resources */,

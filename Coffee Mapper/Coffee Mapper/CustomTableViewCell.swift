@@ -5,18 +5,18 @@
 //  Created by Charles Kang on 5/11/16.
 //  Copyright © 2016 Charles Kang. All rights reserved.
 
-import UIKit
 import Firebase
+import UIKit
 
-class CustomTableViewCell: UITableViewCell
-{
+class CustomTableViewCell: UITableViewCell {
+    
+    // Properties
     @IBOutlet var reviewerNameLabel: UILabel!
     @IBOutlet var reviewRating: UILabel!
     @IBOutlet var reviewText: UILabel!
     
     var review: Reviews!
-    
-    var reviewRef: Firebase!
+    static var reviewRef: Firebase!
     
     func configureCell(review: Reviews)
     {

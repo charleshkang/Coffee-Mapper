@@ -6,17 +6,19 @@
 //  Copyright © 2016 Charles Kang. All rights reserved.
 //
 
-import Foundation
 import Firebase
+import Foundation
 
-class DataService
-{
-    static let dataService = DataService()
-    let venue = Venue()
+class DataService {
     
-    var FB_BASE_REF = Firebase(url: "\(BASE_URL)")
-    var FB_USER_REF = Firebase(url: "\(BASE_URL)/users")
-    var FB_REVIEW_REF = Firebase(url: "\(BASE_URL)/reviews")
+    // Static Properties
+    static let dataService = DataService()
+    static let venue = Venue()
+    
+    // Properties
+    let FB_BASE_REF = Firebase(url: "\(baseURL)")
+    let FB_USER_REF = Firebase(url: "\(baseURL)/users")
+    var FB_REVIEW_REF = Firebase(url: "\(baseURL)/reviews")
     
     var BASE_REF: Firebase {
         return FB_BASE_REF
@@ -36,13 +38,11 @@ class DataService
         return FB_REVIEW_REF
     }
     
-    func createNewAccount(uid: String, user: Dictionary<String, String>)
-    {
+    func createNewAccount(uid: String, user: Dictionary<String, String>) {
         USER_REF.childByAppendingPath(uid).setValue(user)
     }
     
-    func createNewReview(review: Dictionary<String, AnyObject>)
-    {
+    func createNewReview(review: Dictionary<String, AnyObject>) {
         let firebaseNewReview = REVIEW_REF.childByAutoId()
         firebaseNewReview.setValue(review)
     }

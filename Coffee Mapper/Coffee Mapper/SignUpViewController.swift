@@ -6,29 +6,25 @@
 //  Copyright © 2016 Charles Kang. All rights reserved.
 //
 
-import UIKit
 import Firebase
+import UIKit
 
-class SignUpViewController: UIViewController
-{
+class SignUpViewController: UIViewController {
     
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
     }
     
-    @IBAction func signUpButtonTapped(sender: AnyObject)
-    {
+    @IBAction func signUpButtonTapped(sender: AnyObject) {
         userSignup()
     }
     
-    func signupErrorAlert(title: String, message: String)
-    {
+    func signupErrorAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
         alert.addAction(action)
@@ -36,8 +32,7 @@ class SignUpViewController: UIViewController
     }
     
     // MARK: Sign Up Logic
-    func userSignup()
-    {
+    func userSignup() {
         guard
             let username = usernameTextField.text,
             let email = emailTextField.text,
@@ -61,4 +56,5 @@ class SignUpViewController: UIViewController
                 self.showViewController(homeVC!, sender: self)
             }
         })
-    }}
+    }
+}
