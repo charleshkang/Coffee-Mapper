@@ -144,6 +144,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		53D2581B1DF536C4009297FB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BFCF745C1CBEDE23005733F9 /* AppDelegate.swift */,
+				BFCF74651CBEDE23005733F9 /* LaunchScreen.storyboard */,
+				BFC4023E1D0BF93B0072A7D0 /* Assets.xcassets */,
+				BFCF74681CBEDE23005733F9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		BF1BE6351CC1695A00776328 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,16 +220,12 @@
 		BFCF745B1CBEDE23005733F9 /* Coffee Mapper */ = {
 			isa = PBXGroup;
 			children = (
+				BFCF74601CBEDE23005733F9 /* Main.storyboard */,
 				BFA474BF1CBF173600BA3928 /* Utility */,
 				BF1BE6351CC1695A00776328 /* Model */,
 				BF269CEE1CC039510052CC54 /* View */,
 				BF72F7011D60FE01001EFF87 /* Controller */,
-				BFCF74601CBEDE23005733F9 /* Main.storyboard */,
-				BFCF745C1CBEDE23005733F9 /* AppDelegate.swift */,
-				BFCF74651CBEDE23005733F9 /* LaunchScreen.storyboard */,
-				BFC4023E1D0BF93B0072A7D0 /* Assets.xcassets */,
-				BFCF74681CBEDE23005733F9 /* Info.plist */,
-				BFCF748B1CBEDFDD005733F9 /* Resources */,
+				53D2581B1DF536C4009297FB /* Supporting Files */,
 			);
 			path = "Coffee Mapper";
 			sourceTree = "<group>";
@@ -248,14 +255,6 @@
 				BFCF747B1CBEDE24005733F9 /* Coffee MapperUITests */,
 			);
 			name = Tests;
-			sourceTree = "<group>";
-		};
-		BFCF748B1CBEDFDD005733F9 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Resources;
-			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -612,7 +611,7 @@
 				INFOPLIST_FILE = "Coffee Mapper/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.charleshkang.Coffee-Mapper";
+				PRODUCT_BUNDLE_IDENTIFIER = com.charleshkang.coffeeMapepr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -637,7 +636,7 @@
 				INFOPLIST_FILE = "Coffee Mapper/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.charleshkang.Coffee-Mapper";
+				PRODUCT_BUNDLE_IDENTIFIER = com.charleshkang.coffeeMapepr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
