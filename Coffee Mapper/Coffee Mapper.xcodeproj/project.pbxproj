@@ -20,7 +20,6 @@
 		BF7B3ECA1D067F6C00D2DC04 /* HCSStarRatingView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7B3EC71D067F6C00D2DC04 /* HCSStarRatingView.framework */; };
 		BF7B3ECB1D067F6C00D2DC04 /* QuadratTouch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7B3EC81D067F6C00D2DC04 /* QuadratTouch.framework */; };
 		BF850DC61D06838F00B0A5CA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1BE62D1CC0534A00776328 /* MapKit.framework */; };
-		BF850DC81D06838F00B0A5CA /* Pods_Coffee_Mapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1756AE2FEB795BB7C345213E /* Pods_Coffee_Mapper.framework */; };
 		BFA474AB1CBEEC4200BA3928 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474AA1CBEEC4200BA3928 /* LoginViewController.swift */; };
 		BFA474AF1CBEF38800BA3928 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474AE1CBEF38800BA3928 /* SignUpViewController.swift */; };
 		BFA474BE1CBF162500BA3928 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA474BD1CBF162500BA3928 /* Constants.swift */; };
@@ -33,6 +32,7 @@
 		BFCF74671CBEDE23005733F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFCF74651CBEDE23005733F9 /* LaunchScreen.storyboard */; };
 		BFCF74721CBEDE24005733F9 /* Coffee_MapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF74711CBEDE23005733F9 /* Coffee_MapperTests.swift */; };
 		BFCF747D1CBEDE24005733F9 /* Coffee_MapperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF747C1CBEDE24005733F9 /* Coffee_MapperUITests.swift */; };
+		D063E187DA754AA7F68C9F3C /* Pods_Coffee_Mapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D75AEEB574636C7197E676 /* Pods_Coffee_Mapper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,9 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1756AE2FEB795BB7C345213E /* Pods_Coffee_Mapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coffee_Mapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		23A33960441F331DD906B998 /* Pods-Coffee Mapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coffee Mapper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coffee Mapper/Pods-Coffee Mapper.release.xcconfig"; sourceTree = "<group>"; };
-		7D08BCE3905AD427C414A047 /* Pods-Coffee Mapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coffee Mapper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Coffee Mapper/Pods-Coffee Mapper.debug.xcconfig"; sourceTree = "<group>"; };
+		66D75AEEB574636C7197E676 /* Pods_Coffee_Mapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coffee_Mapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		893794669CAFA5B2C525216D /* Pods-Coffee Mapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coffee Mapper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coffee Mapper/Pods-Coffee Mapper.release.xcconfig"; sourceTree = "<group>"; };
+		A10C84FF0EA3A1FB363676C1 /* Pods-Coffee Mapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coffee Mapper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Coffee Mapper/Pods-Coffee Mapper.debug.xcconfig"; sourceTree = "<group>"; };
 		BF1BE62D1CC0534A00776328 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BF1BE62F1CC05B9D00776328 /* FoursquareAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoursquareAPI.swift; sourceTree = "<group>"; };
 		BF1BE6311CC0634400776328 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
@@ -99,8 +99,8 @@
 				BF7B3EC91D067F6C00D2DC04 /* Firebase.framework in Frameworks */,
 				BF7B3ECA1D067F6C00D2DC04 /* HCSStarRatingView.framework in Frameworks */,
 				BF7B3ECB1D067F6C00D2DC04 /* QuadratTouch.framework in Frameworks */,
-				BF850DC81D06838F00B0A5CA /* Pods_Coffee_Mapper.framework in Frameworks */,
 				BF850DC61D06838F00B0A5CA /* MapKit.framework in Frameworks */,
+				D063E187DA754AA7F68C9F3C /* Pods_Coffee_Mapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,15 +121,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2CB61155CDA06E20192864DE /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7D08BCE3905AD427C414A047 /* Pods-Coffee Mapper.debug.xcconfig */,
-				23A33960441F331DD906B998 /* Pods-Coffee Mapper.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		4D8B682BE5C8D151E42D50D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,7 +130,7 @@
 				BF7B3EC71D067F6C00D2DC04 /* HCSStarRatingView.framework */,
 				BF7B3EC81D067F6C00D2DC04 /* QuadratTouch.framework */,
 				BF1BE62D1CC0534A00776328 /* MapKit.framework */,
-				1756AE2FEB795BB7C345213E /* Pods_Coffee_Mapper.framework */,
+				66D75AEEB574636C7197E676 /* Pods_Coffee_Mapper.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -202,8 +193,8 @@
 				BFCF745B1CBEDE23005733F9 /* Coffee Mapper */,
 				BFCF748A1CBEDFD4005733F9 /* Tests */,
 				BFCF745A1CBEDE23005733F9 /* Products */,
-				2CB61155CDA06E20192864DE /* Pods */,
 				4D8B682BE5C8D151E42D50D0 /* Frameworks */,
+				C837D0A4536C1EE2C05B91ED /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -257,6 +248,15 @@
 			name = Tests;
 			sourceTree = "<group>";
 		};
+		C837D0A4536C1EE2C05B91ED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A10C84FF0EA3A1FB363676C1 /* Pods-Coffee Mapper.debug.xcconfig */,
+				893794669CAFA5B2C525216D /* Pods-Coffee Mapper.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -264,12 +264,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFCF74811CBEDE24005733F9 /* Build configuration list for PBXNativeTarget "Coffee Mapper" */;
 			buildPhases = (
-				A0BF5640574E8D39A614BAB5 /* [CP] Check Pods Manifest.lock */,
+				046D0CF21207F53E7856EFE8 /* [CP] Check Pods Manifest.lock */,
 				BFCF74551CBEDE23005733F9 /* Sources */,
 				BFCF74561CBEDE23005733F9 /* Frameworks */,
 				BFCF74571CBEDE23005733F9 /* Resources */,
-				A8838F4383417D3FA763C590 /* [CP] Embed Pods Frameworks */,
-				9F9F8D8F51DCC30C7F6DF7B0 /* [CP] Copy Pods Resources */,
+				69A3675A0B07455E06E696E7 /* [CP] Embed Pods Frameworks */,
+				FBEB2C3EDC19BE269798499C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -323,7 +323,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Charles Kang";
 				TargetAttributes = {
 					BFCF74581CBEDE23005733F9 = {
@@ -391,22 +391,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9F9F8D8F51DCC30C7F6DF7B0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Coffee Mapper/Pods-Coffee Mapper-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A0BF5640574E8D39A614BAB5 /* [CP] Check Pods Manifest.lock */ = {
+		046D0CF21207F53E7856EFE8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -418,10 +403,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		A8838F4383417D3FA763C590 /* [CP] Embed Pods Frameworks */ = {
+		69A3675A0B07455E06E696E7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -434,6 +419,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Coffee Mapper/Pods-Coffee Mapper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBEB2C3EDC19BE269798499C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Coffee Mapper/Pods-Coffee Mapper-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -524,8 +524,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -569,8 +571,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -589,18 +593,20 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		BFCF74821CBEDE24005733F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D08BCE3905AD427C414A047 /* Pods-Coffee Mapper.debug.xcconfig */;
+			baseConfigurationReference = A10C84FF0EA3A1FB363676C1 /* Pods-Coffee Mapper.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 735G6X6W9B;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -614,18 +620,20 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.charleshkang.coffeeMapepr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		BFCF74831CBEDE24005733F9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23A33960441F331DD906B998 /* Pods-Coffee Mapper.release.xcconfig */;
+			baseConfigurationReference = 893794669CAFA5B2C525216D /* Pods-Coffee Mapper.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 735G6X6W9B;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -639,6 +647,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.charleshkang.coffeeMapepr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
