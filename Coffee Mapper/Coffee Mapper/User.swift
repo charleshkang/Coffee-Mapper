@@ -15,16 +15,9 @@ struct User {
     let email: String
     let username: String
     
-    init(authData: FAuthData) {
-        uid = authData.uid
-        email = authData.providerData["email"] as! String
-        username = authData.providerData["username"] as! String
+    init(authData: FIRAuth) {
+        uid = (authData.currentUser?.uid)!
+        email = (authData.currentUser?.providerData[0] as? String)!
+        username = (authData.currentUser?.providerData[1] as? String)!
     }
-    
-//    init(uid: String, email: String, username: String)
-//    {
-//        self.uid = uid
-//        self.email = email
-//        self.username = username
-//    }
 }

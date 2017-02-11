@@ -15,9 +15,13 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    var ref: FIRDatabaseReference
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        
+        ref = FIRDatabase.database().reference()
     }
     
     @IBAction func signUpButtonTapped(sender: AnyObject) {
@@ -33,6 +37,7 @@ class SignUpViewController: UIViewController {
     
     // MARK: Sign Up Logic
     func userSignup() {
+            
         guard
             let username = usernameTextField.text,
             let email = emailTextField.text,
